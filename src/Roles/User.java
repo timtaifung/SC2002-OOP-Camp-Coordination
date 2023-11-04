@@ -1,6 +1,8 @@
 package Roles;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String name;
     private String email;
     private String userID;
@@ -8,7 +10,7 @@ public class User {
     private String password;
     private String role;
 
-    public User(String name,String email, String faculty, String role){
+    public User(String name,String email, String faculty, String role   ){
         this.name=name;
         this.email=email;
         String[] parts =this.email.split("@");
@@ -33,4 +35,5 @@ public class User {
     public String getPassword(){
         return this.password;
     }
+    public String getRole(){return this.role;}
 }

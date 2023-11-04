@@ -1,4 +1,4 @@
-package Helper.Database;
+package Helper;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
