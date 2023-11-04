@@ -39,11 +39,12 @@ public class ExcelReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        userList.remove(0);
         // Display the users stored in the ArrayList
         for (User user : userList) {
             System.out.println("User ID: " + user.getUserID());
         }
+
         return userList;
     }
 }
