@@ -6,14 +6,16 @@ public class User {
     private String userID;
     private String faculty;
     private String password;
+    private String role;
 
-    public User(String name,String email, String faculty){
+    public User(String name,String email, String faculty, String role){
         this.name=name;
         this.email=email;
         String[] parts =this.email.split("@");
         this.userID=parts[0];
         this.faculty=faculty;
         this.password = "password";
+        this.role=role;
     }
 
     public String getUserID(){
