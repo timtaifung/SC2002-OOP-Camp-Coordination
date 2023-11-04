@@ -12,6 +12,7 @@ import Roles.User;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class ExcelReader {
@@ -31,7 +32,7 @@ public class ExcelReader {
                     String name = nameCell.toString();
                     String email = emailCell.toString();
                     String faculty = facultyCell.toString();
-
+                    if(Objects.equals(name, "")) break;
                     User user = new User(name,email,faculty);
                     userList.add(user);
                 }
