@@ -2,7 +2,7 @@ package Roles;
 
 public class User {
     private String name;
-    private  String email;
+    private String email;
     private String userID;
     private String faculty;
     private String password;
@@ -18,5 +18,17 @@ public class User {
 
     public String getUserID(){
         return this.userID;
+    }
+    public String getEmail(){
+        return this.email;
+    }
+    public String userID(){
+        return this.userID;
+    }
+    public String getFaculty(){
+        return this.faculty;
+    }
+    public String getPassword(){
+        return this.password;
     }
 }
