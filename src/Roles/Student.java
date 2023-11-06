@@ -1,5 +1,4 @@
 package Roles;
-
 import Camp.Camp;
 import QnA.Enquires.Enquiry;
 
@@ -15,4 +14,13 @@ public class Student extends User {
         this.studentEnquiryList = new ArrayList<Enquiry>();
         this.isCampCommitee=false;
     }
+    public ArrayList<Enquiry> getEnquiryList() {
+       return EnquiryList;
+    }
+	public void setEnquiryList( ArrayList<Enquiry> s) {
+	       this.EnquiryList=s;
+	}
+	public void addToEnquiryList(Enquiry enquiry) {
+	    EnquiryList.add(enquiry);
+	}
 }
