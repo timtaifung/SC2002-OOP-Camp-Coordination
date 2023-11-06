@@ -7,7 +7,6 @@ import java.util.Iterator;
 public class EnquiryMenu extends Enquiry{
 
     public void MainEnquiryMenu(Student student){
-        public  void mainEnquiryMenu(Student student) {
 		int choice;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Choose your options:");

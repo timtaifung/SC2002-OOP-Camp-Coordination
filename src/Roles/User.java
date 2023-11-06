@@ -40,7 +40,7 @@ public class User implements Serializable {
     	this.password = x;
     	System.out.println("Password has been reset!");
     }
-    //if 0 is a student, if 1 is a camp committee member
+    
     public void setRole (String x) {
     	this.role = x;
     }
