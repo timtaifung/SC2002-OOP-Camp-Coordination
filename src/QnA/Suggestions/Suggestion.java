@@ -1,5 +1,5 @@
 package QnA.Suggestions;
-import QnA.Submisson;
+import QnA.Submission;
 import java.util.Scanner;
 
 public class Suggestion extends Submission {

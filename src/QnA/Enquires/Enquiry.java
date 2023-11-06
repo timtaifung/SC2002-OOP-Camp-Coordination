@@ -1,7 +1,7 @@
 package QnA.Enquires;
-import QnA.Submission;
 import java.util.Scanner;
- 
+import QnA.Submission;
+
 public class Enquiry extends Submission {
 	private String content;
 	private String reply;
