@@ -1,5 +1,6 @@
 import Camp.Camp;
 import Helper.ExcelReader;
+import Helper.LoginHelper.Login;
 import QnA.Enquires.Enquiry;
 import QnA.Suggestions.Suggestion;
 import Roles.User;
@@ -15,6 +16,9 @@ public class Main {
         ArrayList<Suggestion> suggestionList = new ArrayList<Suggestion>();
 
         /* --------------- Login Page View ----------------------*/
-
+        User currentUser = Login.login(userList);
+        if (currentUser.getUserID()=="fail"){
+            System.out.println("Wrong Username / Password!");
+        }
     }
 }
