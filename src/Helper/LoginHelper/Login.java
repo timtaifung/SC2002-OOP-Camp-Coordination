@@ -1,6 +1,7 @@
 package Helper.LoginHelper;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 import Roles.User;
@@ -13,10 +14,14 @@ public class Login {
         System.out.print("Password: ");
         String passwordInput = sc.nextLine();
         for(User user : userList){
-            if(user.getUserID()==usernameInput){
-                if(user.getPassword() ==passwordInput){
-                    if(passwordInput =="password")
+            String comparatorUser =user.getUserID();
+            String comparatorPassword = user.getPassword();
+            if(Objects.equals(comparatorUser, usernameInput)){
+                if(Objects.equals(comparatorPassword, passwordInput)){
+                    if(Objects.equals(comparatorPassword, "password")){
                         firstTimeLogin.firstLogin(user);
+                        return user;
+                    }
                     else{
                         return user;
                     }

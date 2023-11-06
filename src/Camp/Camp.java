@@ -18,6 +18,9 @@ public class Camp {
     public ArrayList<User> getAttendanceList(){
         return this.attendanceList;
     }
+    public User getCreatedBy(){
+        return this.createdBy;
+    }
 
 
 }
