@@ -15,12 +15,12 @@ public class Student extends User {
         this.isCampCommitee=false;
     }
     public ArrayList<Enquiry> getEnquiryList() {
-       return EnquiryList;
+       return this.studentEnquiryList;
     }
 	public void setEnquiryList( ArrayList<Enquiry> s) {
-	       this.EnquiryList=s;
+	       this.studentEnquiryList=s;
 	}
 	public void addToEnquiryList(Enquiry enquiry) {
-	    EnquiryList.add(enquiry);
+	    studentEnquiryList.add(enquiry);
 	}
 }
