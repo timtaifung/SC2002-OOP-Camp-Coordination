@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import Camp.Camp;
 import Camp.CampHelper;
+import Helper.GenerateList;
 
 import static Camp.CampHelper.createCamp;
 
@@ -18,18 +19,17 @@ public class StaffCampMenu {
 	private static void displayStaffCampMenu(){
 		System.out.println("\nCamps");
     	System.out.println("2. View all Camps");
-    	System.out.println("3. Create new Camp");
-    	System.out.println("4. Edit/Delete camp");
-    	System.out.println("5. Toggle Camp Visibility");
-    	System.out.println("6. View my Created Camps");
+		System.out.println("3. View own Camps");
+    	System.out.println("4. Create new Camp");
+    	System.out.println("5. Edit/Delete camp");
     		
     	System.out.println("\nEnquiries and Suggestions");
-    	System.out.println("7. View/Reply Enquiries");
-    	System.out.println("8. View/Approve Suggestions");
+    	System.out.println("6. View/Reply Enquiries");
+    	System.out.println("7. View/Approve Suggestions");
     		
     	System.out.println("\nReports");
-    	System.out.println("9. Generate reports");
-    	System.out.println("0. Exit");
+    	System.out.println("8. Generate reports");
+    	System.out.println("9. Exit");
 		
 
 	}
@@ -59,41 +59,42 @@ public class StaffCampMenu {
     			CampHelper.viewAllCamps(campList);
     			break;
 
-    		case 3:
-    			do {
-                    System.out.println("Staff -> Create/Edit/Delete Camp");
-					System.out.println("1. Create Camp");
-    				System.out.println("2. Edit Camp");
-    				System.out.println("3. Delete Camp");
-    				System.out.println("4. Back to homepage");
-    				choice2 = sc.nextInt();
-    				switch (choice2) {
-						case 1:
-							System.out.println("Staff -> Create/Edit/Delete Camp -> Create Camp");
-							campList.add(createCamp(currentUser));
-						case 2:
-    						System.out.println("Staff -> Edit/Delete Camp -> Edit Camp");
-                            CampHelper.editCamp(campList, currentUser);
-    						break;
-    					case 3:
-                            System.out.println("Staff -> Edit/Delete Camp -> Delete Camp");
-    						CampHelper.delCamp(campList, currentUser);
-    						break;
-    					case 4:
-    						reverse = true;
-    						break;
-    					default:
-    						System.out.println("Invalid choice! Please choose again!");
-    						break;
-    				}
-                    if (choice2 == 1 || choice2 == 2) {
-							CommonView.pressEnterToContinue();
-    			}while (reverse == false);
-    			break;
-    		case 5:
-    			System.out.println("Staff -> View my Created Camp");
+			case 3:
+				System.out.println("Staff -> View my Created Camp");
                 CampHelper.viewMyCreatedCamps(campList, currentUser);
-    					
+				break;
+
+    		case 4:
+                System.out.println("Staff -> Create Camp");
+				campList.add(createCamp(currentUser));					
+    			break;
+
+    		case 5:
+				do{
+					System.out.println("1. Edit Camp");
+    				System.out.println("2. Delete Camp");
+    				System.out.println("3. Back to homepage");
+
+					choice2 = sc.nextInt();
+					switch (choice2) {
+						case 1:
+							System.out.println("Staff -> Edit Camp");
+							CampHelper.editCamp(campList, currentUser);							
+							break;
+						case 2:
+							System.out.println("Staff -> Delete Camp");
+							CampHelper.delCamp(campList, currentUser);
+							break;
+						case 3:
+							break;
+					
+						default:
+							System.out.println("Invalid choice! Please choose again!");
+							break;
+					}
+				}while (choice2 != 3);
+
+				
     		case 6:
     			System.out.println("Staff -> View/Reply Enquiries");
 				//
@@ -102,15 +103,15 @@ public class StaffCampMenu {
     					
     		case 7:
     			System.out.println("Staff -> View/Reply Suggestions");
-                SuggestionMenu suggestionMenu = new SuggestionMenu();
-    			suggstionMenu = run.SuggestionMenu();
+                //
     			break;
     					
     		case 8:
     			System.out.println("Staff -> Generate reports");
-                Helper.generateList();
+                GenerateList.generateList(campList);
+				break;
     					
-    		case 0:
+    		case 9:
     			System.out.println("Leaving staff menu");
     			return;
     					
@@ -119,14 +120,9 @@ public class StaffCampMenu {
     			break;	
     			
     	}
-        if (choice >= 2 && choice <9) {
-				CommonView.pressEnterToContinue();
     		
-    }while(true);
+    }while(choice1 != 9);
     	}
     }
 
 	
-}
-}
-    
