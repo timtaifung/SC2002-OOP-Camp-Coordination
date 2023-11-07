@@ -3,8 +3,13 @@ import Helper.ExcelReader;
 import Helper.LoginHelper.Login;
 import QnA.Enquires.Enquiry;
 import QnA.Suggestions.Suggestion;
+import Roles.StaffCampMenu;
 import Roles.User;
+import Menu.UserCampMenu;
+
 import java.util.ArrayList;
+
+
 
 public class Main {
     public static void main(String[] args){
@@ -17,8 +22,21 @@ public class Main {
 
         /* --------------- Login Page View ----------------------*/
         User currentUser = Login.login(userList);
-        if (currentUser.getUserID()=="fail"){
+        while (currentUser.getUserID()=="fail"){
             System.out.println("Wrong Username / Password!");
+            currentUser = Login.login(userList);
+        }
+
+        /*-----------------Main Menu Page -----------------------*/
+        switch(currentUser.getRole().toString()){
+            case "Student":
+                UserCampMenu.menu(currentUser);
+                break;
+            case "Staff":
+                StaffCampMenu.mainMenu(currentUser);
+                break;
+            case "CampCommitee":
+
         }
     }
 }
