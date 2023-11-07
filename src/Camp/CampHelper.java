@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
+//hi im nic
+
 public class CampHelper {
     public static void viewAllCamps(ArrayList<Camp> campList){
         for(int i=0; i< campList.size()-1; i++){
