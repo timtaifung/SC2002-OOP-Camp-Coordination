@@ -20,4 +20,10 @@ public class Student extends User {
     public ArrayList<Enquiry> getStudentEnquiryList(){
         return this.studentEnquiryList;
     }
+    public Boolean getIsCampCommitee(){
+        return this.isCampCommitee;
+    }
+    public void setIsCampCommitee(Boolean isCampCommitee){
+        this.isCampCommitee=isCampCommitee;
+    }
 }

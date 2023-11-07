@@ -52,6 +52,7 @@ public class CampHelper {
         camp.setCommiteeSlots(commiteeSlots);
         camp.setShortDescription(result);
         camp.setVisiblity(true);
+        camp.setNTU(grouping);
         return camp;
     }
 
@@ -134,23 +135,16 @@ public class CampHelper {
         campList.remove(campIndex);
     }
 
-    public static void showAllVisibleCamp(ArrayList<Camp> campList, User currentUser){
-        for(int i=0; i< campList.size()-1; i++){
+    public static void showAllVisibleCamp(ArrayList<Camp> campList, Student currentUser){
+        for(int i=0; i< campList.size(); i++){
             if(campList.get(i).getVisiblity() && campList.get(i).getNTU() || campList.get(i).getVisiblity() && Objects.equals(campList.get(i).getGrouping(), currentUser.getFaculty())){
                 System.out.println((i+1) + ". " + campList.get(i).getName() + " " + campList.get(i).getAvailableSlots() + "/" + campList.get(i).getTotalSlots());
             }
         }
     }
 
-    public static void showAllVisibleCampForStudent(ArrayList<Camp> campList, User currentUser){
-        for(int i=0; i< campList.size()-1; i++){
-            if((campList.get(i).getVisiblity() && campList.get(i).getNTU()) || (campList.get(i).getVisiblity() && Objects.equals(campList.get(i).getGrouping(), currentUser.getFaculty()))){
-                System.out.println((i+1) + ". " + campList.get(i).getName() + " " + campList.get(i).getAvailableSlots() + "/" + campList.get(i).getTotalSlots());
-            }
-        }
-    }
 
-    public static void showAvailableCamp(ArrayList<Camp> campList, User currentStudent){
+    public static void showAvailableCamp(ArrayList<Camp> campList, Student currentStudent){
         int i=1;
         for (Camp camp : campList) {
             if (camp.getAvailableSlots() > 0 && camp.getVisiblity() && camp.getNTU() || camp.getAvailableSlots() > 0 && camp.getVisiblity() && Objects.equals(camp.getGrouping(), currentStudent.getFaculty())) {
@@ -160,14 +154,15 @@ public class CampHelper {
         }
     }
 
-    public static void registerCamp(ArrayList<Camp> campList, User currentUser){
+    public static void registerCamp(ArrayList<Camp> campList, Student currentUser){
         showAvailableCamp(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Register: ");
         Integer campIndex = sc.nextInt();
-        Camp camp = campList.get(campIndex);
+        Camp camp = campList.get(campIndex-1);
         if(camp.getAvailableSlots()>0){
             camp.getAttendanceList().add(currentUser);
+            currentUser.getStudentCampList().add(camp);
             System.out.println("Registered successfully!");
         }
         else{
@@ -182,6 +177,32 @@ public class CampHelper {
             i++;
         }
     }
+
+    public static void campDetail(Camp currentCamp){
+        System.out.println("Camp Name: "+currentCamp.getName());
+        System.out.println("Date of Camp: "+currentCamp.getDateofCamp());
+        System.out.println("Registeration Closing Date: "+currentCamp.getRegisteraionClosing());
+        System.out.println("Faculty/School: "+currentCamp.getGrouping());
+        System.out.println("Location: "+currentCamp.getLocation());
+        System.out.println("Total Slots: "+currentCamp.getTotalSlots());
+        System.out.println("Short Description: "+currentCamp.getShortDescription());
+        System.out.println("Available Slots: "+currentCamp.getAvailableSlots());
+    }
+
+    public static void applyCampCommitee(Student currentStudent, Camp currentCamp){
+        if(currentCamp.getCommiteeSlots()>0 && !currentStudent.getIsCampCommitee()){
+            currentCamp.getCommiteeList().add(currentStudent);
+            currentStudent.setIsCampCommitee(true);
+            System.out.println("Applied successfully!");
+        }
+        if (currentStudent.getIsCampCommitee()){
+            System.out.println("You are already a camp commitee!");
+        }
+        else{
+            System.out.println("Camp commitee slots are full!");
+        }
+    }
+
 
 
 

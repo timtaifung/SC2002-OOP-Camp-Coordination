@@ -18,6 +18,7 @@ public class Camp {
     private String location;
     private Integer totalSlots;
     private Integer availableSlots;
+    private Integer availableCommiteeSlots;
     private Integer commiteeSlots;
     private String shortDescription;
     public Camp(User createdBy){
@@ -26,6 +27,7 @@ public class Camp {
         this.createdBy=createdBy;
         this.visiblity = true;
         this.availableSlots= this.totalSlots;
+        this.NTU = false;
 
     }
     public String getName(){
@@ -47,6 +49,8 @@ public class Camp {
     public String getShortDescription(){return this.shortDescription;}
     public Boolean getVisiblity(){return this.visiblity;}
     public Integer getAvailableSlots(){return this.totalSlots-this.getAttendanceList().size();}
+    public ArrayList<User> getCommiteeList(){return this.commiteeList;}
+    public Integer getAvailableCommiteeSlots(){return this.commiteeSlots-this.getCommiteeList().size();}
 
     public void setName(String name){
         this.name=name;
@@ -60,10 +64,6 @@ public class Camp {
     public void setGrouping(String grouping){
         this.grouping=grouping;
     }
-    public void setNTU(Boolean NTU){
-        if(Objects.equals(this.getGrouping(), "NTU"))
-            this.NTU=true;
-    }
     public void setLocation(String location){
         this.location=location;
     }
@@ -75,6 +75,10 @@ public class Camp {
         if(this.commiteeSlots>this.totalSlots){
             System.out.println("Committee slots cannot be more than total slots");
         }
+    }
+    public void setNTU(String grouping){
+        this.NTU= Objects.equals(grouping, "NTU");
+
     }
     public void setShortDescription(String shortDescription){
         this.shortDescription=shortDescription;

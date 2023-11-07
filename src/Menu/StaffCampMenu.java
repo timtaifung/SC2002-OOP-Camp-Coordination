@@ -35,7 +35,7 @@ public class StaffCampMenu {
 		System.out.println("-------------------Reports-------------------");
     	System.out.println("\nReports");
     	System.out.println("8. Generate reports");
-    	System.out.println("9. Exit");
+    	System.out.println("9. Logout");
 		
 
 	}
@@ -52,7 +52,10 @@ public class StaffCampMenu {
     		displayStaffCampMenu();
     		
     		choice1 = sc.nextInt();  
-    		
+    		if(choice1 == 9) {
+				System.out.println("Successfully logged out!");
+				return;
+			}
     		switch (choice1) {
     		case 1:
     			System.out.println("Staff -> Change Password");
