@@ -4,17 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import Camp.Camp;
 import Camp.CampHelper;
-import QnA.Enquires.EnquiryMenu;
-import QnA.Suggestions.SuggestionMenu;
 
 import static Camp.CampHelper.createCamp;
+
+import QnA.Enquires.Enquiry;
+import QnA.Suggestions.Suggestion;
 import Roles.User;
 
 public class StaffCampMenu {
     
     private static final Scanner sc = new Scanner(System.in);
 
-    public static void menu(User currentUser, ArrayList<Camp> campList) {
+    public static void menu(User currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){
     	int choice1, choice2;
     	boolean reverse = false;
     	
@@ -83,19 +84,13 @@ public class StaffCampMenu {
 							CommonView.pressEnterToContinue();
     			}while (reverse == false);
     			break;
-    		case 4:
-    			System.out.println("Staff -> Toggle Camp Visibility");
-                CampView.toggleVisibility();
-    			break;
-    				
     		case 5:
     			System.out.println("Staff -> View my Created Camp");
-                CampView.viewPersonalCamp();
+                CampHelper.viewMyCreatedCamps(campList, currentUser);
     					
     		case 6:
     			System.out.println("Staff -> View/Reply Enquiries");
-                EnquiryMenu enquiryMenu = new EnquiryMenu();
-    			enquiryMenu = run.EnquiryMenu();
+
     			break;
     					
     		case 7:
