@@ -1,6 +1,7 @@
 import Camp.Camp;
 import Helper.ExcelReader;
 import Helper.LoginHelper.Login;
+import Menu.StaffCampMenu;
 import QnA.Enquires.Enquiry;
 import QnA.Suggestions.Suggestion;
 import Roles.StaffCampMenu;
@@ -33,7 +34,7 @@ public class Main {
                 UserCampMenu.menu(currentUser);
                 break;
             case "Staff":
-                StaffCampMenu.mainMenu(currentUser);
+                StaffCampMenu.menu(currentUser, campList, enquiryList, suggestionList);
                 break;
             case "CampCommitee":
 

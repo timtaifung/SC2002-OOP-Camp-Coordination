@@ -1,21 +1,18 @@
 package QnA;
 
-public class Submission implements SubmissionAbstract{
-	private String content;
-	
-	public Submission() {this.content = null;}
-	public Submission(String c) {this.content = c;}
-	
-	public void setContent(String newContent) {
-		this.content = newContent;
-	}
+import Roles.User;
 
-	public void view() {
-		System.out.println(this.content);	
-		
-	}
-	public void edit(String y) {
-		setContent(y);
-	} 
-	
+public class Submission {
+	private String title;
+	private String content;
+	private User createdBy;
+
+	public Submission(User currentUser) {this.createdBy=currentUser; this.title = ""; this.content = "";}
+	public String getTitle(){return this.title;}
+	public String getContent(){return this.content;}
+	public User getCreatedBy(){return this.createdBy;}
+	public void setTitle(String t){this.title=t;}
+	public void setContent(String c){this.content=c;}
+	public void setCreatedBy(User u){this.createdBy=u;}
+
 }

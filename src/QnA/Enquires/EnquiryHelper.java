@@ -1,24 +1,26 @@
 package QnA.Enquires;
+import Roles.User;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EnquiryHelper extends Enquiry{
-	
-	
-	public void replyToEnquiry() {
-		String content = getcontent();
-		System.out.println("The enquiry is: "+ content);
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter your reply below:");
-		String y = sc.nextLine();
-		setreply(y);
-		setProcessedStatus(true);
-		System.out.println("Reply saved!");
-	}
-	public static void getAllEnquiry(ArrayList<Enquiry> enquiryList){
-		for (Enquiry en : enquiryList) {
-		    en.view();
-		}
+	public EnquiryHelper(User currentUser) {
+		super(currentUser);
 	}
 
+	public static void replyEnquiry(Enquiry currentEnquiry){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your reply:");
+		String y = sc.nextLine();
+		currentEnquiry.setreply(y);
+		currentEnquiry.setProcessedStatus(true);
+		System.out.println("Reply submitted!");
+	}
+	public static void getAllEnquiry(ArrayList<Enquiry> enquiryList){
+		Integer i=1;
+		for (Enquiry currentEnquiry : enquiryList) {
+			System.out.println(i+". "+currentEnquiry.getTitle());
+		}
+	}
 }

@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import Camp.Camp;
 import Camp.CampHelper;
-import Helper.GenerateList;
 
 import static Camp.CampHelper.createCamp;
 
+import Helper.GenerateList;
 import QnA.Enquires.Enquiry;
+import QnA.Enquires.EnquiryHelper;
 import QnA.Suggestions.Suggestion;
+import QnA.Suggestions.SuggestionHelper;
 import Roles.User;
 
 public class StaffCampMenu {
@@ -59,58 +61,63 @@ public class StaffCampMenu {
     			CampHelper.viewAllCamps(campList);
     			break;
 
-			case 3:
-				System.out.println("Staff -> View my Created Camp");
-                CampHelper.viewMyCreatedCamps(campList, currentUser);
-				break;
-
-    		case 4:
-                System.out.println("Staff -> Create Camp");
-				campList.add(createCamp(currentUser));					
-    			break;
-
-    		case 5:
-				do{
-					System.out.println("1. Edit Camp");
-    				System.out.println("2. Delete Camp");
-    				System.out.println("3. Back to homepage");
-
-					choice2 = sc.nextInt();
-					switch (choice2) {
+    		case 3:
+    			do {
+                    System.out.println("Staff -> Create/Edit/Delete Camp");
+					System.out.println("1. Create Camp");
+    				System.out.println("2. Edit Camp");
+    				System.out.println("3. Delete Camp");
+    				System.out.println("4. Back to homepage");
+    				choice2 = sc.nextInt();
+    				switch (choice2) {
 						case 1:
-							System.out.println("Staff -> Edit Camp");
-							CampHelper.editCamp(campList, currentUser);							
-							break;
+							System.out.println("Staff -> Create/Edit/Delete Camp -> Create Camp");
+							campList.add(createCamp(currentUser));
 						case 2:
-							System.out.println("Staff -> Delete Camp");
-							CampHelper.delCamp(campList, currentUser);
-							break;
-						case 3:
-							break;
-					
-						default:
-							System.out.println("Invalid choice! Please choose again!");
-							break;
-					}
-				}while (choice2 != 3);
-
-				
+    						System.out.println("Staff -> Edit/Delete Camp -> Edit Camp");
+                            CampHelper.editCamp(campList, currentUser);
+    						break;
+    					case 3:
+                            System.out.println("Staff -> Edit/Delete Camp -> Delete Camp");
+    						CampHelper.delCamp(campList, currentUser);
+    						break;
+    					case 4:
+    						reverse = true;
+    						break;
+    					default:
+    						System.out.println("Invalid choice! Please choose again!");
+    						break;
+    				}
+    			}while (reverse == false);
+    			break;
+    		case 5:
+    			System.out.println("Staff -> View my Created Camp");
+                CampHelper.viewMyCreatedCamps(campList, currentUser);
+    					
     		case 6:
     			System.out.println("Staff -> View/Reply Enquiries");
-				//
-
+				EnquiryHelper.getAllEnquiry(enquiryList);
+				System.out.println("Select an enquiry to reply to:");
+				int eChoice = sc.nextInt();
+				Enquiry currentEnquiry = enquiryList.get(eChoice-1);
+				EnquiryHelper.replyEnquiry(currentEnquiry);
     			break;
     					
     		case 7:
     			System.out.println("Staff -> View/Reply Suggestions");
-                //
-    			break;
+				SuggestionHelper.getAllSuggestion(suggestionList);
+				System.out.println("Select a suggestion to approve/reject:");
+				int sChoice = sc.nextInt();
+				Suggestion currentSuggestion = suggestionList.get(sChoice-1);
+				SuggestionHelper.approveSuggestion(currentSuggestion);
+				break;
     					
     		case 8:
     			System.out.println("Staff -> Generate reports");
+				GenerateList.generateList(campList);
                 GenerateList.generateList(campList);
 				break;
-    					
+
     		case 9:
     			System.out.println("Leaving staff menu");
     			return;
@@ -120,8 +127,7 @@ public class StaffCampMenu {
     			break;	
     			
     	}
-    		
-    }while(choice1 != 9);
+    }while (choice1 != 9);
     	}
     }
 
