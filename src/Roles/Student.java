@@ -14,13 +14,10 @@ public class Student extends User {
         this.studentEnquiryList = new ArrayList<Enquiry>();
         this.isCampCommitee=false;
     }
-    public ArrayList<Enquiry> getEnquiryList() {
-       return this.studentEnquiryList;
+    public ArrayList<Camp> getStudentCampList(){
+        return this.studentCampList;
     }
-	public void setEnquiryList( ArrayList<Enquiry> s) {
-	       this.studentEnquiryList=s;
-	}
-	public void addToEnquiryList(Enquiry enquiry) {
-	    studentEnquiryList.add(enquiry);
-	}
+    public ArrayList<Enquiry> getStudentEnquiryList(){
+        return this.studentEnquiryList;
+    }
 }

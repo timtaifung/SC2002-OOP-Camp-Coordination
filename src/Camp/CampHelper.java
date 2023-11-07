@@ -1,5 +1,6 @@
 package Camp;
 
+import Roles.Student;
 import Roles.User;
 
 import java.util.ArrayList;
@@ -10,8 +11,8 @@ import java.util.Scanner;
 
 public class CampHelper {
     public static void viewAllCamps(ArrayList<Camp> campList){
-        for(int i=0; i< campList.size()-1; i++){
-            System.out.println(campList.get(i));
+        for(int i=0; i< campList.size(); i++){
+            System.out.println(campList.get(i).getName());
         }
     }
     public static void viewMyCreatedCamps(ArrayList<Camp> campList, User currentUser){
@@ -24,33 +25,33 @@ public class CampHelper {
 
     public static Camp createCamp(User currentUser){
         Camp camp = new Camp(currentUser);
-        System.out.println("------Create Camp------");
         Scanner sc = new Scanner(System.in);
+        System.out.println("------Create Camp------");
         System.out.print("Camp Name: ");
         String campName = sc.nextLine();
-        camp.setName(campName);
         System.out.print("Date of Camp: ");
         String dateOfCamp = sc.nextLine();
-        camp.setDateofCamp(dateOfCamp);
         System.out.print("Registeration Closing Date: ");
         String registeraionClosing = sc.nextLine();
-        camp.setRegisteraionClosing(registeraionClosing);
         System.out.print("Faculty/School: ");
         String grouping = sc.nextLine();
-        camp.setGrouping(grouping);
         System.out.print("Location: ");
         String location = sc.nextLine();
-        camp.setLocation(location);
         System.out.print("Total Slots: ");
         Integer totalSlots = sc.nextInt();
-        camp.setTotalSlots(totalSlots);
         System.out.print("Camp Commitee Slots: ");
         Integer commiteeSlots = sc.nextInt();
-        camp.setCommiteeSlots(commiteeSlots);
         System.out.print("Short Description: ");
-        String shortDescription = sc.nextLine();
-        camp.setShortDescription(shortDescription);
-
+        String result=sc.nextLine();
+        camp.setName(campName);
+        camp.setDateofCamp(dateOfCamp);
+        camp.setRegisteraionClosing(registeraionClosing);
+        camp.setGrouping(grouping);
+        camp.setLocation(location);
+        camp.setTotalSlots(totalSlots);
+        camp.setCommiteeSlots(commiteeSlots);
+        camp.setShortDescription(result);
+        camp.setVisiblity(true);
         return camp;
     }
 
@@ -132,6 +133,58 @@ public class CampHelper {
         Integer campIndex = sc.nextInt();
         campList.remove(campIndex);
     }
+
+    public static void showAllVisibleCamp(ArrayList<Camp> campList, User currentUser){
+        for(int i=0; i< campList.size()-1; i++){
+            if(campList.get(i).getVisiblity() && campList.get(i).getNTU() || campList.get(i).getVisiblity() && Objects.equals(campList.get(i).getGrouping(), currentUser.getFaculty())){
+                System.out.println((i+1) + ". " + campList.get(i).getName() + " " + campList.get(i).getAvailableSlots() + "/" + campList.get(i).getTotalSlots());
+            }
+        }
+    }
+
+    public static void showAllVisibleCampForStudent(ArrayList<Camp> campList, User currentUser){
+        for(int i=0; i< campList.size()-1; i++){
+            if((campList.get(i).getVisiblity() && campList.get(i).getNTU()) || (campList.get(i).getVisiblity() && Objects.equals(campList.get(i).getGrouping(), currentUser.getFaculty()))){
+                System.out.println((i+1) + ". " + campList.get(i).getName() + " " + campList.get(i).getAvailableSlots() + "/" + campList.get(i).getTotalSlots());
+            }
+        }
+    }
+
+    public static void showAvailableCamp(ArrayList<Camp> campList, User currentStudent){
+        int i=1;
+        for (Camp camp : campList) {
+            if (camp.getAvailableSlots() > 0 && camp.getVisiblity() && camp.getNTU() || camp.getAvailableSlots() > 0 && camp.getVisiblity() && Objects.equals(camp.getGrouping(), currentStudent.getFaculty())) {
+                System.out.println((i)+". "+camp.getName());
+                i++;
+            }
+        }
+    }
+
+    public static void registerCamp(ArrayList<Camp> campList, User currentUser){
+        showAvailableCamp(campList, currentUser);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Select Camp to Register: ");
+        Integer campIndex = sc.nextInt();
+        Camp camp = campList.get(campIndex);
+        if(camp.getAvailableSlots()>0){
+            camp.getAttendanceList().add(currentUser);
+            System.out.println("Registered successfully!");
+        }
+        else{
+            System.out.println("Camp is full!");
+        }
+    }
+
+    public static void showMyRegisteredCamp(Student currentUser){
+        int i=1;
+        for (Camp camp : currentUser.getStudentCampList()) {
+            System.out.println((i)+". "+camp.getName());
+            i++;
+        }
+    }
+
+
+
 
 
 }

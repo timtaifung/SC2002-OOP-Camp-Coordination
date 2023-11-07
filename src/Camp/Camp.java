@@ -17,6 +17,7 @@ public class Camp {
     private Boolean NTU;  //if grouping==NTU, NTu == True
     private String location;
     private Integer totalSlots;
+    private Integer availableSlots;
     private Integer commiteeSlots;
     private String shortDescription;
     public Camp(User createdBy){
@@ -24,6 +25,7 @@ public class Camp {
         this.commiteeList = new ArrayList<User>();
         this.createdBy=createdBy;
         this.visiblity = true;
+        this.availableSlots= this.totalSlots;
 
     }
     public String getName(){
@@ -44,6 +46,7 @@ public class Camp {
     public Integer getCommiteeSlots(){return this.commiteeSlots;}
     public String getShortDescription(){return this.shortDescription;}
     public Boolean getVisiblity(){return this.visiblity;}
+    public Integer getAvailableSlots(){return this.totalSlots-this.getAttendanceList().size();}
 
     public void setName(String name){
         this.name=name;
@@ -79,6 +82,8 @@ public class Camp {
     public void setVisiblity(Boolean visiblity){
         this.visiblity=visiblity;
     }
+
+
 
 
 

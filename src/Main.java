@@ -4,9 +4,8 @@ import Helper.LoginHelper.Login;
 import Menu.StaffCampMenu;
 import QnA.Enquires.Enquiry;
 import QnA.Suggestions.Suggestion;
-import Roles.StaffCampMenu;
 import Roles.User;
-import Menu.UserCampMenu;
+import Menu.StudentMenu;
 
 import java.util.ArrayList;
 
@@ -23,6 +22,7 @@ public class Main {
 
         /* --------------- Login Page View ----------------------*/
         User currentUser = Login.login(userList);
+
         while (currentUser.getUserID()=="fail"){
             System.out.println("Wrong Username / Password!");
             currentUser = Login.login(userList);
@@ -31,7 +31,7 @@ public class Main {
         /*-----------------Main Menu Page -----------------------*/
         switch(currentUser.getRole().toString()){
             case "Student":
-                UserCampMenu.menu(currentUser);
+                StudentMenu.menu(currentUser);
                 break;
             case "Staff":
                 StaffCampMenu.menu(currentUser, campList, enquiryList, suggestionList);
