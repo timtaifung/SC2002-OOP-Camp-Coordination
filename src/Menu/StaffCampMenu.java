@@ -15,6 +15,25 @@ public class StaffCampMenu {
     
     private static final Scanner sc = new Scanner(System.in);
 
+	private static void displayStaffCampMenu(){
+		System.out.println("\nCamps");
+    	System.out.println("2. View all Camps");
+    	System.out.println("3. Create new Camp");
+    	System.out.println("4. Edit/Delete camp");
+    	System.out.println("5. Toggle Camp Visibility");
+    	System.out.println("6. View my Created Camps");
+    		
+    	System.out.println("\nEnquiries and Suggestions");
+    	System.out.println("7. View/Reply Enquiries");
+    	System.out.println("8. View/Approve Suggestions");
+    		
+    	System.out.println("\nReports");
+    	System.out.println("9. Generate reports");
+    	System.out.println("0. Exit");
+		
+
+	}
+
     public static void menu(User currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){
     	int choice1, choice2;
     	boolean reverse = false;
@@ -23,20 +42,7 @@ public class StaffCampMenu {
     		System.out.println("Staff Menu:");
     		System.out.println("1. Change password");
     		
-    		System.out.println("\nCamps");
-    		System.out.println("2. View all Camps");
-    		System.out.println("3. Create new Camp");
-    		System.out.println("4. Edit/Delete camp");
-    		System.out.println("5. Toggle Camp Visibility");
-    		System.out.println("6. View my Created Camps");
-    		
-    		System.out.println("\nEnquiries and Suggestions");
-    		System.out.println("7. View/Reply Enquiries");
-    		System.out.println("8. View/Approve Suggestions");
-    		
-    		System.out.println("\nReports");
-    		System.out.println("9. Generate reports");
-    		System.out.println("0. Exit");
+    		displayStaffCampMenu();
     		
     		choice1 = sc.nextInt();  
     		
@@ -90,6 +96,7 @@ public class StaffCampMenu {
     					
     		case 6:
     			System.out.println("Staff -> View/Reply Enquiries");
+				//
 
     			break;
     					
@@ -118,4 +125,8 @@ public class StaffCampMenu {
     }while(true);
     	}
     }
+
+	
+}
+}
     
