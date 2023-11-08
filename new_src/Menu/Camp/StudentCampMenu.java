@@ -1,10 +1,10 @@
 package new_src.Menu.Camp;
 import new_src.Assets.Camp.Camp;
-import Camp.CampHelper;
-import QnA.Enquires.Enquiry;
-import QnA.Suggestions.Suggestion;
-import Roles.Student;
-import Roles.User;
+import new_src.Assets.Roles.Student;
+import new_src.Assets.Camp.*;
+import new_src.Assets.QnA.Enquiry.*;
+import new_src.Assets.QnA.Suggestion.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,7 +13,8 @@ public class StudentCampMenu
 {
     public static void menu(Student currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){
         int x=0;
-        do{
+        do
+        {
             Scanner sc = new Scanner(System.in);
             System.out.println("Welcome to Student Menu");
             System.out.println("Choose your options:");
@@ -35,21 +36,21 @@ public class StudentCampMenu
             switch (x) 
             {
                 case 1:
-                    CampHelper.showAllVisibleCamp(campList, currentUser);
+                    CampViewer.showAllVisibleCamp(campList, currentUser);
 
                 case 2:
-                    CampHelper.showAvailableCamp(campList, currentUser);
+                    CampViewer.showAvailableCamp(campList, currentUser);
 
                 case 3:
-                    CampHelper.registerCamp(campList, currentUser);
+                    CampManager.registerCamp(campList, currentUser);
 
                 case 4:
-                    CampHelper.showMyRegisteredCamp(currentUser);
+                    CampViewer.showMyRegisteredCamp(currentUser);
 
                 case 5:
                 {
                     System.out.println("Inspect Individual Camp");
-                    CampHelper.showMyRegisteredCamp(currentUser);
+                    CampViewer.showMyRegisteredCamp(currentUser);
                     System.out.println("Please enter your choice: ");
                     Integer campIndex = sc.nextInt();
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);
@@ -59,6 +60,7 @@ public class StudentCampMenu
                 default:
                     System.out.println("Invalid input!");
             }
+            sc.close();
         }
         while(x!=7);
     }
