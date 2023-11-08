@@ -1,10 +1,10 @@
 package new_src.Menu.Camp;
-import Camp.Camp;
-import Camp.CampHelper;
-import QnA.Enquires.Enquiry;
-import QnA.Enquires.EnquiryHelper;
-import QnA.Suggestions.Suggestion;
-import Roles.Student;
+import new_src.Assets.Camp.Camp;
+import new_src.Assets.Roles.Student;
+import new_src.Assets.Camp.CampManager;
+import new_src.Assets.QnA.Enquiry.*;
+import new_src.Assets.QnA.Suggestion.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -22,13 +22,13 @@ public class CampMenu
             case 1:
             {
                 System.out.println("View Camp Details");
-                CampHelper.campDetail(currentCamp);
+                CampManager.campDetail(currentCamp);
             }
 
             case 2:
             {
                 System.out.println("Apply Camp Commitee");
-                CampHelper.applyCampCommitee(currentStudent, currentCamp);
+                CampManager.applyCampCommitee(currentStudent, currentCamp);
             }
 
             case 3:
@@ -45,36 +45,36 @@ public class CampMenu
                     case 1:
                     {
                         System.out.println("View my Camp Enquiry");
-                        EnquiryHelper.viewMyEnquiry(enquiryList, currentStudent);
+                        EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
                         break;
                     }
 
                     case 2:
                     {
                         System.out.println("Create new Camp Enquiry");
-                        EnquiryHelper.newEnquiry(enquiryList, currentStudent, currentCamp);
+                        EnquiryManager.newEnquiry(enquiryList, currentStudent, currentCamp);
                         break;
                     }
 
                     case 3:
                     {
                         System.out.println("Edit Camp Enquiry");
-                        EnquiryHelper.viewMyEnquiry(enquiryList, currentStudent);
+                        EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
                         System.out.println("Please enter your choice: ");
                         Integer enquiryIndex = sc.nextInt();
                         Enquiry enquiryChoice = currentStudent.getStudentEnquiryList().get(enquiryIndex-1);
-                        EnquiryHelper.editEnquiry(enquiryChoice, currentStudent);
+                        EnquiryManager.editEnquiry(enquiryChoice, currentStudent);
                         break;
                     }
 
                     case 4:
                     {
                         System.out.println("Delete Camp Enquiry");
-                        EnquiryHelper.viewMyEnquiry(enquiryList, currentStudent);
+                        EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
                         System.out.println("Please enter your choice: ");
                         Integer enquiryIndex = sc.nextInt();
                         Enquiry enquiryChoice = currentStudent.getStudentEnquiryList().get(enquiryIndex);
-                        EnquiryHelper.deleteEnquiry(enquiryChoice, enquiryList);
+                        EnquiryManager.deleteEnquiry(enquiryChoice, enquiryList);
                         break;
 
                     }
@@ -101,33 +101,33 @@ public class CampMenu
                     case 1:
                     {
                         System.out.println("View my Camp Suggestion");
-                        EnquiryHelper.viewMyEnquiry(enquiryList, currentStudent);
+                        EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
                         break;
                     }
                     case 2:
                     {
                         System.out.println("Create new Camp Suggestion");
-                        EnquiryHelper.newEnquiry(enquiryList, currentStudent, currentCamp);
+                        EnquiryManager.newEnquiry(enquiryList, currentStudent, currentCamp);
                         break;
                     }
                     case 3:
                     {
                         System.out.println("Edit Camp Suggestion");
-                        EnquiryHelper.viewMyEnquiry(enquiryList, currentStudent);
+                        EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
                         System.out.println("Please enter your choice: ");
                         Integer enquiryIndex = sc.nextInt();
                         Enquiry enquiryChoice = currentStudent.getStudentEnquiryList().get(enquiryIndex);
-                        EnquiryHelper.editEnquiry(enquiryChoice, currentStudent);
+                        EnquiryManager.editEnquiry(enquiryChoice, currentStudent);
                         break;
                     }
                     case 4:
                     {
                         System.out.println("Delete Camp Suggestion");
-                        EnquiryHelper.viewMyEnquiry(enquiryList, currentStudent);
+                        EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
                         System.out.println("Please enter your choice: ");
                         Integer enquiryIndex = sc.nextInt();
                         Enquiry enquiryChoice = currentStudent.getStudentEnquiryList().get(enquiryIndex);
-                        EnquiryHelper.deleteEnquiry(enquiryChoice, enquiryList);
+                        EnquiryManager.deleteEnquiry(enquiryChoice, enquiryList);
                         break;
 
                     }
@@ -140,5 +140,6 @@ public class CampMenu
             default:
                 System.out.println("Invalid input!");
         }
+        sc.close();
     }
 }

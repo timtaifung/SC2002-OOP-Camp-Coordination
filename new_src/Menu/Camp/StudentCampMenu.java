@@ -1,5 +1,5 @@
 package new_src.Menu.Camp;
-import Camp.Camp;
+import new_src.Assets.Camp.Camp;
 import Camp.CampHelper;
 import QnA.Enquires.Enquiry;
 import QnA.Suggestions.Suggestion;

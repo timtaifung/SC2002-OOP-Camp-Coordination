@@ -1,5 +1,4 @@
-package new_src.Assets.Camp.CampView;
-import new_src.Assets.Camp.Camp;
+package new_src.Assets.Camp;
 import new_src.Assets.Roles.*;
 
 import java.util.ArrayList;
