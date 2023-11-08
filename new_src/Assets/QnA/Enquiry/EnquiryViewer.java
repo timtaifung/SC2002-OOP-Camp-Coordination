@@ -1,9 +1,7 @@
-package new_src.Assets.Enquiry;
-import new_src.Assets.Camp.Camp;
+package new_src.Assets.QnA.Enquiry;
 import new_src.Assets.Roles.User;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class EnquiryViewer extends Enquiry
 {

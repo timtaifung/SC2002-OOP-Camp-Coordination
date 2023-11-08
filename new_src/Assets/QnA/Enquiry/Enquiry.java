@@ -1,19 +1,20 @@
-package new_src.Assets.Enquiry;
-import QnA.Submission;
-import Roles.User;
+package new_src.Assets.QnA.Enquiry;
+import new_src.Assets.QnA.Submission;
+import new_src.Assets.Roles.User;
 
-public class Enquiry 
+public class Enquiry extends Submission
 {
-    private String content;
+	private String content;
 	private String reply;
 	private boolean processed;
 
 	public Enquiry(User currentUser) 
     {
-        super(currentUser);this.processed = false;
+        super(currentUser);
+        this.processed = false;
 	}
 
-	public String getContent()
+	public String getContent() 
     {
         return content;
     }
@@ -28,7 +29,7 @@ public class Enquiry
         return reply;
     }
 
-	public void setreply(String reply) 
+	public void setreply(String reply)
     {
         this.reply = reply;
     }
@@ -42,5 +43,4 @@ public class Enquiry
     {
         this.processed = processed;
     }
-
 }
