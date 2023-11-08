@@ -1,7 +1,8 @@
 package new_src.Assets.Camp.CampManager;
-import Roles.Student;
-import Roles.User;
-import Camp.Camp;
+import new_src.Assets.Roles.Student;
+import new_src.Assets.Roles.User;
+import new_src.Assets.Camp.Camp;
+import new_src.Assets.Camp.CampView.viewCamp;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -41,6 +42,8 @@ public class CampManager
         camp.setShortDescription(result);
         camp.setVisiblity(true);
         camp.setNTU(grouping);
+
+        sc.close();
         return camp;
     }
 
@@ -140,8 +143,9 @@ public class CampManager
         campList.remove(campIndex);
     }
 
-    public static void registerCamp(ArrayList<Camp> campList, Student currentUser){
-        showAvailableCamp(campList, currentUser);
+    public static void registerCamp(ArrayList<Camp> campList, Student currentUser)
+    {
+        viewCamp.showAvailableCamp(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Register: ");
         Integer campIndex = sc.nextInt();
