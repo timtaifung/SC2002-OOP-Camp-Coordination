@@ -1,6 +1,6 @@
 package new_src.Assets.Camp.CampView;
 import new_src.Assets.Camp.Camp;
-import new_src.Assets.Roles.Student;
+import new_src.Assets.Roles.*;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -12,6 +12,15 @@ public class viewCamp
         for(int i=0; i< campList.size(); i++)
         {
             System.out.println(campList.get(i).getName());
+        }
+    }
+
+    public static void viewMyCreatedCamps(ArrayList<Camp> campList, User currentUser)
+    {
+        for(int i=0; i< campList.size()-1; i++){
+            if(Objects.equals(campList.get(i).getCreatedBy(), currentUser)){
+                System.out.println(campList.get(i));
+            }
         }
     }
 

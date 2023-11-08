@@ -1,5 +1,5 @@
 package new_src.Assets.Camp;
-import Roles.User;
+import new_src.Assets.Roles.User;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -21,6 +21,7 @@ public class Camp
     private Integer availableCommiteeSlots;
     private Integer commiteeSlots;
     private String shortDescription;
+
     public Camp(User createdBy)
     {
         this.attendanceList = new ArrayList<User>();

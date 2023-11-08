@@ -1,6 +1,6 @@
 package new_src.Assets.Enquiry;
-import Camp.Camp;
-import Roles.User;
+import new_src.Assets.Camp.Camp;
+import new_src.Assets.Roles.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
