@@ -1,6 +1,6 @@
 package new_src.Assets.Camp.CampView;
-import Camp.Camp;
-import Roles.Student;
+import new_src.Assets.Camp.Camp;
+import new_src.Assets.Roles.Student;
 
 import java.util.ArrayList;
 import java.util.Objects;

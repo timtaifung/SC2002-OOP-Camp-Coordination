@@ -1,11 +1,14 @@
 package new_src.Assets.Roles;
+import new_src.Assets.Suggestion.Suggestion;
+
+import java.util.ArrayList;
 
 public class CampCommittee extends Student
 {
     private int point;
     private ArrayList<Suggestion> ssl;
 
-    public CampCommitee(String name, String email, String faculty, String role) 
+    public CampCommittee(String name, String email, String faculty, String role) 
     {
         super(name, email, faculty, role); 
         this.point = 0;
