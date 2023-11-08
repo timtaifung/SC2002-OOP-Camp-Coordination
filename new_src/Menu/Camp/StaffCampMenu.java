@@ -1,16 +1,11 @@
 package new_src.Menu.Camp;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-import Camp.Camp;
-import Camp.CampHelper;
-import Helper.GenerateList;
-import static Camp.CampHelper.createCamp;
-import QnA.Enquires.Enquiry;
-import QnA.Enquires.EnquiryHelper;
-import QnA.Suggestions.Suggestion;
-import QnA.Suggestions.SuggestionHelper;
-import Roles.User;
+
+import new_src.Assets.Camp.*;
+import new_src.Assets.Roles.*;
+import new_src.Assets.QnA.Enquiry.*;
+import new_src.Assets.QnA.Suggestion.*;
 
 public class StaffCampMenu 
 {
@@ -63,17 +58,17 @@ public class StaffCampMenu
 				break;
     		case 2:
     			System.out.println("Staff -> View All Camps");
-    			CampHelper.viewAllCamps(campList);
+    			CampViewer.viewAllCamps(campList);
     			break;
 
 			case 3:
 				System.out.println("Staff -> View my Created Camp");
-                CampHelper.viewMyCreatedCamps(campList, currentUser);
+                CampViewer.viewMyCreatedCamps(campList, currentUser);
 				break;
 
     		case 4:
                 System.out.println("Staff -> Create Camp");
-				campList.add(createCamp(currentUser));					
+				campList.add(CampManager.createCamp(currentUser));					
     			break;
 
     		case 5:
@@ -86,11 +81,11 @@ public class StaffCampMenu
 					switch (choice2) {
 						case 1:
 							System.out.println("Staff -> Edit Camp");
-							CampHelper.editCamp(campList, currentUser);							
+							CampManager.editCamp(campList, currentUser);							
 							break;
 						case 2:
 							System.out.println("Staff -> Delete Camp");
-							CampHelper.delCamp(campList, currentUser);
+							CampManager.delCamp(campList, currentUser);
 							break;
 						case 3:
 							break;
@@ -104,26 +99,26 @@ public class StaffCampMenu
 				
     		case 6:
     			System.out.println("Staff -> View/Reply Enquiries");
-				EnquiryHelper.getAllEnquiry(enquiryList);
+				EnquiryViewer.getAllEnquiry(enquiryList);
 				System.out.println("Select an enquiry to reply to:");
 				int eChoice = sc.nextInt();
-				Enquiry currentEnquiry = enquiryList.get(eChoice-1);
-				EnquiryHelper.replyEnquiry(currentEnquiry);
+				Enquiry currentEnquiry = enquiryList.get(eChoice - 1);
+				EnquiryManager.replyEnquiry(currentEnquiry);
     			break;
     					
     		case 7:
     			System.out.println("Staff -> View/Reply Suggestions");
-                SuggestionHelper.getAllSuggestion(suggestionList);
+                SuggestionViewer.getAllSuggestion(suggestionList);
 				System.out.println("Select a suggestion to approve/reject:");
 				int sChoice = sc.nextInt();
 				Suggestion currentSuggestion = suggestionList.get(sChoice-1);
-				SuggestionHelper.approveSuggestion(currentSuggestion);
+				SuggestionManager.approveSuggestion(currentSuggestion);
     			break;
     					
     		case 8:
     			System.out.println("Staff -> Generate reports");
-GenerateList.generateList(campList);
-                GenerateList.generateList(campList);
+				CampReport.generateList(campList);
+                CampReport.generateList(campList);
 				break;
     					
     		case 9:
@@ -134,8 +129,8 @@ GenerateList.generateList(campList);
     			System.out.println("Invalid choice! Please choose again!");
     			break;	
     			
+    		}
     	}
-    		
-    }
-    while(choice1 != 9);
+    	while(choice1 != 9);
+	}
 }
