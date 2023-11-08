@@ -1,13 +1,11 @@
 package new_src;
-import Camp.Camp;
-import Helper.ExcelReader;
-import Helper.LoginHelper.Login;
-import Menu.StaffCampMenu;
-import QnA.Enquires.Enquiry;
-import QnA.Suggestions.Suggestion;
-import Roles.Student;
-import Roles.User;
-import Menu.StudentMenu;
+import new_src.Assets.ExcelReader;
+import new_src.Assets.Roles.*;
+import new_src.Assets.Camp.Camp;
+import new_src.Assets.QnA.Enquiry.Enquiry;
+import new_src.Assets.QnA.Suggestion.Suggestion;
+import new_src.Assets.Login.Login;
+import new_src.Menu.*;
 
 import java.util.ArrayList;
 
@@ -26,7 +24,8 @@ public class Main {
         while(true){
             User currentUser = Login.login(userList);
 
-            while (currentUser.getUserID()=="fail"){
+            while (currentUser.getUserID()=="fail")
+            {
                 System.out.println("Wrong Username / Password!");
                 currentUser = Login.login(userList);
             }
@@ -35,7 +34,7 @@ public class Main {
             switch(currentUser.getRole().toString()){
                 case "Student":
                     Student currentUserStudent = (Student) currentUser;
-                    StudentMenu.menu(currentUserStudent, campList, enquiryList, suggestionList);
+                    StudentCampMenu.menu(currentUserStudent, campList, enquiryList, suggestionList);
                     break;
                 case "Staff":
                     StaffCampMenu.menu(currentUser, campList, enquiryList, suggestionList);
