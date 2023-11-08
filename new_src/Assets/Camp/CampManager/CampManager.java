@@ -5,7 +5,6 @@ import new_src.Assets.Camp.Camp;
 import new_src.Assets.Camp.CampView.viewCamp;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class CampManager 
@@ -49,7 +48,7 @@ public class CampManager
 
     public static void editCamp(ArrayList<Camp> campList, User currentUser)
     {
-        viewMyCreatedCamps(campList, currentUser);
+        viewCamp.viewMyCreatedCamps(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Edit: ");
         Integer campIndex = sc.nextInt();
@@ -132,15 +131,19 @@ public class CampManager
             case 10:
                 break;
         }
+
+        sc.close();
     }
 
     public static void delCamp(ArrayList<Camp> campList, User currentUser)
     {
-        viewMyCreatedCamps(campList, currentUser);
+        viewCamp.viewMyCreatedCamps(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Delete: ");
         Integer campIndex = sc.nextInt();
-        campList.remove(campIndex);
+        campList.remove(campIndex.intValue());
+
+        sc.close();
     }
 
     public static void registerCamp(ArrayList<Camp> campList, Student currentUser)
@@ -150,17 +153,24 @@ public class CampManager
         System.out.print("Select Camp to Register: ");
         Integer campIndex = sc.nextInt();
         Camp camp = campList.get(campIndex-1);
-        if(camp.getAvailableSlots()>0){
+
+        if(camp.getAvailableSlots()>0)
+        {
             camp.getAttendanceList().add(currentUser);
             currentUser.getStudentCampList().add(camp);
             System.out.println("Registered successfully!");
         }
-        else{
+
+        else
+        {
             System.out.println("Camp is full!");
         }
+
+        sc.close();
     }
 
-    public static void campDetail(Camp currentCamp){
+    public static void campDetail(Camp currentCamp)
+    {
         System.out.println("Camp Name: "+currentCamp.getName());
         System.out.println("Date of Camp: "+currentCamp.getDateofCamp());
         System.out.println("Registeration Closing Date: "+currentCamp.getRegisteraionClosing());

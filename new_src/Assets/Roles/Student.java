@@ -32,4 +32,9 @@ public class Student extends User
     {
         return this.studentEnquiryList;
     }
+
+    public void setIsCampCommitee(Boolean isCampCommitee)
+    {
+        this.isCampCommitee = isCampCommitee;
+    }
 }
