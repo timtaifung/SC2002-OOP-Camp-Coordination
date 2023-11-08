@@ -1,6 +1,6 @@
 package new_src.Assets.Roles;
 import new_src.Assets.Camp.Camp;
-import new_src.Assets.Enquiry.Enquiry;
+import new_src.Assets.QnA.Enquiry.Enquiry;
 
 import java.util.ArrayList;
 

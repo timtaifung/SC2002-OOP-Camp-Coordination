@@ -1,7 +1,7 @@
 package new_src.Assets.Roles;
-import new_src.Assets.Suggestion.Suggestion;
-
 import java.util.ArrayList;
+
+import new_src.Assets.QnA.Suggestion.Suggestion;
 
 public class CampCommittee extends Student
 {
