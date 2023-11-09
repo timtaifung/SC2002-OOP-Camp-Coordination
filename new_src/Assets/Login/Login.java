@@ -15,7 +15,7 @@ public class Login
 
         System.out.print("Password: ");
         String passwordInput = sc.nextLine();
-        sc.close();
+
 
         for(User user : userList)
         {

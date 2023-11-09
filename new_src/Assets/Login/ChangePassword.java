@@ -3,24 +3,23 @@ import Assets.Roles.User;
 
 import java.util.Scanner;
 
-public class ChangePassword 
-{
-    public static void changePassword(User user)
-    {
-        System.out.println("Change Your Password:");
+public class ChangePassword {
+    public static void changePassword(User user) {
         Scanner sc = new Scanner(System.in);
-        String newPasswordInput = sc.nextLine(); // possible to check if only 1 single string is added in
-        boolean checked = false;
+        System.out.println("Change Your Password:");
+        boolean validPassword = false;
 
-        while(!checked)
-        {
-            if (newPasswordInput.contains(" "))
-                newPasswordInput = sc.nextLine();
+        while (!validPassword) {
+            String newPasswordInput = sc.next();
 
-            else
-                checked = true;
+            if (!newPasswordInput.contains(" ")) {
+                user.setPassword(newPasswordInput);
+                validPassword = true;
+            } else {
+                System.out.println("Password cannot contain spaces. Try again:");
+            }
         }
-        user.setPassword(newPasswordInput);
-        sc.close();
+
+        // Do not close the scanner here
     }
 }
