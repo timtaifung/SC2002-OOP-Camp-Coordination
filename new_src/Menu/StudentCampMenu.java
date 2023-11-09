@@ -1,9 +1,9 @@
-package new_src.Menu;
-import new_src.Assets.Camp.Camp;
-import new_src.Assets.Roles.Student;
-import new_src.Assets.Camp.*;
-import new_src.Assets.QnA.Enquiry.*;
-import new_src.Assets.QnA.Suggestion.*;
+package Menu;
+import Assets.Camp.Camp;
+import Assets.Roles.Student;
+import Assets.Camp.*;
+import Assets.QnA.Enquiry.*;
+import Assets.QnA.Suggestion.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;

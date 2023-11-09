@@ -1,11 +1,11 @@
-package new_src.Menu;
+package Menu;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import new_src.Assets.Camp.*;
-import new_src.Assets.Roles.*;
-import new_src.Assets.QnA.Enquiry.*;
-import new_src.Assets.QnA.Suggestion.*;
+import Assets.Camp.*;
+import Assets.Roles.*;
+import Assets.QnA.Enquiry.*;
+import Assets.QnA.Suggestion.*;
 
 public class StaffCampMenu 
 {

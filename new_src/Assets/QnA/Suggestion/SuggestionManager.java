@@ -1,6 +1,6 @@
-package new_src.Assets.QnA.Suggestion;
-import new_src.Assets.Roles.CampCommittee;
-import new_src.Assets.Roles.User;
+package Assets.QnA.Suggestion;
+import Assets.Roles.CampCommittee;
+import Assets.Roles.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;

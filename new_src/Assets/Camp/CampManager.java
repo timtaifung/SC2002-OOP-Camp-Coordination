@@ -1,6 +1,6 @@
-package new_src.Assets.Camp;
-import new_src.Assets.Roles.Student;
-import new_src.Assets.Roles.User;
+package Assets.Camp;
+import Assets.Roles.Student;
+import Assets.Roles.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;

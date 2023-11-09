@@ -1,5 +1,5 @@
-package new_src.Assets.Camp;
-import new_src.Assets.Roles.User;
+package Assets.Camp;
+import Assets.Roles.User;
 
 import java.io.*;
 import java.util.ArrayList;

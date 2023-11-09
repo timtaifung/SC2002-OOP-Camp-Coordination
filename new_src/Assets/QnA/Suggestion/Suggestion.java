@@ -1,6 +1,6 @@
-package new_src.Assets.QnA.Suggestion;
-import new_src.Assets.QnA.Submission;
-import new_src.Assets.Roles.User;
+package Assets.QnA.Suggestion;
+import Assets.QnA.Submission;
+import Assets.Roles.User;
 
 public class Suggestion extends Submission 
 {

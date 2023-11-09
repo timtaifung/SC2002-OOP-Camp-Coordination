@@ -1,5 +1,5 @@
-package new_src.Assets.Login;
-import new_src.Assets.Roles.User;
+package Assets.Login;
+import Assets.Roles.User;
 
 import java.util.Scanner;
 

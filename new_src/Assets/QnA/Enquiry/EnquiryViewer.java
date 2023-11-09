@@ -1,5 +1,5 @@
-package new_src.Assets.QnA.Enquiry;
-import new_src.Assets.Roles.User;
+package Assets.QnA.Enquiry;
+import Assets.Roles.User;
 
 import java.util.ArrayList;
 

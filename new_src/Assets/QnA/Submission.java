@@ -1,6 +1,6 @@
-package new_src.Assets.QnA;
+package Assets.QnA;
 
-import new_src.Assets.Roles.User;
+import Assets.Roles.User;
 
 public class Submission 
 {

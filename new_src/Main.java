@@ -1,11 +1,10 @@
-package new_src;
-import new_src.Assets.ExcelReader;
-import new_src.Assets.Roles.*;
-import new_src.Assets.Camp.Camp;
-import new_src.Assets.QnA.Enquiry.Enquiry;
-import new_src.Assets.QnA.Suggestion.Suggestion;
-import new_src.Assets.Login.Login;
-import new_src.Menu.*;
+import Assets.ExcelReader;
+import Assets.Roles.*;
+import Assets.Camp.Camp;
+import Assets.QnA.Enquiry.Enquiry;
+import Assets.QnA.Suggestion.Suggestion;
+import Assets.Login.Login;
+import Menu.*;
 
 import java.util.ArrayList;
 
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args){
         /* ---------------Declaration of Databases ----------------------*/
-        String excelFile = "staff_list.xlsx";
+        String excelFile = "new_src/staff_list.xlsx";
         ArrayList<User> userList = ExcelReader.read(excelFile);
         ArrayList<Camp> campList = new ArrayList<Camp>();
         ArrayList<Enquiry> enquiryList = new ArrayList<Enquiry>();
