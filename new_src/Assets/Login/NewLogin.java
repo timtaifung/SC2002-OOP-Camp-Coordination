@@ -5,7 +5,7 @@ public class NewLogin
 {
     public static void firstLogin(User user)
     {
-        System.out.println("Frist Login");
+        System.out.println("First Login");
         ChangePassword.changePassword(user);
     }
 }

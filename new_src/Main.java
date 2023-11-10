@@ -23,7 +23,7 @@ public class Main {
         while(true){
             User currentUser = Login.login(userList);
 
-            while (currentUser.getUserID()=="fail")
+            while (currentUser.getUserID() == "fail")
             {
                 System.out.println("Wrong Username / Password!");
                 currentUser = Login.login(userList);

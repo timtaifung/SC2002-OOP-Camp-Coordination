@@ -16,8 +16,8 @@ public class CampManager
         String campName = sc.nextLine();
         System.out.print("Date of Camp: ");
         String dateOfCamp = sc.nextLine();
-        System.out.print("Registeration Closing Date: ");
-        String registeraionClosing = sc.nextLine();
+        System.out.print("Registration Closing Date: ");
+        String registrationClosing = sc.nextLine();
         System.out.print("Faculty/School: ");
         String grouping = sc.nextLine();
         System.out.print("Location: ");
@@ -25,17 +25,17 @@ public class CampManager
         System.out.print("Total Slots: ");
         Integer totalSlots = sc.nextInt();
         System.out.print("Camp Commitee Slots: ");
-        Integer commiteeSlots = sc.nextInt();
+        Integer committeeSlots = sc.nextInt();
         System.out.print("Short Description: ");
         String result=sc.nextLine();
 
         camp.setName(campName);
         camp.setDateofCamp(dateOfCamp);
-        camp.setRegisteraionClosing(registeraionClosing);
+        camp.setRegisteraionClosing(registrationClosing);
         camp.setGrouping(grouping);
         camp.setLocation(location);
         camp.setTotalSlots(totalSlots);
-        camp.setCommiteeSlots(commiteeSlots);
+        camp.setCommiteeSlots(committeeSlots);
         camp.setShortDescription(result);
         camp.setVisiblity(true);
         camp.setNTU(grouping);
@@ -49,21 +49,21 @@ public class CampManager
         CampViewer.viewMyCreatedCamps(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Edit: ");
-        Integer campIndex = sc.nextInt();
+        int campIndex = sc.nextInt();
         Camp camp = campList.get(campIndex);
         System.out.println("------Edit Camp------");
         System.out.println("1. Camp Name");
         System.out.println("2. Date of Camp");
-        System.out.println("3. Registeration Closing Date");
+        System.out.println("3. Registration Closing Date");
         System.out.println("4. Faculty/School");
         System.out.println("5. Location");
         System.out.println("6. Total Slots");
-        System.out.println("7. Camp Commitee Slots");
+        System.out.println("7. Camp Committee Slots");
         System.out.println("8. Short Description");
-        System.out.println("9. Visiblity Toggle");
+        System.out.println("9. Visibility Toggle");
         System.out.println("10. Back to homepage");
 
-        Integer choice = sc.nextInt();
+        int choice = sc.nextInt();
         switch(choice)
         {
             case 1:
@@ -79,9 +79,9 @@ public class CampManager
                 break;
 
             case 3:
-                System.out.print("Registeration Closing Date: ");
-                String registeraionClosing = sc.nextLine();
-                camp.setRegisteraionClosing(registeraionClosing);
+                System.out.print("Registration Closing Date: ");
+                String registrationClosing = sc.nextLine();
+                camp.setRegisteraionClosing(registrationClosing);
                 break;
 
             case 4:
@@ -103,9 +103,9 @@ public class CampManager
                 break;
 
             case 7:
-                System.out.print("Camp Commitee Slots: ");
-                Integer commiteeSlots = sc.nextInt();
-                camp.setCommiteeSlots(commiteeSlots);
+                System.out.print("Camp Committee Slots: ");
+                Integer committeeSlots = sc.nextInt();
+                camp.setCommiteeSlots(committeeSlots);
                 break;
 
             case 8:
@@ -115,7 +115,7 @@ public class CampManager
                 break;
 
             case 9:
-                if(camp.getVisiblity())
+                if (camp.getVisiblity())
                 {
                     camp.setVisiblity(false);
                 }
@@ -138,8 +138,8 @@ public class CampManager
         CampViewer.viewMyCreatedCamps(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Delete: ");
-        Integer campIndex = sc.nextInt();
-        campList.remove(campIndex.intValue());
+        int campIndex = sc.nextInt();
+        campList.remove((int) campIndex);
 
         sc.close();
     }
@@ -149,10 +149,10 @@ public class CampManager
         CampViewer.showAvailableCamp(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Register: ");
-        Integer campIndex = sc.nextInt();
+        int campIndex = sc.nextInt();
         Camp camp = campList.get(campIndex-1);
 
-        if(camp.getAvailableSlots()>0)
+        if(camp.getAvailableSlots() > 0)
         {
             camp.getAttendanceList().add(currentUser);
             currentUser.getStudentCampList().add(camp);
