@@ -14,7 +14,8 @@ public class CampMenu
         System.out.println("-------------------Camp Menu-------------------");
         System.out.println("1. View Camp Details");
         System.out.println("2. Apply Camp Commitee");
-        System.out.println("3. Camp Enquiry");
+        System.out.println("3. Leave Camp");
+        System.out.println("4. Camp Enquiry");
         Scanner sc = new Scanner(System.in);
         Integer x = sc.nextInt();
         switch (x) 
@@ -32,6 +33,20 @@ public class CampMenu
             }
 
             case 3:
+            {
+                System.out.println("Leave Camp");
+                System.out.println("Are you sure you want to leave this camp? (Y/N)");
+                System.out.println("Once you leave, you will not be able to rejoin the camp.");
+                String choice = sc.nextLine();
+                if (choice.equals("Y"))
+                    CampManager.leaveCamp(currentStudent, currentCamp);
+                else if (choice.equals("N"))
+                    break;
+                else
+                    System.out.println("Invalid input!");
+            }
+
+            case 4:
             {
                 System.out.println("Camp Enquiry");
                 System.out.println("-------------------Camp Enquiry-------------------");
@@ -87,7 +102,6 @@ public class CampMenu
                 }
             }
 
-            case 4:
             {
                 System.out.println("Camp Suggestion");
                 System.out.println("-------------------Camp Suggestion-------------------");
@@ -140,6 +154,5 @@ public class CampMenu
             default:
                 System.out.println("Invalid input!");
         }
-        sc.close();
     }
 }

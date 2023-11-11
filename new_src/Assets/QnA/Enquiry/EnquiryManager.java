@@ -7,9 +7,14 @@ import java.util.Scanner;
 
 public class EnquiryManager extends Enquiry
 {
-    public EnquiryManager(User currentUser) 
+    public EnquiryManager(User currentUser)
     {
 		super(currentUser);
+	}
+	public static void viewAllEnquiry(ArrayList<Enquiry> enquiryList){
+		for(int i=0; i< enquiryList.size(); i++){
+			System.out.println((i+1) + ". " + enquiryList.get(i).getTitle());
+		}
 	}
 
     public static void replyEnquiry(Enquiry currentEnquiry)

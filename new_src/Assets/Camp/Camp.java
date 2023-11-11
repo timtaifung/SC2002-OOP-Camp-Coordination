@@ -21,11 +21,13 @@ public class Camp
     private Integer availableCommiteeSlots;
     private Integer commiteeSlots;
     private String shortDescription;
+    private ArrayList<User> blackList ;
 
     public Camp(User createdBy)
     {
         this.attendanceList = new ArrayList<User>();
         this.commiteeList = new ArrayList<User>();
+        this.blackList = new ArrayList<User>();
         this.createdBy = createdBy;
         this.visiblity = true;
         this.availableSlots = this.totalSlots;
@@ -91,6 +93,8 @@ public class Camp
     {
         return this.visiblity;
     }
+
+    public ArrayList<User> getBlackList() {return this.blackList;}
 
     public Integer getAvailableSlots()
     {
@@ -163,4 +167,6 @@ public class Camp
     {
         this.visiblity=visiblity;
     }
+
+    public void addBlackList(User currentUser) {this.blackList.add(currentUser);}
 }

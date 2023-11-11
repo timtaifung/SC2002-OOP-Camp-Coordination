@@ -4,6 +4,7 @@ import Assets.Roles.Student;
 import Assets.Camp.*;
 import Assets.QnA.Enquiry.*;
 import Assets.QnA.Suggestion.*;
+import Assets.Roles.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -54,7 +55,11 @@ public class StudentCampMenu
                     System.out.println("Please enter your choice: ");
                     Integer campIndex = sc.nextInt();
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);
-                    CampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
+                    if(currentUser.getIsCampCommitee()){
+                        CampCommiteeCampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
+                    }
+                    else
+                        CampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
                 }
 
                 default:

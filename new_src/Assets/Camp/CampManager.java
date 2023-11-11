@@ -16,8 +16,8 @@ public class CampManager
         String campName = sc.nextLine();
         System.out.print("Date of Camp: ");
         String dateOfCamp = sc.nextLine();
-        System.out.print("Registration Closing Date: ");
-        String registrationClosing = sc.nextLine();
+        System.out.print("Registeration Closing Date: ");
+        String registeraionClosing = sc.nextLine();
         System.out.print("Faculty/School: ");
         String grouping = sc.nextLine();
         System.out.print("Location: ");
@@ -25,17 +25,17 @@ public class CampManager
         System.out.print("Total Slots: ");
         Integer totalSlots = sc.nextInt();
         System.out.print("Camp Commitee Slots: ");
-        Integer committeeSlots = sc.nextInt();
+        Integer commiteeSlots = sc.nextInt();
         System.out.print("Short Description: ");
         String result=sc.nextLine();
 
         camp.setName(campName);
         camp.setDateofCamp(dateOfCamp);
-        camp.setRegisteraionClosing(registrationClosing);
+        camp.setRegisteraionClosing(registeraionClosing);
         camp.setGrouping(grouping);
         camp.setLocation(location);
         camp.setTotalSlots(totalSlots);
-        camp.setCommiteeSlots(committeeSlots);
+        camp.setCommiteeSlots(commiteeSlots);
         camp.setShortDescription(result);
         camp.setVisiblity(true);
         camp.setNTU(grouping);
@@ -49,21 +49,21 @@ public class CampManager
         CampViewer.viewMyCreatedCamps(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Edit: ");
-        int campIndex = sc.nextInt();
+        Integer campIndex = sc.nextInt();
         Camp camp = campList.get(campIndex);
         System.out.println("------Edit Camp------");
         System.out.println("1. Camp Name");
         System.out.println("2. Date of Camp");
-        System.out.println("3. Registration Closing Date");
+        System.out.println("3. Registeration Closing Date");
         System.out.println("4. Faculty/School");
         System.out.println("5. Location");
         System.out.println("6. Total Slots");
-        System.out.println("7. Camp Committee Slots");
+        System.out.println("7. Camp Commitee Slots");
         System.out.println("8. Short Description");
-        System.out.println("9. Visibility Toggle");
+        System.out.println("9. Visiblity Toggle");
         System.out.println("10. Back to homepage");
 
-        int choice = sc.nextInt();
+        Integer choice = sc.nextInt();
         switch(choice)
         {
             case 1:
@@ -79,9 +79,9 @@ public class CampManager
                 break;
 
             case 3:
-                System.out.print("Registration Closing Date: ");
-                String registrationClosing = sc.nextLine();
-                camp.setRegisteraionClosing(registrationClosing);
+                System.out.print("Registeration Closing Date: ");
+                String registeraionClosing = sc.nextLine();
+                camp.setRegisteraionClosing(registeraionClosing);
                 break;
 
             case 4:
@@ -103,9 +103,9 @@ public class CampManager
                 break;
 
             case 7:
-                System.out.print("Camp Committee Slots: ");
-                Integer committeeSlots = sc.nextInt();
-                camp.setCommiteeSlots(committeeSlots);
+                System.out.print("Camp Commitee Slots: ");
+                Integer commiteeSlots = sc.nextInt();
+                camp.setCommiteeSlots(commiteeSlots);
                 break;
 
             case 8:
@@ -115,7 +115,7 @@ public class CampManager
                 break;
 
             case 9:
-                if (camp.getVisiblity())
+                if(camp.getVisiblity())
                 {
                     camp.setVisiblity(false);
                 }
@@ -138,8 +138,8 @@ public class CampManager
         CampViewer.viewMyCreatedCamps(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Delete: ");
-        int campIndex = sc.nextInt();
-        campList.remove((int) campIndex);
+        Integer campIndex = sc.nextInt();
+        campList.remove(campIndex.intValue());
 
         sc.close();
     }
@@ -149,11 +149,31 @@ public class CampManager
         CampViewer.showAvailableCamp(campList, currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Register: ");
-        int campIndex = sc.nextInt();
+        Integer campIndex = sc.nextInt();
         Camp camp = campList.get(campIndex-1);
 
-        if(camp.getAvailableSlots() > 0)
+        //check if current user is blacklisted
+        for(User blackListedUser: camp.getBlackList())
         {
+            if(blackListedUser.equals(currentUser))
+            {
+                System.out.println("You previously left this camp! Unable to join back");
+                return;
+            }
+        }
+
+
+        if(camp.getAvailableSlots()>0)
+        {
+            //check if student registered camp clash with other camp date
+            for(Camp studentCamp: currentUser.getStudentCampList())
+            {
+                if(studentCamp.getDateofCamp().toString().equals(camp.getDateofCamp().toString()))
+                {
+                    System.out.println("You have registered another camp on the same date!");
+                    return;
+                }
+            }
             camp.getAttendanceList().add(currentUser);
             currentUser.getStudentCampList().add(camp);
             System.out.println("Registered successfully!");
@@ -164,7 +184,6 @@ public class CampManager
             System.out.println("Camp is full!");
         }
 
-        sc.close();
     }
 
     public static void campDetail(Camp currentCamp)
@@ -197,5 +216,12 @@ public class CampManager
         {
             System.out.println("Camp commitee slots are full!");
         }
+    }
+
+    public static void leaveCamp(Student currentStudent, Camp currentCamp) {
+        currentCamp.getAttendanceList().remove(currentStudent);
+        currentStudent.getStudentCampList().remove(currentCamp);
+        currentCamp.addBlackList(currentStudent);
+        System.out.println("Left camp successfully!");
     }
 }
