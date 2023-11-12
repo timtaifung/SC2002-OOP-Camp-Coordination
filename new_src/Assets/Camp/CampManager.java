@@ -26,6 +26,7 @@ public class CampManager
         Integer totalSlots = sc.nextInt();
         System.out.print("Camp Commitee Slots: ");
         Integer commiteeSlots = sc.nextInt();
+        sc.nextLine();
         System.out.print("Short Description: ");
         String result=sc.nextLine();
 
@@ -40,7 +41,6 @@ public class CampManager
         camp.setVisiblity(true);
         camp.setNTU(grouping);
 
-        sc.close();
         return camp;
     }
 
