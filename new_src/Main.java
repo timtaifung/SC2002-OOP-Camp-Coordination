@@ -13,7 +13,8 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args){
         /* ---------------Declaration of Databases ----------------------*/
-        String excelFile = "new_src/staff_list.xlsx";
+        String excelFile = "SC2002_Camp_Coordination\\n" + //
+                "ew_src\\staff_list.xlsx";
         ArrayList<User> userList = ExcelReader.read(excelFile);
         ArrayList<Camp> campList = new ArrayList<Camp>();
         ArrayList<Enquiry> enquiryList = new ArrayList<Enquiry>();
