@@ -45,8 +45,6 @@ public class StaffCampMenu
     		
     		choice1 = sc.nextInt();  
     		if(choice1 == 9) {
-				//System.out.println("Successfully logged out!");
-				//dont need above line bc alrd printed out in main
 				return;
 			}
     		switch (choice1) {
