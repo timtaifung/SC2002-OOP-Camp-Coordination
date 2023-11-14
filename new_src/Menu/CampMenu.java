@@ -15,7 +15,7 @@ public class CampMenu
         System.out.println("1. View Camp Details");
         System.out.println("2. Apply Camp Commitee");
         System.out.println("3. Leave Camp");
-        System.out.println("4. Camp Enquiry");
+        System.out.println("4. Camp Enquiry\n");
         Scanner sc = new Scanner(System.in);
         Integer x = sc.nextInt();
         switch (x) 

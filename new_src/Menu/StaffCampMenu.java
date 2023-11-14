@@ -18,18 +18,14 @@ public class StaffCampMenu
 		System.out.println("3. View own Camps");
     	System.out.println("4. Create new Camp");
     	System.out.println("5. Edit/Delete camp");
-
 		System.out.println("-------------------QnA-------------------");
     	System.out.println("\nEnquiries and Suggestions");
     	System.out.println("6. View/Reply Enquiries");
     	System.out.println("7. View/Approve Suggestions");
-
 		System.out.println("-------------------Reports-------------------");
     	System.out.println("\nReports");
     	System.out.println("8. Generate reports");
-    	System.out.println("9. Logout");
-		
-
+    	System.out.println("9. Logout\n");
 	}
 
     public static void menu(User currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){

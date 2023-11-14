@@ -4,23 +4,31 @@ import Assets.Roles.User;
 import java.util.Scanner;
 
 public class ChangePassword {
-    public static void changePassword(User user) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Change Your Password:");
-        boolean validPassword = false;
+    public static void changePassword(User user) 
+    {
+        boolean invalidPassword = true;
 
-        while (!validPassword) {
-            String newPasswordInput = sc.next();
-            if(newPasswordInput == user.getPassword()) {
-                System.out.println("New password cannot be the same as old password!");
+        while (invalidPassword) 
+        {
+            System.out.println("Please enter your new password:");
+            Scanner sc = new Scanner(System.in);
+
+            String newPasswordInput = sc.nextLine();
+            if(newPasswordInput.equals(user.getPassword()))
+            {
+                System.out.println("New password cannot be the same as old password!\n");
             }
-            if (newPasswordInput.contains(" ")){
-                System.out.println("Password cannot contain spaces!");
+
+            else if (newPasswordInput.contains(" "))
+            {
+                System.out.println("Password cannot contain spaces!\n");
             }
-            else {
+
+            else 
+            {
                 user.setPassword(newPasswordInput);
-                System.out.println("Password changed!");
-                validPassword = true;
+                System.out.println("Password changed!\n");
+                invalidPassword = false;
             }
         }
 
