@@ -12,20 +12,20 @@ public class StaffCampMenu
     private static final Scanner sc = new Scanner(System.in);
 
 	private static void displayStaffCampMenu(){
-		System.out.println("-------------------Camps-------------------");
-		System.out.println("\nCamps");
+		System.out.println("----------- Camps -----------");
     	System.out.println("2. View all Camps");
 		System.out.println("3. View own Camps");
     	System.out.println("4. Create new Camp");
     	System.out.println("5. Edit/Delete camp");
-		System.out.println("-------------------QnA-------------------");
-    	System.out.println("\nEnquiries and Suggestions");
+		System.out.println("-----------------------------\n");
+		System.out.println("------------ QnA ------------");
     	System.out.println("6. View/Reply Enquiries");
     	System.out.println("7. View/Approve Suggestions");
-		System.out.println("-------------------Reports-------------------");
-    	System.out.println("\nReports");
+		System.out.println("-----------------------------\n");
+		System.out.println("---------- Reports ----------");
     	System.out.println("8. Generate reports");
-    	System.out.println("9. Logout\n");
+    	System.out.println("9. Logout");
+		System.out.println("-----------------------------\n");
 	}
 
     public static void menu(User currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){
@@ -33,8 +33,9 @@ public class StaffCampMenu
     	
     	do {
     		System.out.println("Staff Menu:");
-			System.out.println("-------------------Personal Details-------------------");
+			System.out.println("------ Personal Detail ------");
     		System.out.println("1. Change password");
+			System.out.println("-----------------------------\n");
 
 
     		displayStaffCampMenu();
