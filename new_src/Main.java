@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args){
         /* ---------------Declaration of Databases ----------------------*/
-        String excelFile = "new_src/database.xlsx";
+        String excelFile = "new_src\\database.xlsx";
         ArrayList<User> userList = ExcelReader.read(excelFile);
         ArrayList<Camp> campList = new ArrayList<Camp>();
         ArrayList<Enquiry> enquiryList = new ArrayList<Enquiry>();

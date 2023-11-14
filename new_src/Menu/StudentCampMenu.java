@@ -1,5 +1,4 @@
 package Menu;
-import Assets.Camp.Camp;
 import Assets.Roles.Student;
 import Assets.Camp.*;
 import Assets.QnA.Enquiry.*;
@@ -37,7 +36,12 @@ public class StudentCampMenu
             switch (x) 
             {
                 case 1:
-                    CampViewer.showAllVisibleCamp(campList, currentUser);
+                    if(campList.isEmpty()){
+					    System.out.println("There are no camps currently!");
+				    }
+				    else{
+					    CampViewer.viewAllCamps(campList);
+				    }
 
                 case 2:
                     CampViewer.showAvailableCamp(campList, currentUser);

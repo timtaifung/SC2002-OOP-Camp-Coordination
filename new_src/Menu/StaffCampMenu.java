@@ -45,7 +45,6 @@ public class StaffCampMenu
     		
     		choice1 = sc.nextInt();  
     		if(choice1 == 9) {
-				System.out.println("Successfully logged out!");
 				return;
 			}
     		switch (choice1) {
@@ -58,12 +57,22 @@ public class StaffCampMenu
 				break;
     		case 2:
     			System.out.println("Staff -> View All Camps");
-    			CampViewer.viewAllCamps(campList);
+    			if(campList.isEmpty()){
+					System.out.println("There are no camps currently!");
+				}
+				else{
+					CampViewer.viewAllCamps(campList);
+				}
     			break;
 
 			case 3:
 				System.out.println("Staff -> View my Created Camp");
+				if(campList.isEmpty()){
+					System.out.println("There are no camps currently!");
+				}
+				else{
                 CampViewer.viewMyCreatedCamps(campList, currentUser);
+				}
 				break;
 
     		case 4:
@@ -99,26 +108,36 @@ public class StaffCampMenu
 				
     		case 6:
     			System.out.println("Staff -> View/Reply Enquiries");
-				EnquiryViewer.getAllEnquiry(enquiryList);
-				System.out.println("Select an enquiry to reply to:");
-				int eChoice = sc.nextInt();
-				Enquiry currentEnquiry = enquiryList.get(eChoice - 1);
-				EnquiryManager.replyEnquiry(currentEnquiry);
+				if (enquiryList.isEmpty()){
+					System.out.println("There are no enquiries currently!");
+				}
+				else{
+					EnquiryViewer.getAllEnquiry(enquiryList);
+					System.out.println("Select an enquiry to reply to:");
+					int eChoice = sc.nextInt();
+					Enquiry currentEnquiry = enquiryList.get(eChoice - 1);
+					EnquiryManager.replyEnquiry(currentEnquiry);
+				}
     			break;
     					
     		case 7:
     			System.out.println("Staff -> View/Reply Suggestions");
-                SuggestionViewer.getAllSuggestion(suggestionList);
-				System.out.println("Select a suggestion to approve/reject:");
-				int sChoice = sc.nextInt();
-				Suggestion currentSuggestion = suggestionList.get(sChoice-1);
-				SuggestionManager.approveSuggestion(currentSuggestion);
-    			break;
+				if(suggestionList.isEmpty()){
+					System.out.println("There are no suggestions currently!");
+				}
+				else{
+					SuggestionViewer.getAllSuggestion(suggestionList);
+					System.out.println("Select a suggestion to approve/reject:");
+					int sChoice = sc.nextInt();
+					Suggestion currentSuggestion = suggestionList.get(sChoice-1);
+					SuggestionManager.approveSuggestion(currentSuggestion);
+				}
+				break;
     					
     		case 8:
     			System.out.println("Staff -> Generate reports");
 				CampReport.generateList(campList);
-                CampReport.generateList(campList);
+                //CampReport.generateList(campList);
 				break;
     					
     		case 9:

@@ -10,27 +10,37 @@ public class CampViewer
     {
         for(int i=0; i< campList.size(); i++)
         {
-            System.out.println(campList.get(i).getName());
+            System.out.println(i+1 + ". " + campList.get(i).getName());
         }
     }
 
     public static void viewMyCreatedCamps(ArrayList<Camp> campList, User currentUser)
     {
+        int x = 0;
         for(int i=0; i< campList.size()-1; i++){
             if(Objects.equals(campList.get(i).getCreatedBy(), currentUser)){
-                System.out.println(campList.get(i));
+                System.out.println(i+1 + ". " + campList.get(i));
+                x = 1;
             }
+        }
+        if(x == 0){
+            System.out.println("You have not created any camps!");
         }
     }
 
     public static void showAllVisibleCamp(ArrayList<Camp> campList, Student currentUser)
     {
+        int x = 0;
         for(int i=0; i< campList.size(); i++)
         {
             if(campList.get(i).getVisiblity() && campList.get(i).getNTU() || campList.get(i).getVisiblity() && Objects.equals(campList.get(i).getGrouping(), currentUser.getFaculty()))
             {
                 System.out.println((i+1) + ". " + campList.get(i).getName() + " " + campList.get(i).getAvailableSlots() + "/" + campList.get(i).getTotalSlots());
+                x = 1;
             }
+        }
+        if(x==0){
+            System.out.println("There are no camps available currently!");
         }
     }
 
