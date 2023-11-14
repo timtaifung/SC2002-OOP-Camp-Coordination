@@ -200,14 +200,14 @@ public class CampManager
 
     public static void applyCampCommitee(Student currentStudent, Camp currentCamp)
     {
-        if(currentCamp.getCommiteeSlots()>0 && !currentStudent.getIsCampCommitee())
+        if(currentCamp.getCommiteeSlots() > 0 && !currentStudent.getIsCampCommittee().contains(currentCamp.getName()))
         {
             currentCamp.getCommiteeList().add(currentStudent);
-            currentStudent.setIsCampCommitee(true);
+            currentStudent.setIsCampCommittee(currentCamp.getName());
             System.out.println("Applied successfully!");
         }
 
-        if (currentStudent.getIsCampCommitee())
+        if (currentStudent.getIsCampCommittee().contains(currentCamp.getName()))
         {
             System.out.println("You are already a camp commitee!");
         }
@@ -218,7 +218,8 @@ public class CampManager
         }
     }
 
-    public static void leaveCamp(Student currentStudent, Camp currentCamp) {
+    public static void leaveCamp(Student currentStudent, Camp currentCamp) 
+    {
         currentCamp.getAttendanceList().remove(currentStudent);
         currentStudent.getStudentCampList().remove(currentCamp);
         currentCamp.addBlackList(currentStudent);

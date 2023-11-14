@@ -3,7 +3,6 @@ import Assets.Roles.Student;
 import Assets.Camp.*;
 import Assets.QnA.Enquiry.*;
 import Assets.QnA.Suggestion.*;
-import Assets.Roles.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -41,18 +40,13 @@ public class StudentCampMenu
             switch (x) 
             {
                 case 1:
-                    System.out.println("Student -> Change Password");
-                    System.out.print("Input new Password: ");
-                    String passwordInput = sc.nextLine();
-                    currentUser.setPassword(passwordInput);
-                    System.out.println("Password reset successfully!");
-                    break;
-
-                case 2:
-                    if(campList.isEmpty()){
+                    if (campList.isEmpty())
+                    {
 					    System.out.println("There are no camps currently!");
 				    }
-				    else{
+
+				    else
+                    {
 					    CampViewer.viewAllCamps(campList);
 				    }
 
@@ -72,7 +66,8 @@ public class StudentCampMenu
                     System.out.println("Please enter your choice: ");
                     Integer campIndex = sc.nextInt();
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);
-                    if(currentUser.getIsCampCommitee()){
+                    if (currentUser.getIsCampCommittee().contains(campChoice.getName()))
+                    {
                         CampCommiteeCampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
                     }
                     else
