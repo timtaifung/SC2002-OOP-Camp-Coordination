@@ -17,13 +17,18 @@ public class StudentCampMenu
         {
             Scanner sc = new Scanner(System.in);
             System.out.println("Welcome to Student Menu");
+
+            System.out.println("-------------------Personal Details-------------------");
+            System.out.println("1. Change password");
+
+            System.out.println("-------------------Camps-------------------");
             System.out.println("Choose your options:");
-            System.out.println("1. View All Camps");
-            System.out.println("2. View All Available Camps");
-            System.out.println("3. Register Camp");
-            System.out.println("4. View My Registered Camps");
-            System.out.println("5. Inspect Individual Camp");
-            System.out.println("6. Logout");
+            System.out.println("2. View All Camps");
+            System.out.println("3. View All Available Camps");
+            System.out.println("4. Register Camp");
+            System.out.println("5. View My Registered Camps");
+            System.out.println("6. Inspect Individual Camp");
+            System.out.println("7. Logout");
             System.out.println("Please enter your choice: ");
             x = sc.nextInt();
 
@@ -36,6 +41,14 @@ public class StudentCampMenu
             switch (x) 
             {
                 case 1:
+                    System.out.println("Student -> Change Password");
+                    System.out.print("Input new Password: ");
+                    String passwordInput = sc.nextLine();
+                    currentUser.setPassword(passwordInput);
+                    System.out.println("Password reset successfully!");
+                    break;
+
+                case 2:
                     if(campList.isEmpty()){
 					    System.out.println("There are no camps currently!");
 				    }
@@ -43,16 +56,16 @@ public class StudentCampMenu
 					    CampViewer.viewAllCamps(campList);
 				    }
 
-                case 2:
+                case 3:
                     CampViewer.showAvailableCamp(campList, currentUser);
 
-                case 3:
+                case 4:
                     CampManager.registerCamp(campList, currentUser);
 
-                case 4:
+                case 5:
                     CampViewer.showMyRegisteredCamp(currentUser);
 
-                case 5:
+                case 6:
                 {
                     System.out.println("Inspect Individual Camp");
                     CampViewer.showMyRegisteredCamp(currentUser);
