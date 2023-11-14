@@ -59,16 +59,7 @@ public class User implements Serializable
 
     public void setPassword(String newPassword) 
     {
-    	if (newPassword.equals(this.password))
-        {
-            System.out.println("New password is the same as the previous password.");
-        }
-
-        else 
-        {
-            this.password = newPassword;
-            System.out.println("Password has been reset!");
-        }
+    	this.password = newPassword;
     }
     
     public void setRole (String r) 
