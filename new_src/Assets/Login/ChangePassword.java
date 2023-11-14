@@ -11,12 +11,16 @@ public class ChangePassword {
 
         while (!validPassword) {
             String newPasswordInput = sc.next();
-
-            if (!newPasswordInput.contains(" ")) {
+            if(newPasswordInput == user.getPassword()) {
+                System.out.println("New password cannot be the same as old password!");
+            }
+            if (newPasswordInput.contains(" ")){
+                System.out.println("Password cannot contain spaces!");
+            }
+            else {
                 user.setPassword(newPasswordInput);
+                System.out.println("Password changed!");
                 validPassword = true;
-            } else {
-                System.out.println("Password cannot contain spaces. Try again:");
             }
         }
 
