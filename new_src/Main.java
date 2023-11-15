@@ -27,7 +27,7 @@ public class Main {
                 System.out.println("Wrong Username / Password!");
                 currentUser = Login.login(userList);
             }
-
+            System.out.println("Checkpoint");
             /*-----------------Main Menu Page -----------------------*/
             switch(currentUser.getRole().toString()){
                 case "Student":

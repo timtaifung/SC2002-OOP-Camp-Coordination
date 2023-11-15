@@ -31,7 +31,7 @@ public class StudentCampMenu
             System.out.println("Please enter your choice: ");
             x = sc.nextInt();
 
-            if (x == 6)
+            if (x == 7)
             {
                 System.out.println("Successfully logged out!");
                 break;
@@ -40,24 +40,36 @@ public class StudentCampMenu
             switch (x) 
             {
                 case 1:
+                    System.out.println("Student -> Change Password");
+                    System.out.print("Input new Password: ");
+                    String passwordInput = sc.nextLine();
+                    currentUser.setPassword(passwordInput);
+                    System.out.println("Password reset successfully!");
+                    break;
+                case 2:
                     if (campList.isEmpty())
                     {
 					    System.out.println("There are no camps currently!");
+                        break;
 				    }
 
 				    else
                     {
 					    CampViewer.viewAllCamps(campList);
+                        break;
 				    }
 
                 case 3:
                     CampViewer.showAvailableCamp(campList, currentUser);
+                    break;
 
                 case 4:
                     CampManager.registerCamp(campList, currentUser);
+                    break;
 
                 case 5:
                     CampViewer.showMyRegisteredCamp(currentUser);
+                    break;
 
                 case 6:
                 {
@@ -69,15 +81,16 @@ public class StudentCampMenu
                     if (currentUser.getIsCampCommittee().contains(campChoice.getName()))
                     {
                         CampCommiteeCampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
+                        break;
                     }
                     else
                         CampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
+                    break;
                 }
 
                 default:
                     System.out.println("Invalid input!");
             }
-            sc.close();
         }
         while(x!=7);
     }
