@@ -207,7 +207,7 @@ public class CampManager
             System.out.println("Applied successfully!");
         }
 
-        if (currentStudent.getIsCampCommittee().contains(currentCamp.getName()))
+        else if (currentStudent.getIsCampCommittee().contains(currentCamp.getName()))
         {
             System.out.println("You are already a camp commitee!");
         }

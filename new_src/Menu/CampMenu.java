@@ -16,6 +16,7 @@ public class CampMenu
         System.out.println("2. Apply Camp Commitee");
         System.out.println("3. Leave Camp");
         System.out.println("4. Camp Enquiry\n");
+        System.out.println("5. Return to Main Menu");
         Scanner sc = new Scanner(System.in);
         Integer x = sc.nextInt();
         switch (x) 
@@ -24,12 +25,14 @@ public class CampMenu
             {
                 System.out.println("View Camp Details");
                 CampManager.campDetail(currentCamp);
+                break;
             }
 
             case 2:
             {
                 System.out.println("Apply Camp Commitee");
                 CampManager.applyCampCommitee(currentStudent, currentCamp);
+                break;
             }
 
             case 3:
@@ -44,6 +47,7 @@ public class CampMenu
                     break;
                 else
                     System.out.println("Invalid input!");
+                break;
             }
 
             case 4:
@@ -96,10 +100,13 @@ public class CampMenu
 
                     case 5:
                         System.out.println("Exit");
+                        break;
                         
                     default:
                         System.out.println("Invalid input!");
+                        break;
                 }
+
             }
 
             {
@@ -146,7 +153,11 @@ public class CampMenu
 
                     }
                     case 5:
-                    System.out.println("Exit");
+                    {
+                        System.out.println("Exit");
+                        break;
+                    }
+
                     default:
                     System.out.println("Invalid input!");
                 }

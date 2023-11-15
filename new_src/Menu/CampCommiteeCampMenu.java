@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class CampCommiteeCampMenu extends CampMenu{
    //similar to camp menu but with additional features for camp commitee like suggestion reply
-   public static void indivCampMenu(Camp currentCamp, CampCommittee currentStudent, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){
+   public static void campCommMenu(Camp currentCamp, CampCommittee currentStudent, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){
        System.out.println("-------------------Camp Menu-------------------");
        System.out.println("1. View Camp Details");
        System.out.println("2. Apply Camp Commitee");
