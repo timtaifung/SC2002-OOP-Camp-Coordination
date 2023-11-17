@@ -148,8 +148,15 @@ public class CampManager
     {
         CampViewer.showAvailableCamp(campList, currentUser);
         Scanner sc = new Scanner(System.in);
+        
         System.out.print("Select Camp to Register: ");
-        Integer campIndex = sc.nextInt();
+        if (!sc.hasNextInt()) 
+        {
+            System.out.println("Invalid input. Please enter a valid integer.");
+            return;
+        }
+        int campIndex = sc.nextInt();
+        sc.nextLine();
         Camp camp = campList.get(campIndex-1);
 
         //check if current user is blacklisted
