@@ -1,5 +1,6 @@
 package Menu;
 import Assets.Roles.Student;
+import Assets.Roles.CampCommittee;
 import Assets.Camp.*;
 import Assets.QnA.Enquiry.*;
 import Assets.QnA.Suggestion.*;
@@ -79,7 +80,8 @@ public class StudentCampMenu
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);
                     if (currentUser.getIsCampCommittee().contains(campChoice.getName()))
                     {
-                        CampCommiteeCampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
+                        CampCommittee campCommittee = new CampCommittee(currentUser.getName(), currentUser.getEmail(), currentUser.getFaculty(), "CampCommittee");
+                        CampCommiteeCampMenu.indivCampMenu(campChoice, campCommittee, campList, enquiryList, suggestionList);
                         break;
                     }
                     else
