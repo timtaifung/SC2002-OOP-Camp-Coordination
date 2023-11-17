@@ -53,9 +53,14 @@ public class CampReport
             }
 
             /*----------------------------------Printing it into a .txt File-----------------------------*/
-            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(campChoice.getName() + ".txt"))) 
+            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(campChoice.getName() + ".txt")))
             {
-                oos.writeObject(filteredList);
+                for(User user: filteredList)
+                {
+                    oos.writeObject(user.getName());
+                    oos.writeObject(user.getRole());
+
+                }
                 System.out.println("ArrayList of Student objects saved to " + campChoice.getName() + ".txt");
             } 
 
