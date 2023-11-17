@@ -80,9 +80,17 @@ public class StudentCampMenu
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);
                     if (currentUser.getIsCampCommittee().contains(campChoice.getName()))
                     {
-                        CampCommittee campCommittee = new CampCommittee(currentUser.getName(), currentUser.getEmail(), currentUser.getFaculty(), "CampCommittee");
-                        CampCommiteeCampMenu.indivCampMenu(campChoice, campCommittee, campList, enquiryList, suggestionList);
-                        break;
+                        if (currentUser instanceof CampCommittee) 
+                        {
+                            CampCommittee campCommittee = (CampCommittee) currentUser;
+                            CampCommiteeCampMenu.indivCampMenu(campChoice, campCommittee, campList, enquiryList, suggestionList);
+                            break;
+                        } 
+                        else 
+                        {
+                            System.out.println("Error: Unable to downcast to CampCommittee.");
+                            break;
+                        }
                     }
                     else
                         CampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
