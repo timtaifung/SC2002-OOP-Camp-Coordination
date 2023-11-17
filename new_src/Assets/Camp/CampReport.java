@@ -20,7 +20,7 @@ public class CampReport
                System.out.println((i+1) +". "+ campList.get(i).getName());
             }
             Scanner sc = new Scanner(System.in);
-            Camp campChoice = campList.get(sc.nextInt());
+            Camp campChoice = campList.get(sc.nextInt()-1);
 
             /*------------------------Filter Selection ----------------------------------*/
             int choice;
@@ -63,7 +63,6 @@ public class CampReport
             {
                 e.printStackTrace();
             }
-            sc.close();
         }
     }
 }
