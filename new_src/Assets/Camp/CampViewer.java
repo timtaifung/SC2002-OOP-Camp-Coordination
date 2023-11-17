@@ -17,9 +17,9 @@ public class CampViewer
     public static void viewMyCreatedCamps(ArrayList<Camp> campList, User currentUser)
     {
         int x = 0;
-        for(int i=0; i< campList.size()-1; i++){
+        for(int i=0; i< campList.size(); i++){
             if(Objects.equals(campList.get(i).getCreatedBy(), currentUser)){
-                System.out.println(i+1 + ". " + campList.get(i));
+                System.out.println(i+1 + ". " + campList.get(i).getName());
                 x = 1;
             }
         }
