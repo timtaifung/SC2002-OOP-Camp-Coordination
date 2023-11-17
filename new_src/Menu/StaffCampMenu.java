@@ -48,6 +48,7 @@ public class StaffCampMenu
     		case 1:
     			System.out.println("Staff -> Change Password");
 				System.out.print("Input new Password: ");
+				sc.nextLine();
 				String passwordInput = sc.nextLine();
 				currentUser.setPassword(passwordInput);
 				System.out.println("Password reset successfully!");

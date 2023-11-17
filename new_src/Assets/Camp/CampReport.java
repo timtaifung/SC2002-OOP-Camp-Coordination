@@ -42,6 +42,7 @@ public class CampReport
                     break;
                 list.remove(choice - 1);
             }
+            
         
             /*---------------------------Pacing Filtered into a new ArrayList---------------------------*/
             ArrayList<User> filteredList = new ArrayList<User>();
