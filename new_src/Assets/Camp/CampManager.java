@@ -68,6 +68,7 @@ public class CampManager
         {
             case 1:
                 System.out.print("Camp Name: ");
+                sc.nextLine();
                 String campName = sc.nextLine();
                 camp.setName(campName);
                 System.out.println("Camp name changed successfully!");
@@ -75,6 +76,7 @@ public class CampManager
 
             case 2:
                 System.out.print("Date of Camp: ");
+                sc.nextLine();
                 String dateOfCamp = sc.nextLine();
                 camp.setDateofCamp(dateOfCamp);
                 System.out.println("Date of camp changed successfully!");
@@ -82,6 +84,7 @@ public class CampManager
 
             case 3:
                 System.out.print("Registeration Closing Date: ");
+                sc.nextLine();
                 String registeraionClosing = sc.nextLine();
                 camp.setRegisteraionClosing(registeraionClosing);
                 System.out.println("Registeration closing date changed successfully!");
@@ -89,6 +92,7 @@ public class CampManager
 
             case 4:
                 System.out.print("Faculty/School: ");
+                sc.nextLine();
                 String grouping = sc.nextLine();
                 camp.setGrouping(grouping);
                 System.out.println("Faculty/School changed successfully!");
@@ -96,6 +100,7 @@ public class CampManager
 
             case 5:
                 System.out.print("Location: ");
+                sc.nextLine();
                 String location = sc.nextLine();
                 camp.setLocation(location);
                 System.out.println("Location changed successfully!");
@@ -103,6 +108,7 @@ public class CampManager
 
             case 6:
                 System.out.print("Total Slots: ");
+                sc.nextLine();
                 Integer totalSlots = sc.nextInt();
                 camp.setTotalSlots(totalSlots);
                 System.out.println("Total slots changed successfully!");
@@ -110,6 +116,7 @@ public class CampManager
 
             case 7:
                 System.out.print("Camp Commitee Slots: ");
+                sc.nextLine();
                 Integer commiteeSlots = sc.nextInt();
                 camp.setCommiteeSlots(commiteeSlots);
                 System.out.println("Camp commitee slots changed successfully!");
@@ -117,6 +124,7 @@ public class CampManager
 
             case 8:
                 System.out.print("Short Description: ");
+                sc.nextLine();
                 String shortDescription = sc.nextLine();
                 camp.setShortDescription(shortDescription);
                 System.out.println("Short description changed successfully!");
