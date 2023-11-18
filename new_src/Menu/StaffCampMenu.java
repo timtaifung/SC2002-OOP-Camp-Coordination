@@ -26,6 +26,7 @@ public class StaffCampMenu
     	System.out.println("8. Generate reports");
     	System.out.println("9. Logout");
 		System.out.println("-----------------------------\n");
+		System.out.println("Please enter your choice: ");
 	}
 
     public static void menu(User currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){

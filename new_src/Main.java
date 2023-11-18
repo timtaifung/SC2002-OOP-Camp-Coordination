@@ -39,7 +39,6 @@ public class Main {
                     break;
                 case "CampCommitee":
             }
-            System.out.println("Successfully logged out!");
         }
     }
 }

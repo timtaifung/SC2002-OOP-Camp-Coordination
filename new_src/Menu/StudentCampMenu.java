@@ -1,5 +1,6 @@
 package Menu;
 import Assets.Roles.Student;
+import Assets.Roles.CampCommittee;
 import Assets.Camp.*;
 import Assets.QnA.Enquiry.*;
 import Assets.QnA.Suggestion.*;
@@ -16,18 +17,17 @@ public class StudentCampMenu
         {
             Scanner sc = new Scanner(System.in);
             System.out.println("Welcome to Student Menu");
-
-            System.out.println("-------------------Personal Details-------------------");
-            System.out.println("1. Change password");
-
-            System.out.println("-------------------Camps-------------------");
-            System.out.println("Choose your options:");
+            System.out.println("------ Personal Detail ------");
+    		System.out.println("1. Change password");
+			System.out.println("-----------------------------\n");
+            System.out.println("----------- Camps -----------");
             System.out.println("2. View All Camps");
             System.out.println("3. View All Available Camps");
             System.out.println("4. Register Camp");
             System.out.println("5. View My Registered Camps");
             System.out.println("6. Inspect Individual Camp");
             System.out.println("7. Logout");
+			System.out.println("-----------------------------\n");
             System.out.println("Please enter your choice: ");
             x = sc.nextInt();
 
@@ -80,8 +80,17 @@ public class StudentCampMenu
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);
                     if (currentUser.getIsCampCommittee().contains(campChoice.getName()))
                     {
-                        CampCommiteeCampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
-                        break;
+                        if (currentUser instanceof CampCommittee) 
+                        {
+                            CampCommittee campCommittee = (CampCommittee) currentUser;
+                            CampCommiteeCampMenu.indivCampMenu(campChoice, campCommittee, campList, enquiryList, suggestionList);
+                            break;
+                        } 
+                        else 
+                        {
+                            System.out.println("Error: Unable to downcast to CampCommittee.");
+                            break;
+                        }
                     }
                     else
                         CampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
