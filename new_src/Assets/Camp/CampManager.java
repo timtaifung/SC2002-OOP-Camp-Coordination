@@ -70,48 +70,56 @@ public class CampManager
                 System.out.print("Camp Name: ");
                 String campName = sc.nextLine();
                 camp.setName(campName);
+                System.out.println("Camp name changed successfully!");
                 break;
 
             case 2:
                 System.out.print("Date of Camp: ");
                 String dateOfCamp = sc.nextLine();
                 camp.setDateofCamp(dateOfCamp);
+                System.out.println("Date of camp changed successfully!");
                 break;
 
             case 3:
                 System.out.print("Registeration Closing Date: ");
                 String registeraionClosing = sc.nextLine();
                 camp.setRegisteraionClosing(registeraionClosing);
+                System.out.println("Registeration closing date changed successfully!");
                 break;
 
             case 4:
                 System.out.print("Faculty/School: ");
                 String grouping = sc.nextLine();
                 camp.setGrouping(grouping);
+                System.out.println("Faculty/School changed successfully!");
                 break;
 
             case 5:
                 System.out.print("Location: ");
                 String location = sc.nextLine();
                 camp.setLocation(location);
+                System.out.println("Location changed successfully!");
                 break;
 
             case 6:
                 System.out.print("Total Slots: ");
                 Integer totalSlots = sc.nextInt();
                 camp.setTotalSlots(totalSlots);
+                System.out.println("Total slots changed successfully!");
                 break;
 
             case 7:
                 System.out.print("Camp Commitee Slots: ");
                 Integer commiteeSlots = sc.nextInt();
                 camp.setCommiteeSlots(commiteeSlots);
+                System.out.println("Camp commitee slots changed successfully!");
                 break;
 
             case 8:
                 System.out.print("Short Description: ");
                 String shortDescription = sc.nextLine();
                 camp.setShortDescription(shortDescription);
+                System.out.println("Short description changed successfully!");
                 break;
 
             case 9:
@@ -124,13 +132,12 @@ public class CampManager
                 {
                     camp.setVisiblity(true);
                 }
+                System.out.println("Visiblity changed successfully!");
                 break;
                 
             case 10:
                 break;
         }
-
-        sc.close();
     }
 
     public static void delCamp(ArrayList<Camp> campList, User currentUser)
