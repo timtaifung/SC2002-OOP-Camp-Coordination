@@ -50,7 +50,7 @@ public class CampManager
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Edit: ");
         Integer campIndex = sc.nextInt();
-        Camp camp = campList.get(campIndex);
+        Camp camp = campList.get(campIndex-1);
         System.out.println("------Edit Camp------");
         System.out.println("1. Camp Name");
         System.out.println("2. Date of Camp");
@@ -139,7 +139,7 @@ public class CampManager
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Delete: ");
         Integer campIndex = sc.nextInt();
-        campList.remove(campIndex.intValue());
+        campList.remove(campIndex.intValue()-1);
 
         sc.close();
     }
