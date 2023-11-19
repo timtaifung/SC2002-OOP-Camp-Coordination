@@ -163,6 +163,11 @@ public class CampManager
     {
         CampViewer.showAvailableCamp(campList, currentUser);
         Scanner sc = new Scanner(System.in);
+        if(campList.size()==0)
+        {
+            System.out.println("There are no camps available currently!");
+            return;
+        }
         
         System.out.print("Select Camp to Register: ");
         if (!sc.hasNextInt()) 
