@@ -50,33 +50,33 @@ public class ChangePassword
 
             if (newPasswordInput.equals(user.getPassword())) 
             {
-                System.out.println("New password cannot be the same as old password!\n");
+                System.out.println("\nNew password cannot be the same as old password!\n");
             } 
 
             else if (newPasswordInput.contains(" ")) 
             {
-                System.out.println("Password cannot contain spaces!\n");
+                System.out.println("\nPassword cannot contain spaces!\n");
             } 
 
             else if (!containsSpecialCharacter(newPasswordInput)) 
             {
-                System.out.println("Password must include at least one special character!\n");
+                System.out.println("\nPassword must include at least one special character!\n");
             } 
 
             else if (!containsNumericCharacter(newPasswordInput)) 
             {
-                System.out.println("Password must include at least one numerical character!\n");
+                System.out.println("\nPassword must include at least one numerical character!\n");
             } 
 
             else if (newPasswordInput.length() < 6) 
             {
-                System.out.println("Password must be at least 6 characters long!\n");
+                System.out.println("\nPassword must be at least 6 characters long!\n");
             } 
 
             else 
             {
                 user.setPassword(newPasswordInput);
-                System.out.println("Password changed!\n");
+                System.out.println("\nPassword changed!\n");
                 invalidPassword = false;
             }
         }

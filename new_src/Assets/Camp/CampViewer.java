@@ -24,7 +24,7 @@ public class CampViewer
             }
         }
         if(x == 0){
-            System.out.println("You have not created any camps!");
+            System.out.println("You have not created any camps!\n");
         }
     }
 
@@ -48,23 +48,33 @@ public class CampViewer
     public static void showAvailableCamp(ArrayList<Camp> campList, Student currentStudent)
     {
         int i=1;
+        int x=0;
         for (Camp camp : campList) 
         {
             if (camp.getAvailableSlots() > 0 && camp.getVisiblity() && camp.getNTU() || camp.getAvailableSlots() > 0 && camp.getVisiblity() && Objects.equals(camp.getGrouping(), currentStudent.getFaculty())) 
             {
                 System.out.println((i)+". "+camp.getName());
                 i++;
+                x=1;
             }
+        }
+        if(x==0){
+            System.out.println("There are no available camps currently!\n");
         }
     }
 
     public static void showMyRegisteredCamp(Student currentUser)
     {
         int i=1;
+        int x=0;
         for (Camp camp : currentUser.getStudentCampList()) 
         {
             System.out.println((i)+". "+camp.getName());
             i++;
+            x=1;
+        }
+        if(x==0){
+            System.out.println("You have not registered for any camps yet!\n");
         }
     }
 }

@@ -55,9 +55,9 @@ public class StaffCampMenu
 				System.out.println("Password reset successfully!");
 				break;
     		case 2:
-    			System.out.println("Staff -> View All Camps");
+    			System.out.println("\nStaff -> View All Camps");
     			if(campList.isEmpty()){
-					System.out.println("There are no camps currently!");
+					System.out.println("There are no camps currently!\n");
 				}
 				else{
 					CampViewer.viewAllCamps(campList);
@@ -67,7 +67,7 @@ public class StaffCampMenu
 			case 3:
 				System.out.println("Staff -> View my Created Camp");
 				if(campList.isEmpty()){
-					System.out.println("There are no camps currently!");
+					System.out.println("There are no camps currently!\n");
 				}
 				else{
                 CampViewer.viewMyCreatedCamps(campList, currentUser);
@@ -108,7 +108,7 @@ public class StaffCampMenu
     		case 6:
     			System.out.println("Staff -> View/Reply Enquiries");
 				if (enquiryList.isEmpty()){
-					System.out.println("There are no enquiries currently!");
+					System.out.println("There are no enquiries currently!\n");
 				}
 				else{
 					EnquiryViewer.getAllEnquiry(enquiryList);
@@ -122,7 +122,7 @@ public class StaffCampMenu
     		case 7:
     			System.out.println("Staff -> View/Reply Suggestions");
 				if(suggestionList.isEmpty()){
-					System.out.println("There are no suggestions currently!");
+					System.out.println("There are no suggestions currently!\n");
 				}
 				else{
 					SuggestionViewer.getAllSuggestion(suggestionList);

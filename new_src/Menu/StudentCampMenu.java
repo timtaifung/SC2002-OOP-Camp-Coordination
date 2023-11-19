@@ -49,7 +49,7 @@ public class StudentCampMenu
                 case 2:
                     if (campList.isEmpty())
                     {
-					    System.out.println("There are no camps currently!");
+					    System.out.println("There are no camps currently!\n");
                         break;
 				    }
 
@@ -72,7 +72,11 @@ public class StudentCampMenu
                     break;
 
                 case 6:
-                {
+                {   
+                    if(currentUser.getStudentCampList().isEmpty()){
+                        System.out.println("You have not registered for any camps!\n");
+                        break;
+                    }
                     System.out.println("Inspect Individual Camp");
                     CampViewer.showMyRegisteredCamp(currentUser);
                     System.out.println("Please enter your choice: ");

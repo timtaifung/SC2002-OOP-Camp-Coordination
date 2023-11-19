@@ -3,6 +3,7 @@ import Assets.Roles.Student;
 import Assets.Roles.User;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class CampManager 
@@ -29,6 +30,7 @@ public class CampManager
         sc.nextLine();
         System.out.print("Short Description: ");
         String result=sc.nextLine();
+        System.out.println("Camp created successfully!\n");
 
         camp.setName(campName);
         camp.setDateofCamp(dateOfCamp);
@@ -71,7 +73,7 @@ public class CampManager
                 sc.nextLine();
                 String campName = sc.nextLine();
                 camp.setName(campName);
-                System.out.println("Camp name changed successfully!");
+                System.out.println("Camp name changed successfully!\n");
                 break;
 
             case 2:
@@ -79,7 +81,7 @@ public class CampManager
                 sc.nextLine();
                 String dateOfCamp = sc.nextLine();
                 camp.setDateofCamp(dateOfCamp);
-                System.out.println("Date of camp changed successfully!");
+                System.out.println("Date of camp changed successfully!\n");
                 break;
 
             case 3:
@@ -87,7 +89,7 @@ public class CampManager
                 sc.nextLine();
                 String registeraionClosing = sc.nextLine();
                 camp.setRegisteraionClosing(registeraionClosing);
-                System.out.println("Registeration closing date changed successfully!");
+                System.out.println("Registeration closing date changed successfully!\n");
                 break;
 
             case 4:
@@ -95,7 +97,7 @@ public class CampManager
                 sc.nextLine();
                 String grouping = sc.nextLine();
                 camp.setGrouping(grouping);
-                System.out.println("Faculty/School changed successfully!");
+                System.out.println("Faculty/School changed successfully!\n");
                 break;
 
             case 5:
@@ -103,7 +105,7 @@ public class CampManager
                 sc.nextLine();
                 String location = sc.nextLine();
                 camp.setLocation(location);
-                System.out.println("Location changed successfully!");
+                System.out.println("Location changed successfully!\n");
                 break;
 
             case 6:
@@ -111,7 +113,7 @@ public class CampManager
                 sc.nextLine();
                 Integer totalSlots = sc.nextInt();
                 camp.setTotalSlots(totalSlots);
-                System.out.println("Total slots changed successfully!");
+                System.out.println("Total slots changed successfully!\n");
                 break;
 
             case 7:
@@ -119,7 +121,7 @@ public class CampManager
                 sc.nextLine();
                 Integer commiteeSlots = sc.nextInt();
                 camp.setCommiteeSlots(commiteeSlots);
-                System.out.println("Camp commitee slots changed successfully!");
+                System.out.println("Camp commitee slots changed successfully!\n");
                 break;
 
             case 8:
@@ -127,7 +129,7 @@ public class CampManager
                 sc.nextLine();
                 String shortDescription = sc.nextLine();
                 camp.setShortDescription(shortDescription);
-                System.out.println("Short description changed successfully!");
+                System.out.println("Short description changed successfully!\n");
                 break;
 
             case 9:
@@ -140,7 +142,7 @@ public class CampManager
                 {
                     camp.setVisiblity(true);
                 }
-                System.out.println("Visiblity changed successfully!");
+                System.out.println("Visiblity changed successfully!\n");
                 break;
                 
             case 10:
@@ -155,6 +157,7 @@ public class CampManager
         System.out.print("Select Camp to Delete: ");
         Integer campIndex = sc.nextInt();
         campList.remove(campIndex.intValue()-1);
+        System.out.println("Camp deleted successfully!\n");
 
         sc.close();
     }
@@ -172,9 +175,10 @@ public class CampManager
         System.out.print("Select Camp to Register: ");
         if (!sc.hasNextInt()) 
         {
-            System.out.println("Invalid input. Please enter a valid integer.");
+            System.out.println("Invalid input. Please enter a valid integer.\n");
             return;
         }
+        
         int campIndex = sc.nextInt();
         sc.nextLine();
         Camp camp = campList.get(campIndex-1);
@@ -184,7 +188,7 @@ public class CampManager
         {
             if(blackListedUser.equals(currentUser))
             {
-                System.out.println("You previously left this camp! Unable to join back");
+                System.out.println("You previously left this camp! Unable to join back!\n");
                 return;
             }
         }
@@ -197,13 +201,13 @@ public class CampManager
             {
                 if(studentCamp.getDateofCamp().toString().equals(camp.getDateofCamp().toString()))
                 {
-                    System.out.println("You have registered another camp on the same date!");
+                    System.out.println("You have registered another camp on the same date!\n");
                     return;
                 }
             }
             camp.getAttendanceList().add(currentUser);
             currentUser.getStudentCampList().add(camp);
-            System.out.println("Registered successfully!");
+            System.out.println("Registered successfully!\n");
         }
 
         else
@@ -231,17 +235,17 @@ public class CampManager
         {
             currentCamp.getCommiteeList().add(currentStudent);
             currentStudent.setIsCampCommittee(currentCamp.getName());
-            System.out.println("Applied successfully!");
+            System.out.println("Applied successfully!\n");
         }
 
         else if (currentStudent.getIsCampCommittee().contains(currentCamp.getName()))
         {
-            System.out.println("You are already a camp commitee!");
+            System.out.println("You are already a camp commitee!\n");
         }
 
         else
         {
-            System.out.println("Camp commitee slots are full!");
+            System.out.println("Camp commitee slots are full!\n");
         }
     }
 
@@ -250,6 +254,6 @@ public class CampManager
         currentCamp.getAttendanceList().remove(currentStudent);
         currentStudent.getStudentCampList().remove(currentCamp);
         currentCamp.addBlackList(currentStudent);
-        System.out.println("Left camp successfully!");
+        System.out.println("Left camp successfully!\n");
     }
 }
