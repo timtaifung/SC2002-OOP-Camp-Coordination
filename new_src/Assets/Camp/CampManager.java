@@ -23,8 +23,8 @@ public class CampManager
         String grouping = sc.nextLine();
         System.out.print("Location: ");
         String location = sc.nextLine();
-        System.out.print("Total Slots: ");
-        Integer totalSlots = sc.nextInt();
+        System.out.print("Total Slots: ");          
+        Integer totalSlots = sc.nextInt();      //try throw exception when input is !integer
         System.out.print("Camp Commitee Slots: ");
         Integer commiteeSlots = sc.nextInt();
         sc.nextLine();
@@ -168,13 +168,13 @@ public class CampManager
 
     public static void registerCamp(ArrayList<Camp> campList, Student currentUser)
     {
-        CampViewer.showAvailableCamp(campList, currentUser);
+        if(!CampViewer.showAvailableCamp(campList, currentUser)){return;}
         Scanner sc = new Scanner(System.in);
         if(campList.size()==0){
             return;}
         
         System.out.print("Select Camp to Register: ");
-        if (!sc.hasNextInt()) 
+        if (!sc.hasNextInt())           //WHAT IF INPUT OUR OF RANGE
         {
             System.out.println("Invalid input. Please enter a valid integer.\n");
             return;
