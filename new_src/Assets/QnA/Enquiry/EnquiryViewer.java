@@ -10,13 +10,18 @@ public class EnquiryViewer extends Enquiry
 		super(currentUser);
 	}
 
-    public static void getAllEnquiry(ArrayList<Enquiry> enquiryList)
+    public static Boolean getAllEnquiry(ArrayList<Enquiry> enquiryList)
     {
+		if(enquiryList.isEmpty()){
+			System.out.println("There are no enquiries currently!\n");
+			return false;
+		}
 		Integer i=1;
 		for (Enquiry currentEnquiry : enquiryList) 
         {
 			System.out.println(i+". "+currentEnquiry.getTitle());
 		}
+		return true;
 	}
 
     public static void viewMyEnquiry(ArrayList<Enquiry> enquiryList, User currentUser)

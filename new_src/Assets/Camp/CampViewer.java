@@ -8,6 +8,10 @@ public class CampViewer
 {
     public static void viewAllCamps(ArrayList<Camp> campList)
     {
+        if(campList.isEmpty()){
+            System.out.println("There are no camps currently!\n");
+            return;
+        }
         for(int i=0; i< campList.size(); i++)
         {
             System.out.println(i+1 + ". " + campList.get(i).getName());
