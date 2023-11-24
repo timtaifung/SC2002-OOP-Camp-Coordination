@@ -12,16 +12,17 @@ import java.util.Scanner;
 public class CampCommiteeCampMenu{
     //similar to camp menu but with additional features for camp commitee like suggestion reply
     public static void campCommMenu(Camp currentCamp, Student currentStudent, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList, ArrayList<CampCommittee> campCommitteeList){
-        CampCommittee currentCampCommittee = new CampCommittee(currentStudent);
         String name  = currentStudent.getName();
+        int index = 0;
         for(int i = 0; i<campCommitteeList.size(); i++)
         {
             CampCommittee temp = campCommitteeList.get(i);
             if (temp.getName().equals(name) && temp.getCamps().contains(currentCamp))
             {
-                currentCampCommittee = temp;
+                index = i;
             }
-       }
+        }
+        CampCommittee currentCampCommittee = campCommitteeList.get(index);
 
         System.out.println("-------------------Camp Menu-------------------");
         System.out.println("1. View Camp Details");
