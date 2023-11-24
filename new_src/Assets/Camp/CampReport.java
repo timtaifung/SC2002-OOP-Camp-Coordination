@@ -2,6 +2,8 @@ package Assets.Camp;
 import Assets.Roles.User;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -53,19 +55,29 @@ public class CampReport
             }
 
             /*----------------------------------Printing it into a .txt File-----------------------------*/
-            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(campChoice.getName() + ".txt")))
-            {
-                for(User user: filteredList)
-                {
-                    oos.writeObject(user.getName());
-                    oos.writeObject(user.getRole());
-
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(campChoice.getName() + ".txt"))) {
+                writer.write("------------------------------------ Camp Report ------------------------------------");
+                writer.newLine();
+                writer.write("Camp Name: " + campChoice.getName());
+                writer.newLine();
+                writer.write("Camp Date: " + campChoice.getDateofCamp());
+                writer.newLine();
+                writer.write("Camp Location: " + campChoice.getLocation());
+                writer.newLine();
+                writer.write("Camp Description: " + campChoice.getShortDescription());
+                writer.newLine();
+                writer.write("Camp Slots: " + campChoice.getTotalSlots() + " / " + campChoice.getAvailableSlots());
+                writer.newLine();
+                writer.write("------------------------------------ Attendance List ------------------------------------");
+                writer.newLine();
+                writer.write("Name, Role, ");
+                writer.newLine();
+                for (User user : filteredList) {
+                    writer.write(user.getName() + ", " + user.getRole() + ", ");
+                    writer.newLine();
                 }
-                System.out.println("ArrayList of Student objects saved to " + campChoice.getName() + ".txt");
-            } 
-
-            catch (IOException e) 
-            {
+                System.out.println("Data saved to " + campChoice.getName() + ".txt");
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
