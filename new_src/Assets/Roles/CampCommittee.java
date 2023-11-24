@@ -1,18 +1,22 @@
 package Assets.Roles;
 import java.util.ArrayList;
 
+import Assets.Camp.Camp;
 import Assets.QnA.Suggestion.Suggestion;
+import Assets.Roles.CampCommittee;
 
 public class CampCommittee extends Student
 {
     private int point;
     private ArrayList<Suggestion> suggestions;
+	private ArrayList<CampCommittee> camps;
 
-    public CampCommittee(String name, String email, String faculty, String role) 
+    public CampCommittee(Student student) 
     {
-        super(name, email, faculty, role); 
+        super(student.getName(), student.getEmail(), student.getFaculty(), "CampCommittee"); 
         this.point = 0;
         this.suggestions = new ArrayList<Suggestion>();
+		this.camps = new ArrayList<CampCommittee>();
     }
 
     public void setpoint() 
@@ -27,6 +31,11 @@ public class CampCommittee extends Student
 	public int getpoint() 
     {
 		return this.point;
+	}
+
+	public ArrayList<CampCommittee> getCamps()
+	{
+		return this.camps;
 	}
 	
 	public ArrayList<Suggestion> getSuggestionList() 

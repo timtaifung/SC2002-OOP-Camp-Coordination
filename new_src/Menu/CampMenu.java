@@ -1,6 +1,7 @@
 package Menu;
 import Assets.Camp.Camp;
 import Assets.Roles.Student;
+import Assets.Roles.CampCommittee;
 import Assets.Camp.CampManager;
 import Assets.QnA.Enquiry.*;
 import Assets.QnA.Suggestion.*;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 
 public class CampMenu 
 {
-    public static void indivCampMenu(Camp currentCamp, Student currentStudent, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){
+    public static void indivCampMenu(Camp currentCamp, Student currentStudent, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList, ArrayList<CampCommittee> campCommitteeList){
         System.out.println("-------------------Camp Menu-------------------");
         System.out.println("1. View Camp Details");
         System.out.println("2. Apply Camp Commitee");
@@ -31,7 +32,7 @@ public class CampMenu
             case 2:
             {
                 System.out.println("Apply Camp Commitee");
-                CampManager.applyCampCommitee(currentStudent, currentCamp);
+                CampManager.applyCampCommitee(currentStudent, currentCamp, campCommitteeList);
                 break;
             }
 

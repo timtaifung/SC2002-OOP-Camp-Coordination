@@ -1,6 +1,7 @@
 package Assets.Camp;
 import Assets.Roles.Student;
 import Assets.Roles.User;
+import Assets.Roles.CampCommittee;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -205,12 +206,14 @@ public class CampManager
         System.out.println("Available Slots: "+currentCamp.getAvailableSlots());
     }
 
-    public static void applyCampCommitee(Student currentStudent, Camp currentCamp)
+    public static void applyCampCommitee(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList)
     {
         if(currentCamp.getCommiteeSlots() > 0 && !currentStudent.getIsCampCommittee().contains(currentCamp.getName()))
         {
             currentCamp.getCommiteeList().add(currentStudent);
             currentStudent.setIsCampCommittee(currentCamp.getName());
+            CampCommittee campCommittee = new CampCommittee(currentStudent);
+            campCommitteeList.add(campCommittee);
             System.out.println("Applied successfully!");
         }
 
