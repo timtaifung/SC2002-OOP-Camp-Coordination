@@ -51,7 +51,7 @@ public class CampViewer
     }
 
 
-    public static void showAvailableCamp(ArrayList<Camp> campList, Student currentStudent)
+    public static Boolean showAvailableCamp(ArrayList<Camp> campList, Student currentStudent)
     {
         int i=1;
         int x=0;
@@ -66,7 +66,9 @@ public class CampViewer
         }
         if(x==0){
             System.out.println("There are no available camps currently!\n");
+            return false;
         }
+        return true;
     }
 
     public static Boolean showMyRegisteredCamp(Student currentUser)

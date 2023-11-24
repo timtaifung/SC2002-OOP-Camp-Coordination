@@ -48,17 +48,8 @@ public class StudentCampMenu
                     System.out.println("Password reset successfully!");
                     break;
                 case 2:
-                    if (campList.isEmpty())
-                    {
-					    System.out.println("There are no camps currently!\n");
-                        break;
-				    }
-
-				    else
-                    {
-					    CampViewer.viewAllCamps(campList);
-                        break;
-				    }
+                    CampViewer.viewAllCamps(campList);
+                    break;
 
                 case 3:
                     CampViewer.showAvailableCamp(campList, currentUser);
