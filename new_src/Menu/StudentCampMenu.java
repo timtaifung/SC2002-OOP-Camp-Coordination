@@ -42,22 +42,14 @@ public class StudentCampMenu
                 case 1:
                     System.out.println("Student -> Change Password");
                     System.out.print("Input new Password: ");
+                    sc.nextLine();
                     String passwordInput = sc.nextLine();
                     currentUser.setPassword(passwordInput);
                     System.out.println("Password reset successfully!");
                     break;
                 case 2:
-                    if (campList.isEmpty())
-                    {
-					    System.out.println("There are no camps currently!");
-                        break;
-				    }
-
-				    else
-                    {
-					    CampViewer.viewAllCamps(campList);
-                        break;
-				    }
+                    CampViewer.viewAllCamps(campList);
+                    break;
 
                 case 3:
                     CampViewer.showAvailableCamp(campList, currentUser);
@@ -72,9 +64,13 @@ public class StudentCampMenu
                     break;
 
                 case 6:
-                {
+                {   
+                    if(currentUser.getStudentCampList().isEmpty()){
+                        System.out.println("You have not registered for any camps!\n");
+                        break;
+                    }
                     System.out.println("Inspect Individual Camp");
-                    CampViewer.showMyRegisteredCamp(currentUser);
+                    if(!CampViewer.showMyRegisteredCamp(currentUser)){break;}
                     System.out.println("Please enter your choice: ");
                     Integer campIndex = sc.nextInt();
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);

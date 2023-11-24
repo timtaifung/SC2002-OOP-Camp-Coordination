@@ -10,13 +10,18 @@ public class SuggestionViewer extends Suggestion
         super(currentUser);
     }
 
-    public static void getAllSuggestion(ArrayList<Suggestion> suggestionList)
+    public static Boolean getAllSuggestion(ArrayList<Suggestion> suggestionList)
     {
+        if(suggestionList.isEmpty()){
+            System.out.println("There are no suggestions currently!\n");
+            return false;
+        }
         Integer i=1;
         for (Suggestion currentSuggestion : suggestionList) 
         {
             System.out.println(i + ". " + currentSuggestion.getTitle());
         }
+        return true;
     }
 
     public static void viewMySuggestion(ArrayList<Suggestion> suggestionList, User currentUser)

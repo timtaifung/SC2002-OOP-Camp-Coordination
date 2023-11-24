@@ -8,13 +8,17 @@ public class CampViewer
 {
     public static void viewAllCamps(ArrayList<Camp> campList)
     {
+        if(campList.isEmpty()){
+            System.out.println("There are no camps currently!\n");
+            return;
+        }
         for(int i=0; i< campList.size(); i++)
         {
             System.out.println(i+1 + ". " + campList.get(i).getName());
         }
     }
 
-    public static void viewMyCreatedCamps(ArrayList<Camp> campList, User currentUser)
+    public static Boolean viewMyCreatedCamps(ArrayList<Camp> campList, User currentUser)
     {
         int x = 0;
         for(int i=0; i< campList.size(); i++){
@@ -24,8 +28,10 @@ public class CampViewer
             }
         }
         if(x == 0){
-            System.out.println("You have not created any camps!");
+            System.out.println("You have not created any camps!\n");
+            return false;
         }
+        return true;
     }
 
     public static void showAllVisibleCamp(ArrayList<Camp> campList, Student currentUser)
@@ -45,26 +51,40 @@ public class CampViewer
     }
 
 
-    public static void showAvailableCamp(ArrayList<Camp> campList, Student currentStudent)
+    public static Boolean showAvailableCamp(ArrayList<Camp> campList, Student currentStudent)
     {
         int i=1;
+        int x=0;
         for (Camp camp : campList) 
         {
             if (camp.getAvailableSlots() > 0 && camp.getVisiblity() && camp.getNTU() || camp.getAvailableSlots() > 0 && camp.getVisiblity() && Objects.equals(camp.getGrouping(), currentStudent.getFaculty())) 
             {
                 System.out.println((i)+". "+camp.getName());
                 i++;
+                x=1;
             }
         }
+        if(x==0){
+            System.out.println("There are no available camps currently!\n");
+            return false;
+        }
+        return true;
     }
 
-    public static void showMyRegisteredCamp(Student currentUser)
+    public static Boolean showMyRegisteredCamp(Student currentUser)
     {
         int i=1;
+        int x=0;
         for (Camp camp : currentUser.getStudentCampList()) 
         {
             System.out.println((i)+". "+camp.getName());
             i++;
+            x=1;
         }
+        if(x==0){
+            System.out.println("You have not registered for any camps yet!\n");
+            return false;
+        }
+        return true;
     }
 }
