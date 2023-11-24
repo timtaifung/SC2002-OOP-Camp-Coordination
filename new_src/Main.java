@@ -14,6 +14,7 @@ public class Main {
         String excelFile = "new_src/database.xlsx";
         ArrayList<User> userList = ExcelReader.read(excelFile);
         ArrayList<Camp> campList = new ArrayList<Camp>();
+        ArrayList<CampCommittee> campCommitteeList = new ArrayList<CampCommittee>();
         ArrayList<Enquiry> enquiryList = new ArrayList<Enquiry>();
         ArrayList<Suggestion> suggestionList = new ArrayList<Suggestion>();
 
@@ -29,15 +30,16 @@ public class Main {
             }
             System.out.println("Checkpoint");
             /*-----------------Main Menu Page -----------------------*/
-            switch(currentUser.getRole().toString()){
+            switch(currentUser.getRole().toString())
+            {
                 case "Student":
                     Student currentUserStudent = (Student) currentUser;
-                    StudentCampMenu.menu(currentUserStudent, campList, enquiryList, suggestionList);
+                    StudentCampMenu.menu(currentUserStudent, campList, enquiryList, suggestionList, campCommitteeList);
                     break;
+                    
                 case "Staff":
                     StaffCampMenu.menu(currentUser, campList, enquiryList, suggestionList);
                     break;
-                case "CampCommitee":
             }
         }
     }
