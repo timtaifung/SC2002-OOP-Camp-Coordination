@@ -40,7 +40,6 @@ public class EnquiryManager extends Enquiry
 		newEnquiry.setContent(content);
 		enquiryList.add(newEnquiry);
 		System.out.println("Enquiry submitted!");
-		sc.close();
 	}
 
 	public static void editEnquiry(Enquiry currentEnquiry, User currentUser)

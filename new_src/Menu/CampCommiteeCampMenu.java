@@ -98,46 +98,49 @@ public class CampCommiteeCampMenu extends CampMenu{
                    case 1:
                    {
                        System.out.println("View my Camp Suggestion");
-                       EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
+                       SuggestionViewer.viewMySuggestion(suggestionList, currentStudent);
                        break;
                    }
                    case 2:
                    {
                        System.out.println("Create new Camp Suggestion");
-                       EnquiryManager.newEnquiry(enquiryList, currentStudent, currentCamp);
+                       SuggestionManager.newSuggestion(suggestionList, currentStudent, currentStudent);
                        currentStudent.setpoint();
                        break;
                    }
                    case 3:
                    {
                        System.out.println("Edit Camp Suggestion");
-                       EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
+                       SuggestionViewer.viewMySuggestion(suggestionList, currentStudent);
                        System.out.println("Please enter your choice: ");
-                       Integer enquiryIndex = sc.nextInt();
-                       Enquiry enquiryChoice = currentStudent.getStudentEnquiryList().get(enquiryIndex);
-                       EnquiryManager.editEnquiry(enquiryChoice, currentStudent);
+                       Integer suggestionIndex = sc.nextInt();
+                       Suggestion suggestionChoice = currentStudent.getSuggestionList().get(suggestionIndex);
+                       SuggestionManager.editSuggestion(suggestionChoice, currentStudent);
                        break;
                    }
                    case 4:
                    {
                        System.out.println("Delete Camp Suggestion");
-                       EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
+                       SuggestionViewer.viewMySuggestion(suggestionList, currentStudent);
                        System.out.println("Please enter your choice: ");
-                       Integer enquiryIndex = sc.nextInt();
-                       Enquiry enquiryChoice = currentStudent.getStudentEnquiryList().get(enquiryIndex);
-                       EnquiryManager.deleteEnquiry(enquiryChoice, enquiryList);
+                       Integer suggestionIndex = sc.nextInt();
+                       Suggestion suggestionChoice = currentStudent.getSuggestionList().get(suggestionIndex);
+                       SuggestionManager.deleteSuggestion(suggestionChoice, suggestionList);
                        break;
 
                    }
                    case 5:
                        System.out.println("Exit");
+                       break;
                    default:
                        System.out.println("Invalid input!");
+                       break;
                }
            }
 
            default:
                System.out.println("Invalid input!");
+               break;
        }
    }
 }

@@ -108,8 +108,11 @@ public class CampMenu
                 }
 
             }
+        }
+    }
+}
 
-            {
+            /*{
                 System.out.println("Camp Suggestion");
                 System.out.println("-------------------Camp Suggestion-------------------");
                 System.out.println("1. View my Camp Suggestion");
@@ -167,3 +170,4 @@ public class CampMenu
         }
     }
 }
+*/
