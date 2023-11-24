@@ -9,10 +9,10 @@ import Assets.QnA.Suggestion.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CampCommiteeCampMenu extends CampMenu{
+public class CampCommiteeCampMenu{
    //similar to camp menu but with additional features for camp commitee like suggestion reply
    public static void campCommMenu(Camp currentCamp, Student currentStudent, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList, ArrayList<CampCommittee> campCommitteeList){
-       CampCommittee currentCampCommittee = (CampCommittee) currentStudent;
+       CampCommittee currentCampCommittee = new CampCommittee(currentStudent);
        String name  = currentStudent.getName();
        for(int i = 0; i<campCommitteeList.size(); i++)
        {
