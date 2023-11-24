@@ -14,7 +14,7 @@ public class CampViewer
         }
     }
 
-    public static void viewMyCreatedCamps(ArrayList<Camp> campList, User currentUser)
+    public static Boolean viewMyCreatedCamps(ArrayList<Camp> campList, User currentUser)
     {
         int x = 0;
         for(int i=0; i< campList.size(); i++){
@@ -25,7 +25,9 @@ public class CampViewer
         }
         if(x == 0){
             System.out.println("You have not created any camps!\n");
+            return false;
         }
+        return true;
     }
 
     public static void showAllVisibleCamp(ArrayList<Camp> campList, Student currentUser)
@@ -63,7 +65,7 @@ public class CampViewer
         }
     }
 
-    public static void showMyRegisteredCamp(Student currentUser)
+    public static Boolean showMyRegisteredCamp(Student currentUser)
     {
         int i=1;
         int x=0;
@@ -75,6 +77,8 @@ public class CampViewer
         }
         if(x==0){
             System.out.println("You have not registered for any camps yet!\n");
+            return false;
         }
+        return true;
     }
 }

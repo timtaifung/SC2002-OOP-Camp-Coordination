@@ -136,7 +136,6 @@ public class StaffCampMenu
     		case 8:
     			System.out.println("Staff -> Generate reports");
 				CampReport.generateList(campList);
-                //CampReport.generateList(campList);
 				break;
     					
     		case 9:

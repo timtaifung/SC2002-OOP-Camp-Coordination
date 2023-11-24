@@ -79,7 +79,7 @@ public class StudentCampMenu
                         break;
                     }
                     System.out.println("Inspect Individual Camp");
-                    CampViewer.showMyRegisteredCamp(currentUser);
+                    if(!CampViewer.showMyRegisteredCamp(currentUser)){break;}
                     System.out.println("Please enter your choice: ");
                     Integer campIndex = sc.nextInt();
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);

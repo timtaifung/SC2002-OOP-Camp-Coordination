@@ -77,9 +77,11 @@ public class CampCommiteeCampMenu extends CampMenu{
                    }
                    case 3:
                        System.out.println("Exit");
+                       break;
 
                    default:
                        System.out.println("Invalid input!");
+                       break;
                }
            }
            case 5:

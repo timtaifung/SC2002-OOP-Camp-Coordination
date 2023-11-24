@@ -48,7 +48,9 @@ public class CampManager
 
     public static void editCamp(ArrayList<Camp> campList, User currentUser)
     {
-        CampViewer.viewMyCreatedCamps(campList, currentUser);
+        if(!CampViewer.viewMyCreatedCamps(campList, currentUser)){
+            return;
+        }
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Edit: ");
         Integer campIndex = sc.nextInt();
@@ -152,7 +154,9 @@ public class CampManager
 
     public static void delCamp(ArrayList<Camp> campList, User currentUser)
     {
-        CampViewer.viewMyCreatedCamps(campList, currentUser);
+        if(!CampViewer.viewMyCreatedCamps(campList, currentUser)){
+            return;
+        }        
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Delete: ");
         Integer campIndex = sc.nextInt();
@@ -166,11 +170,8 @@ public class CampManager
     {
         CampViewer.showAvailableCamp(campList, currentUser);
         Scanner sc = new Scanner(System.in);
-        if(campList.size()==0)
-        {
-            System.out.println("There are no camps available currently!");
-            return;
-        }
+        if(campList.size()==0){
+            return;}
         
         System.out.print("Select Camp to Register: ");
         if (!sc.hasNextInt()) 
