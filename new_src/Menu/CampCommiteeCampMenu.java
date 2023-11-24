@@ -21,7 +21,7 @@ public class CampCommiteeCampMenu{
             {
                 currentCampCommittee = temp;
             }
-        }
+       }
 
         System.out.println("-------------------Camp Menu-------------------");
         System.out.println("1. View Camp Details");

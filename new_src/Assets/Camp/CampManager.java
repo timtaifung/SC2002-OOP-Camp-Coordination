@@ -4,7 +4,6 @@ import Assets.Roles.Student;
 import Assets.Roles.User;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class CampManager 
@@ -24,7 +23,7 @@ public class CampManager
         String grouping = sc.nextLine();
         System.out.print("Location: ");
         String location = sc.nextLine();
-        System.out.print("Total Slots: ");          
+        System.out.print("Total Slots: ");
         Integer totalSlots = sc.nextInt();      //try throw exception when input is !integer
         System.out.print("Camp Commitee Slots: ");
         Integer commiteeSlots = sc.nextInt();
@@ -157,7 +156,7 @@ public class CampManager
     {
         if(!CampViewer.viewMyCreatedCamps(campList, currentUser)){
             return;
-        }        
+        }
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Delete: ");
         Integer campIndex = sc.nextInt();
@@ -173,14 +172,14 @@ public class CampManager
         Scanner sc = new Scanner(System.in);
         if(campList.size()==0){
             return;}
-        
+
         System.out.print("Select Camp to Register: ");
         if (!sc.hasNextInt())           //WHAT IF INPUT OUR OF RANGE
         {
             System.out.println("Invalid input. Please enter a valid integer.\n");
             return;
         }
-        
+
         int campIndex = sc.nextInt();
         sc.nextLine();
         Camp camp = campList.get(campIndex-1);
@@ -237,7 +236,9 @@ public class CampManager
         {
             currentCamp.getCommiteeList().add(currentStudent);
             currentStudent.setIsCampCommittee(currentCamp.getName());
-            System.out.println("Applied successfully!\n");
+            CampCommittee campCommittee = new CampCommittee(currentStudent);
+            campCommitteeList.add(campCommittee);
+            System.out.println("Applied successfully!");
         }
 
         else if (currentStudent.getIsCampCommittee().contains(currentCamp.getName()))
