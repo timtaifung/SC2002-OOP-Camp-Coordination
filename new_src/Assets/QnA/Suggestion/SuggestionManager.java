@@ -33,7 +33,6 @@ public class SuggestionManager extends Suggestion
         {
             System.out.println("Invalid input!");
         }
-        sc.close();
     }
 
     public static void newSuggestion(ArrayList<Suggestion> suggestionList, User currentUser, CampCommittee currentCampCommittee)
@@ -52,7 +51,6 @@ public class SuggestionManager extends Suggestion
         suggestionList.add(newSuggestion);
 
         System.out.println("Suggestion submitted!");
-        sc.close();
     }
 
     public static void editSuggestion(Suggestion currentSuggestion, User currentUser)
@@ -84,7 +82,6 @@ public class SuggestionManager extends Suggestion
             default:
                 System.out.println("Invalid input!");
         }
-        sc.close();
     }
 
     public static void deleteSuggestion(Suggestion currentSuggestion, ArrayList<Suggestion> suggestionList)

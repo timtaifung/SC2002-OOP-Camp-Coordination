@@ -37,12 +37,14 @@ public class CampCommiteeCampMenu{
             {
                 System.out.println("View Camp Details");
                 CampManager.campDetail(currentCamp);
+                break;
             }
 
             case 2:
             {
                 System.out.println("Apply Camp Commitee");
                 CampManager.applyCampCommitee(currentCampCommittee, currentCamp, campCommitteeList);
+                break;
             }
 
             case 3:
@@ -58,6 +60,7 @@ public class CampCommiteeCampMenu{
                     break;
                 else
                     System.out.println("Invalid input!");
+                break;
             }
 
             case 4:

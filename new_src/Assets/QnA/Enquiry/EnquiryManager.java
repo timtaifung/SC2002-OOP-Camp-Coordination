@@ -25,7 +25,6 @@ public class EnquiryManager extends Enquiry
 		currentEnquiry.setreply(y);
 		currentEnquiry.setProcessedStatus(true);
 		System.out.println("Reply submitted!");
-		sc.close();
 	}
 
 	public static void newEnquiry(ArrayList<Enquiry> enquiryList, User currentUser, Camp currentCamp)
@@ -73,7 +72,6 @@ public class EnquiryManager extends Enquiry
 			default:
                 System.out.println("Invalid input!");
 		}
-		sc.close();
 	}
 
 	public static void deleteEnquiry(Enquiry currentEnquiry, ArrayList<Enquiry> enquiryList)

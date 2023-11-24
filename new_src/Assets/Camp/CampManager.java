@@ -162,8 +162,6 @@ public class CampManager
         Integer campIndex = sc.nextInt();
         campList.remove(campIndex.intValue()-1);
         System.out.println("Camp deleted successfully!\n");
-
-        sc.close();
     }
 
     public static void registerCamp(ArrayList<Camp> campList, Student currentUser)
