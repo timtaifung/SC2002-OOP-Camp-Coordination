@@ -13,7 +13,7 @@ public class CampReport
     public static  void generateList(ArrayList<Camp> campList)
     {
         if(campList.isEmpty()){
-            System.out.println("There are no camps currently!");
+            System.out.println("There are no camps to generate a report on currently!");
         }
         else{
             System.out.println("---- Which camp would you like to generate Report on? ----");
