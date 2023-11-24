@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class StudentCampMenu 
 {
-    public static void menu(Student currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){
+    public static void menu(Student currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList, ArrayList<CampCommittee> campCommitteeList){
         int x=0;
         do
         {
@@ -74,22 +74,7 @@ public class StudentCampMenu
                     System.out.println("Please enter your choice: ");
                     Integer campIndex = sc.nextInt();
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);
-                    if (currentUser.getIsCampCommittee().contains(campChoice.getName()))
-                    {
-                        if (currentUser instanceof CampCommittee) 
-                        {
-                            CampCommittee campCommittee = (CampCommittee) currentUser;
-                            CampCommiteeCampMenu.indivCampMenu(campChoice, campCommittee, campList, enquiryList, suggestionList);
-                            break;
-                        } 
-                        else 
-                        {
-                            System.out.println("Error: Unable to downcast to CampCommittee.");
-                            break;
-                        }
-                    }
-                    else
-                        CampMenu.indivCampMenu(campChoice, currentUser, campList, enquiryList, suggestionList);
+                    CampCommiteeCampMenu.campCommMenu(campChoice, currentUser, campList, enquiryList, suggestionList, campCommitteeList);
                     break;
                 }
 
