@@ -43,9 +43,9 @@ public class CampCommittee extends Student
 		return suggestions;
 	}
 
-	public void setSuggestionList(ArrayList<Suggestion> s) 
+	public void addSuggestion (Suggestion s) 
     {
-		this.suggestions =s;
+		this.suggestions.add(s);
 	}
 
 	public void addToSuggestionList(Suggestion suggest) 
