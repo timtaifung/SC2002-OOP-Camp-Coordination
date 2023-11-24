@@ -49,6 +49,8 @@ public class SuggestionManager extends Suggestion
         newSuggestion.setTitle(title);
         newSuggestion.setContent(content);
         suggestionList.add(newSuggestion);
+        
+        currentCampCommittee.addSuggestion(newSuggestion);
 
         System.out.println("Suggestion submitted!");
     }
