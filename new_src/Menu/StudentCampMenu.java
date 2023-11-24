@@ -74,7 +74,7 @@ public class StudentCampMenu
                     System.out.println("Please enter your choice: ");
                     Integer campIndex = sc.nextInt();
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex-1);
-                    if (currentUser.getIsCampCommittee().contains(campChoice.getName()))
+                    if (currentUser.getCampCommitteeList().contains(campChoice))
                     {
                         CampCommiteeCampMenu.campCommMenu(campChoice, currentUser, campList, enquiryList, suggestionList, campCommitteeList);
                     }
