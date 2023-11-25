@@ -90,7 +90,7 @@ public class MainMenu {
                         //Student is a camp committee
                         if (currentCampCommittee.getName() == currentUser.getName()) {
                             isCampCommittee = true;
-                            CampCommiteeCampMenu.menu(campChoice, currentCampCommittee, campCommitteeList, enquiryList, suggestionList);
+                            CampCommiteeCampMenu.menu(campChoice, currentCampCommittee, campCommitteeList, enquiryList, suggestionList, campList);
                             break;
                         }
                     }

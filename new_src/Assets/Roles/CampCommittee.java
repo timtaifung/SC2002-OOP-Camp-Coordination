@@ -24,12 +24,8 @@ public class CampCommittee extends Student {
         return this.camp;
     }
 
-    public void getEnquiryAnswered() {
-        for (Enquiry e : enquiryAnswered) {
-            System.out.println(e.getTitle());
-            System.out.println(e.getContent());
-            System.out.println(e.getreply());
-        }
+    public ArrayList<Enquiry> getEnquiryAnswered() {
+        return this.enquiryAnswered;
     }
 
     public void setpoint() {

@@ -2,6 +2,7 @@ package Menu;
 
 import Assets.Camp.Camp;
 import Assets.Camp.CampManager;
+import Assets.Camp.CampReport;
 import Assets.QnA.Enquiry.Enquiry;
 import Assets.QnA.Enquiry.EnquiryManager;
 import Assets.QnA.Enquiry.EnquiryViewer;
@@ -9,13 +10,14 @@ import Assets.QnA.Suggestion.Suggestion;
 import Assets.QnA.Suggestion.SuggestionManager;
 import Assets.QnA.Suggestion.SuggestionViewer;
 import Assets.Roles.CampCommittee;
+import Assets.Tools.PerformanceReport;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CampCommiteeCampMenu {
     //similar to camp menu but with additional features for camp commitee like suggestion reply
-    public static void menu(Camp currentCamp, CampCommittee currentCampCommittee, ArrayList<CampCommittee> campCommitteesList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList) {
+    public static void menu(Camp currentCamp, CampCommittee currentCampCommittee, ArrayList<CampCommittee> campCommitteesList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList, ArrayList<Camp> campList) {
         int x = 0;
         do 
         {
@@ -24,7 +26,8 @@ public class CampCommiteeCampMenu {
             System.out.println("1. View Camp Details");
             System.out.println("2. Camp Enquiry");
             System.out.println("3. Camp Suggestion");
-            System.out.println("4. Back to Main Menu");
+            System.out.println("4. Generate Report");
+            System.out.println("5. Back to Main Menu");
             System.out.println("--------------------\n");
             Scanner sc = new Scanner(System.in);
             x = sc.nextInt();
@@ -180,8 +183,14 @@ public class CampCommiteeCampMenu {
                     } 
                     while (t != 5);
                 }
-
                 case 4:
+                {
+                    System.out.println("Camp Commitee -> Student reports");
+                    CampReport.generateList(campList);
+                    break;
+                }
+
+                case 5:
                 {
                     System.out.println("----");
                     System.out.println("Exit");
@@ -190,6 +199,6 @@ public class CampCommiteeCampMenu {
                 }
             }
         } 
-        while (x != 4);
+        while (x != 5);
     }
 }

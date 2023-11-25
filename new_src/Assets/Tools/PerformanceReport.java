@@ -32,7 +32,12 @@ public class PerformanceReport {
                         writer.newLine();
                         writer.write("Enquiries Answered: ");
                         writer.newLine();
-                        currentPerson.getEnquiryAnswered();
+                        for(int i = 0; i < currentPerson.getEnquiryAnswered().size(); i++) {
+                            writer.write(currentPerson.getEnquiryAnswered().get(i).getTitle());
+                            writer.newLine();
+                            writer.write(currentPerson.getEnquiryAnswered().get(i).getContent());
+                            writer.newLine();
+                        }
                         writer.newLine();
                         writer.write("Suggestions: ");
                         writer.newLine();
