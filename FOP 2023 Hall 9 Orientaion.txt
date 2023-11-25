@@ -1,0 +1,11 @@
+------------------------------------ Camp Report ------------------------------------
+Camp Name: FOP 2023 Hall 9 Orientaion
+Camp Date: 19/10/2023
+Camp Location: Hall 9
+Camp Description: fa dfdsf dsfds fdsf sfsa fsf dsfsdf dsfs dfsdf sdfs dfsdf dsfasd fdsf dsfsda
+Camp Slots: 120 / 117
+------------------------------------ Attendance List ------------------------------------
+Name, Role, 
+RAWAL, Student, 
+LIU , CampCommittee, 
+LEE , CampCommittee, 
