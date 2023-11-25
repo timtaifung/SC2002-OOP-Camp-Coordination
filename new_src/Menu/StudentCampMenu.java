@@ -20,7 +20,7 @@ public class StudentCampMenu {
             System.out.println("------------------------------------------------------");
             System.out.println("----------------------");
             System.out.println("1. View Camp Details");
-            System.out.println("2. Apply Camp Commitee");
+            System.out.println("2. Apply Camp Committee");
             System.out.println("3. Leave Camp");
             System.out.println("4. Camp Enquiry");
             System.out.println("5. Back to Main Menu");
@@ -41,7 +41,7 @@ public class StudentCampMenu {
                 case 2: 
                 {
                     System.out.println("-------------------");
-                    System.out.println("Apply Camp Commitee");
+                    System.out.println("Apply Camp Committee");
                     System.out.println("-------------------\n");
                     if (CampManager.applyCampCommitee(currentStudent, currentCamp, campCommitteesList)){
                         currentStudent.setRole("CampCommittee");
