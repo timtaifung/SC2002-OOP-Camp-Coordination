@@ -7,8 +7,7 @@ import Assets.QnA.Suggestion.Suggestion;
 import Assets.Roles.CampCommittee;
 import Assets.Roles.Student;
 import Menu.CampCommiteeCampMenus.CampCommiteeCampMenu;
-import Menu.StudentCampMenu;
-import Menu.StudentMenu.StudentMenuOption;
+import Menu.StudentCamps.StudentCampMenu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -46,6 +45,7 @@ public class InspectCampOption implements StudentMenuOption {
                 break;
             }
         }
+//        StudentCampMenu.menu(currentUser, campChoice, campCommitteeList, enquiryList);
         StudentCampMenu.menu(currentUser, campChoice, campCommitteeList, enquiryList);
     }
 }
