@@ -21,7 +21,6 @@ public class StaffCampMenu {
     private static final Scanner sc = new Scanner(System.in);
 
     private static void displayStaffCampMenu() {
-        // ... (unchanged menu display code)
     }
 
     public static void menu(User currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList, ArrayList<CampCommittee> campCommitteeList) {
@@ -39,9 +38,22 @@ public class StaffCampMenu {
             System.out.println("------ Personal Detail ------");
             System.out.println("1. Change password");
             System.out.println("-----------------------------\n");
-
-            displayStaffCampMenu();
-
+            System.out.println("----------- Camps -----------");
+            System.out.println("2. View all Camps");
+            System.out.println("3. View own Camps");
+            System.out.println("4. Create new Camp");
+            System.out.println("5. Edit/Delete camp");
+            System.out.println("-----------------------------\n");
+            System.out.println("------------ QnA ------------");
+            System.out.println("6. View/Reply Enquiries");
+            System.out.println("7. View/Approve Suggestions");
+            System.out.println("-----------------------------\n");
+            System.out.println("---------- Reports ----------");
+            System.out.println("8. Generate reports");
+            System.out.println("9. Performance reports");
+            System.out.println("10. Logout");
+            System.out.println("-----------------------------\n");
+            System.out.println("Please enter your choice: ");
             choice1 = sc.nextInt();
             if (choice1 == 10) {
                 return;
