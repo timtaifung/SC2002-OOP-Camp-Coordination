@@ -85,6 +85,7 @@ public class SuggestionManager extends Suggestion {
                 System.out.println("----------------------------");
                 System.out.println("Enter your suggestion title:");
                 System.out.println("----------------------------\n");
+                sc.nextLine();
                 String title = sc.nextLine();
                 currentSuggestion.setTitle(title);
                 break;
@@ -95,6 +96,7 @@ public class SuggestionManager extends Suggestion {
                 System.out.println("------------------------------");
                 System.out.println("Enter your suggestion content:");
                 System.out.println("------------------------------\n");
+                sc.nextLine();
                 String content = sc.nextLine();
                 currentSuggestion.setContent(content);
                 break;
