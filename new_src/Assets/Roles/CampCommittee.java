@@ -7,17 +7,20 @@ import Assets.Roles.CampCommittee;
 
 public class CampCommittee extends Student
 {
+	private Camp camp;
     private int point;
     private ArrayList<Suggestion> suggestions;
-	private ArrayList<CampCommittee> camps;
 
-    public CampCommittee(Student student) 
+    public CampCommittee(Student student, Camp camp)
     {
-        super(student.getName(), student.getEmail(), student.getFaculty(), "CampCommittee"); 
+        super(student.getName(), student.getEmail(), student.getFaculty(), "CampCommittee");
+		this.camp = camp;
         this.point = 0;
         this.suggestions = new ArrayList<Suggestion>();
-		this.camps = new ArrayList<CampCommittee>();
     }
+	public Camp getCamp(){
+		return this.camp;
+	}
 
     public void setpoint() 
     {
@@ -33,11 +36,6 @@ public class CampCommittee extends Student
 		return this.point;
 	}
 
-	public ArrayList<CampCommittee> getCamps()
-	{
-		return this.camps;
-	}
-	
 	public ArrayList<Suggestion> getSuggestionList() 
     {
 		return suggestions;

@@ -31,7 +31,16 @@ public class EnquiryViewer extends Enquiry
         {
 			if(currentEnquiry.getCreatedBy().equals(currentUser))
             {
-				System.out.println(i+". "+currentEnquiry.getTitle());
+				System.out.print(i+". "+currentEnquiry.getTitle() +"     ");
+				if (currentEnquiry.getProcessedStatus())
+				{
+					System.out.println("Processed");
+					System.out.println("Reply: " + currentEnquiry.getreply());
+				}
+				else
+				{
+					System.out.println("Not Processed");
+				}
 			}
 		}
 	}

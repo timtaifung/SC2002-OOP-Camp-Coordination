@@ -31,7 +31,7 @@ public class SuggestionViewer extends Suggestion
         {
             if(currentSuggestion.getCreatedBy().equals(currentUser))
             {
-                System.out.println(i + ". " + currentSuggestion.getTitle());
+                System.out.println(i + ". " + currentSuggestion.getTitle() + " " + currentSuggestion.getCheckedStatus());
             }
         }
     }

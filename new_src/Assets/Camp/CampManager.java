@@ -230,31 +230,43 @@ public class CampManager
 
     public static void applyCampCommitee(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList)
     {
-        if(currentCamp.getCommiteeSlots() > 0 && !currentStudent.getCampCommitteeList().contains(currentCamp))
+        if(currentCamp.getCommiteeSlots()==0)
         {
-            currentCamp.getCommiteeList().add(currentStudent);
-            currentStudent.addCampCommittee(currentCamp);
-            CampCommittee campCommittee = new CampCommittee(currentStudent);
-            campCommitteeList.add(campCommittee);
-            System.out.println("Applied successfully!");
+            System.out.println("There are no more camp commitee slots available!\n");
+            return;
         }
-
-        else if (currentStudent.getCampCommitteeList().contains(currentCamp))
+        //Checking if student is already a camp commitee for this camp
+        if(currentCamp.getCommiteeList().contains(currentStudent))
         {
             System.out.println("You are already a camp commitee!\n");
+            return;
         }
-
-        else
+        //Checking if student is already a camp commitee for another camp
+        for(CampCommittee currentCampCommittee: campCommitteeList)
         {
-            System.out.println("Camp commitee slots are full!\n");
+            if(currentCampCommittee.getName().equals(currentStudent.getName())){
+                System.out.println("You are already a camp Commitee for another Camp!\n");
+                return;
+            }
         }
+        CampCommittee campCommittee = new CampCommittee(currentStudent, currentCamp);
+        campCommitteeList.add(campCommittee);
+        currentCamp.getCommiteeList().add(currentStudent);
+        currentCamp.setCommiteeSlots(currentCamp.getCommiteeSlots()-1);
+        System.out.println("Applied successfully!\n");
     }
 
-    public static void leaveCamp(Student currentStudent, Camp currentCamp) 
+    public static void leaveCamp(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList)
     {
         currentCamp.getAttendanceList().remove(currentStudent);
         currentStudent.getStudentCampList().remove(currentCamp);
-        currentCamp.addBlackList(currentStudent);
+        if (currentCamp.getCommiteeList().contains(currentStudent))
+        {
+            campCommitteeList.remove(currentStudent);
+            currentCamp.getCommiteeList().remove(currentStudent);
+            currentCamp.setCommiteeSlots(currentCamp.getCommiteeSlots()+1);
+        }
+        currentCamp.getBlackList().add(currentStudent);
         System.out.println("Left camp successfully!\n");
     }
 }

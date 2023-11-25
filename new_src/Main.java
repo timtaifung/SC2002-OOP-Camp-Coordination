@@ -34,7 +34,7 @@ public class Main {
             {
                 case "Student":
                     Student currentUserStudent = (Student) currentUser;
-                    StudentCampMenu.menu(currentUserStudent, campList, enquiryList, suggestionList, campCommitteeList);
+                    MainMenu.menu(currentUserStudent, campList, enquiryList, suggestionList, campCommitteeList);
                     break;
                     
                 case "Staff":
