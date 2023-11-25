@@ -27,7 +27,6 @@ public class MainMenu {
             System.out.println("7. Logout");
             System.out.println("-----------------------------\n");
             System.out.println("Please enter your choice: ");
-            System.out.println("Please enter your choice: ");
             x = sc.nextInt();
 
             if (x == 7) {
@@ -52,11 +51,11 @@ public class MainMenu {
     private static StudentMenuOption createOption(int choice) {
         switch (choice) {
             case 1:
-                return new Menu.ChangePasswordOption();
+                return new Menu.StudentMenu.ChangePasswordOption();
             case 2:
                 return new ViewAllCampsOption();
             case 3:
-                return new Menu.ViewAvailableCampsOption();
+                return new Menu.StudentMenu.ViewAvailableCampsOption();
             case 4:
                 return new RegisterCampOption();
             case 5:

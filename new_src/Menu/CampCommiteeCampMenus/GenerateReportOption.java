@@ -1,4 +1,4 @@
-package Menu;
+package Menu.CampCommiteeCampMenus;
 
 import Assets.QnA.Enquiry.Enquiry;
 import Assets.QnA.Suggestion.Suggestion;

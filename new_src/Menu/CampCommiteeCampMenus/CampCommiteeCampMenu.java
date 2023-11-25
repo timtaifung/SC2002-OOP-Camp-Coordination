@@ -5,11 +5,10 @@ import Assets.QnA.Enquiry.Enquiry;
 import Assets.QnA.Suggestion.Suggestion;
 import Assets.Roles.CampCommittee;
 import Menu.CampCommiteeCampMenus.CampMenuOption;
-import Menu.CampEnquiryOption;
-import Menu.CampSuggestionsOption;
-import Menu.GenerateReportOption;
-import Menu.ViewCampDetailsOption;
-
+import Menu.CampCommiteeCampMenus.CampEnquiryOption;
+import Menu.CampCommiteeCampMenus.CampSuggestionsOption;
+import Menu.CampCommiteeCampMenus.GenerateReportOption;
+import Menu.CampCommiteeCampMenus.ViewCampDetailsOption;
 import java.util.ArrayList;
 import java.util.Scanner;
 

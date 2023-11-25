@@ -1,4 +1,4 @@
-package Menu;
+package Menu.StudentMenu;
 
 import Assets.Camp.Camp;
 import Assets.Login.ChangePassword;

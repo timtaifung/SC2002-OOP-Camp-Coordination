@@ -1,4 +1,4 @@
-package Menu;
+package Menu.CampCommiteeCampMenus;
 
 import Assets.Camp.CampManager;
 import Assets.Camp.Camp;
