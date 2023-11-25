@@ -50,7 +50,7 @@ public class CampCommiteeCampMenu {
                         switch (y) {
                             case 1: {
                                 System.out.println("View All Camp Enquiry");
-                                EnquiryManager.viewAllEnquiry(enquiryList);
+                                EnquiryViewer.getAllEnquiry(enquiryList);
                                 break;
                             }
                             case 2: {

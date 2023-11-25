@@ -10,13 +10,15 @@ public class EnquiryViewer extends Enquiry {
     }
 
     public static Boolean getAllEnquiry(ArrayList<Enquiry> enquiryList) {
-        if (enquiryList.isEmpty()) {
+        if (enquiryList.isEmpty()) 
+        {
             System.out.println("There are no enquiries currently!\n");
             return false;
         }
         Integer i = 1;
         for (Enquiry currentEnquiry : enquiryList) {
             System.out.println(i + ". " + currentEnquiry.getTitle());
+            i += 1;
         }
         return true;
     }

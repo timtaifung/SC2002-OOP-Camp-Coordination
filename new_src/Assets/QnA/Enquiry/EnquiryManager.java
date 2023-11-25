@@ -11,12 +11,6 @@ public class EnquiryManager extends Enquiry {
         super(currentUser);
     }
 
-    public static void viewAllEnquiry(ArrayList<Enquiry> enquiryList) {
-        for (int i = 0; i < enquiryList.size(); i++) {
-            System.out.println((i + 1) + ". " + enquiryList.get(i).getTitle());
-        }
-    }
-
     public static void replyEnquiry(Enquiry currentEnquiry) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your reply:");
