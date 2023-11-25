@@ -1,5 +1,6 @@
-package Assets.Camp;
+package Assets.Tools;
 
+import Assets.Camp.Camp;
 import Assets.Roles.User;
 
 import java.io.BufferedWriter;
@@ -23,7 +24,7 @@ public class CampReport {
 
             /*------------------------Filter Selection ----------------------------------*/
             int choice;
-            ArrayList<String> list = new ArrayList<>(Arrays.asList("Student", "CampCommitee", "Staff"));
+            ArrayList<String> list = new ArrayList<>(Arrays.asList("Student", "CampCommittee", "Staff"));
             while (true) {
                 if (list.size() == 0) {
                     System.out.println("------You Have Removed All Possible Filters---------------!");

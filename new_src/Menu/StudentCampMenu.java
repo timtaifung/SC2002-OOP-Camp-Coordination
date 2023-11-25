@@ -43,7 +43,9 @@ public class StudentCampMenu {
                     System.out.println("-------------------");
                     System.out.println("Apply Camp Commitee");
                     System.out.println("-------------------\n");
-                    CampManager.applyCampCommitee(currentStudent, currentCamp, campCommitteesList);
+                    if (CampManager.applyCampCommitee(currentStudent, currentCamp, campCommitteesList)){
+                        currentStudent.setRole("CampCommittee");
+                    }
                     break;
                 }
 

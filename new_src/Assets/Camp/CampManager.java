@@ -286,14 +286,14 @@ public class CampManager {
         System.out.println("--------------------------------------------");
     }
 
-    public static void applyCampCommitee(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList) 
+    public static Boolean applyCampCommitee(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList)
     {
         if (currentCamp.getCommiteeSlots() == 0) 
         {
             System.out.println("------------------------------------------------");
             System.out.println("There are no more camp commitee slots available!");
             System.out.println("------------------------------------------------\n");
-            return;
+            return false;
         }
         //Checking if student is already a camp commitee for this camp
         if (currentCamp.getCommiteeList().contains(currentStudent)) 
@@ -301,7 +301,7 @@ public class CampManager {
             System.out.println("--------------------------------");
             System.out.println("You are already a camp commitee!");
             System.out.println("--------------------------------\n");
-            return;
+            return false;
         }
         //Checking if student is already a camp commitee for another camp
         for (CampCommittee currentCampCommittee : campCommitteeList) 
@@ -311,7 +311,7 @@ public class CampManager {
                 System.out.println("-------------------------------------------------");
                 System.out.println("You are already a camp Commitee for another Camp!");
                 System.out.println("-------------------------------------------------\n");
-                return;
+                return false;
             }
         }
         CampCommittee campCommittee = new CampCommittee(currentStudent, currentCamp);
@@ -322,6 +322,7 @@ public class CampManager {
         System.out.println("---------------------");
         System.out.println("Applied successfully!");
         System.out.println("---------------------\n");
+        return true;
     }
 
     public static void leaveCamp(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList) {
