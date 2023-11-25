@@ -26,6 +26,7 @@ public class SuggestionViewer extends Suggestion {
         for (Suggestion currentSuggestion : suggestionList) {
             if (currentSuggestion.getCreatedBy().equals(currentUser)) {
                 System.out.println(i + ". " + currentSuggestion.getTitle() + " " + currentSuggestion.getCheckedStatus());
+                i++;
             }
         }
     }
@@ -34,6 +35,7 @@ public class SuggestionViewer extends Suggestion {
         Integer i = 1;
         for (Suggestion currentSuggestion : suggestionList) {
             System.out.println(i + ". " + currentSuggestion.getTitle());
+            i++;
         }
     }
 
@@ -42,6 +44,7 @@ public class SuggestionViewer extends Suggestion {
         for (Suggestion currentSuggestion : suggestionList) {
             if (!currentSuggestion.getApprovedStatus()) {
                 System.out.println(i + ". " + currentSuggestion.getTitle());
+                i++;
             }
         }
     }
@@ -51,6 +54,7 @@ public class SuggestionViewer extends Suggestion {
         for (Suggestion currentSuggestion : suggestionList) {
             if (currentSuggestion.getApprovedStatus()) {
                 System.out.println(i + ". " + currentSuggestion.getTitle());
+                i++;
             }
         }
     }
