@@ -116,7 +116,9 @@ public class StaffCampMenu {
                     if (!EnquiryViewer.getAllEnquiry(enquiryList)) {
                         break;
                     }
+                    System.out.println("------------------------------");
                     System.out.println("Select an enquiry to reply to:");
+                    System.out.println("------------------------------\n");
                     int eChoice = sc.nextInt();
                     Enquiry currentEnquiry = enquiryList.get(eChoice - 1);
                     EnquiryManager.replyEnquiry(currentEnquiry);
@@ -128,7 +130,9 @@ public class StaffCampMenu {
                         break;
                     }
                     SuggestionViewer.getAllSuggestion(suggestionList);
+                    System.out.println("--------------------------------------");
                     System.out.println("Select a suggestion to approve/reject:");
+                    System.out.println("--------------------------------------\n");
                     int sChoice = sc.nextInt();
                     Suggestion currentSuggestion = suggestionList.get(sChoice - 1);
                     SuggestionManager.approveSuggestion(currentSuggestion);
@@ -140,11 +144,15 @@ public class StaffCampMenu {
                     break;
 
                 case 9:
+                    System.out.println("------------------");
                     System.out.println("Leaving staff menu");
+                    System.out.println("------------------\n");
                     return;
 
                 default:
+                    System.out.println("------------------------------------");
                     System.out.println("Invalid choice! Please choose again!");
+                    System.out.println("------------------------------------\n");
                     break;
 
             }
