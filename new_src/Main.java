@@ -6,7 +6,7 @@ import Assets.QnA.Suggestion.Suggestion;
 import Assets.Roles.CampCommittee;
 import Assets.Roles.Student;
 import Assets.Roles.User;
-import Menu.StaffCampMenu;
+import Menu.StaffCampMenus.StaffCampMenu;
 import Menu.StudentMenu.MainMenu;
 
 import java.util.ArrayList;
