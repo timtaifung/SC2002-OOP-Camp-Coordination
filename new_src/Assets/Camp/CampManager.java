@@ -11,7 +11,7 @@ public class CampManager {
     public static Camp createCamp(User currentUser) {
         Camp camp = new Camp(currentUser);
         Scanner sc = new Scanner(System.in);
-        System.out.println("------Create Camp------");
+        System.out.println("------ Create Camp -------");
         System.out.print("Camp Name: ");
         String campName = sc.nextLine();
         System.out.print("Date of Camp: ");
@@ -30,6 +30,7 @@ public class CampManager {
         System.out.print("Short Description: ");
         String result = sc.nextLine();
         System.out.println("Camp created successfully!\n");
+        System.out.println("--------------------------");
 
         camp.setName(campName);
         camp.setDateofCamp(dateOfCamp);
