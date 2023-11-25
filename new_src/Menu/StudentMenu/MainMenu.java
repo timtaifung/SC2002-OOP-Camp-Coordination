@@ -5,12 +5,11 @@ import Assets.QnA.Enquiry.Enquiry;
 import Assets.QnA.Suggestion.Suggestion;
 import Assets.Roles.CampCommittee;
 import Assets.Roles.Student;
-import Menu.StudentMenu.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MainMenu2 {
+public class MainMenu {
     public static void menu(Student currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList, ArrayList<CampCommittee> campCommitteeList) {
         int x = 0;
         do {
