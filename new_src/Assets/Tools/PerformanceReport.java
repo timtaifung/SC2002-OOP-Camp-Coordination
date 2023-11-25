@@ -47,6 +47,7 @@ public class PerformanceReport {
                             writer.write(currentPerson.getSuggestionList().get(i).getContent());
                             writer.newLine();
                         }
+                        writer.newLine();
                     }
 
                 }

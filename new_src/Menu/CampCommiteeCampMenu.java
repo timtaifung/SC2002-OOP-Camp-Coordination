@@ -20,6 +20,7 @@ public class CampCommiteeCampMenu {
         int x = 0;
         do 
         {
+
             System.out.println("Main Menu -> Camp Committee" + currentCamp.getName() + " Camp Menu");
             System.out.println("--------------------");
             System.out.println("1. View Camp Details");
@@ -30,6 +31,9 @@ public class CampCommiteeCampMenu {
             System.out.println("--------------------\n");
             Scanner sc = new Scanner(System.in);
             x = sc.nextInt();
+            if(x==5){
+                break;
+            }
             switch (x) 
             {
                 case 1: 
@@ -72,6 +76,10 @@ public class CampCommiteeCampMenu {
                                 System.out.println("Please enter your choice: ");
                                 Integer enquiryIndex = sc.nextInt();
                                 Enquiry currentEnquiry = enquiryList.get(enquiryIndex - 1);
+                                if(currentEnquiry.getProcessedStatus()){
+                                    System.out.println("This enquiry has already been answered!");
+                                    break;
+                                }
                                 EnquiryManager.replyEnquiry(currentEnquiry);
                                 currentCampCommittee.addToEnquiryAnswered(currentEnquiry);
                                 currentCampCommittee.setpoint();
