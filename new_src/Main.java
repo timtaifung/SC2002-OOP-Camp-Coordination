@@ -8,6 +8,7 @@ import Assets.Roles.Student;
 import Assets.Roles.User;
 import Menu.MainMenu;
 import Menu.StaffCampMenu;
+import Menu.StudentMenu.MainMenu2;
 
 import java.util.ArrayList;
 
@@ -34,7 +35,7 @@ public class Main {
             switch (currentUser.getRole().toString()) {
                 case "Student":
                     Student currentUserStudent = (Student) currentUser;
-                    MainMenu.menu(currentUserStudent, campList, enquiryList, suggestionList, campCommitteeList);
+                    MainMenu2.menu(currentUserStudent, campList, enquiryList, suggestionList, campCommitteeList);
                     break;
 
                 case "Staff":
