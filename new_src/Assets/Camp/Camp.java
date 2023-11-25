@@ -12,7 +12,7 @@ public class Camp {
     private ArrayList<User> attendanceList;
     private ArrayList<User> commiteeList;
     private String dateOfCamp;
-    private String registeraionClosing;
+    private String registrationClosing;
     private String grouping;
     private Boolean NTU;  //if grouping==NTU, NTu == True
     private String location;
@@ -58,11 +58,11 @@ public class Camp {
     }
 
     public String getRegisteraionClosing() {
-        return this.registeraionClosing;
+        return this.registrationClosing;
     }
 
-    public void setRegisteraionClosing(String registeraionClosing) {
-        this.registeraionClosing = registeraionClosing;
+    public void setRegistrationClosing(String registrationClosing) {
+        this.registrationClosing = registrationClosing;
     }
 
     public String getGrouping() {
@@ -104,7 +104,8 @@ public class Camp {
 
     public void setCommiteeSlots(Integer commiteeSlots) {
         this.commiteeSlots = commiteeSlots;
-        if (this.commiteeSlots > this.totalSlots) {
+        if (this.commiteeSlots > this.totalSlots) 
+        {
             System.out.println("Committee slots cannot be more than total slots");
         }
     }
