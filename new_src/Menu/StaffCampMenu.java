@@ -57,10 +57,10 @@ public class StaffCampMenu {
             switch (choice1) 
             {
                 case 1:
-                    System.out.println("-----------------------------");
+                    System.out.println("------------------------");
                     System.out.println("Staff -> Change Password");
                     System.out.println("Input new Password: ");
-                    System.out.println("-----------------------------\n");
+                    System.out.println("------------------------\n");
                     sc.nextLine();
                     ChangePassword.changePassword(currentUser);
                     break;
@@ -81,10 +81,13 @@ public class StaffCampMenu {
                     break;
 
                 case 5:
-                    do {
+                    do 
+                    {
+                        System.out.println("-------------------");
                         System.out.println("1. Edit Camp");
                         System.out.println("2. Delete Camp");
                         System.out.println("3. Back to homepage");
+                        System.out.println("-------------------\n");
 
                         choice2 = sc.nextInt();
                         switch (choice2) {
@@ -100,7 +103,9 @@ public class StaffCampMenu {
                                 break;
 
                             default:
+                                System.out.println("------------------------------------");
                                 System.out.println("Invalid choice! Please choose again!");
+                                System.out.println("------------------------------------\n");
                                 break;
                         }
                     } while (choice2 != 3);
