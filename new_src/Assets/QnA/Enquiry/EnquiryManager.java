@@ -27,6 +27,7 @@ public class EnquiryManager extends Enquiry {
         System.out.println("----------------");
         System.out.println("Reply submitted!");
         System.out.println("----------------\n");
+
     }
 
     public static void newEnquiry(ArrayList<Enquiry> enquiryList, User currentUser, Camp currentCamp) {

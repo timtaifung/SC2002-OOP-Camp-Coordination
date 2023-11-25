@@ -66,11 +66,13 @@ public class CampCommiteeCampMenu {
                                 System.out.println("-------------------");
                                 System.out.println("Answer Camp Enquiry");
                                 System.out.println("-------------------\n");
-                                EnquiryViewer.viewMyEnquiry(enquiryList, currentCampCommittee);
+                                EnquiryViewer.getAllEnquiry(enquiryList);
                                 System.out.println("Please enter your choice: ");
                                 Integer enquiryIndex = sc.nextInt();
                                 Enquiry currentEnquiry = enquiryList.get(enquiryIndex - 1);
                                 EnquiryManager.replyEnquiry(currentEnquiry);
+                                currentCampCommittee.addToEnquiryAnswered(currentEnquiry);
+                                currentCampCommittee.setpoint();
                                 break;
                             }
 
@@ -129,6 +131,7 @@ public class CampCommiteeCampMenu {
                                 System.out.println("-------------------------");
                                 System.out.println("Camp Suggestions created!");
                                 System.out.println("-------------------------\n");
+                                currentCampCommittee.setpoint();
                                 break;
                             }
 

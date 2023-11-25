@@ -1,5 +1,5 @@
 import Assets.Camp.Camp;
-import Assets.ExcelReader;
+import Assets.Tools.ExcelReader;
 import Assets.Login.Login;
 import Assets.QnA.Enquiry.Enquiry;
 import Assets.QnA.Suggestion.Suggestion;
@@ -38,7 +38,7 @@ public class Main {
                     break;
 
                 case "Staff":
-                    StaffCampMenu.menu(currentUser, campList, enquiryList, suggestionList);
+                    StaffCampMenu.menu(currentUser, campList, enquiryList, suggestionList, campCommitteeList);
                     break;
             }
         }

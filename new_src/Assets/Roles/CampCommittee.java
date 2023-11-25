@@ -1,6 +1,7 @@
 package Assets.Roles;
 
 import Assets.Camp.Camp;
+import Assets.QnA.Enquiry.Enquiry;
 import Assets.QnA.Suggestion.Suggestion;
 
 import java.util.ArrayList;
@@ -9,16 +10,26 @@ public class CampCommittee extends Student {
     private Camp camp;
     private int point;
     private ArrayList<Suggestion> suggestions;
+    private ArrayList<Enquiry> enquiryAnswered;
 
     public CampCommittee(Student student, Camp camp) {
         super(student.getName(), student.getEmail(), student.getFaculty(), "CampCommittee");
         this.camp = camp;
         this.point = 0;
         this.suggestions = new ArrayList<Suggestion>();
+        this.enquiryAnswered = new ArrayList<Enquiry>();
     }
 
     public Camp getCamp() {
         return this.camp;
+    }
+
+    public void getEnquiryAnswered() {
+        for (Enquiry e : enquiryAnswered) {
+            System.out.println(e.getTitle());
+            System.out.println(e.getContent());
+            System.out.println(e.getreply());
+        }
     }
 
     public void setpoint() {
@@ -44,4 +55,6 @@ public class CampCommittee extends Student {
     public void addToSuggestionList(Suggestion suggest) {
         suggestions.add(suggest);
     }
+
+    public void addToEnquiryAnswered(Enquiry e) {enquiryAnswered.add(e);}
 }

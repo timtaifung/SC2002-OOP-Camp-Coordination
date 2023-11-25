@@ -1,17 +1,16 @@
 package Menu;
 
-import Assets.Camp.Camp;
-import Assets.Camp.CampManager;
-import Assets.Camp.CampReport;
-import Assets.Camp.CampViewer;
+import Assets.Camp.*;
 import Assets.QnA.Enquiry.Enquiry;
 import Assets.QnA.Enquiry.EnquiryManager;
 import Assets.QnA.Enquiry.EnquiryViewer;
 import Assets.QnA.Suggestion.Suggestion;
 import Assets.QnA.Suggestion.SuggestionManager;
 import Assets.QnA.Suggestion.SuggestionViewer;
+import Assets.Roles.CampCommittee;
 import Assets.Roles.User;
 import Assets.Login.ChangePassword;
+import Assets.Tools.PerformanceReport;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -32,12 +31,13 @@ public class StaffCampMenu {
         System.out.println("-----------------------------\n");
         System.out.println("---------- Reports ----------");
         System.out.println("8. Generate reports");
-        System.out.println("9. Logout");
+        System.out.println("9. Performance reports");
+        System.out.println("10. Logout");
         System.out.println("-----------------------------\n");
         System.out.println("Please enter your choice: ");
     }
 
-    public static void menu(User currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList) {
+    public static void menu(User currentUser, ArrayList<Camp> campList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList, ArrayList<CampCommittee> campCommitteeList) {
         int choice1, choice2;
 
         do {
@@ -49,7 +49,7 @@ public class StaffCampMenu {
             displayStaffCampMenu();
 
             choice1 = sc.nextInt();
-            if (choice1 == 9) 
+            if (choice1 == 10)
             {
                 return;
             }
@@ -142,8 +142,12 @@ public class StaffCampMenu {
                     System.out.println("Staff -> Generate reports");
                     CampReport.generateList(campList);
                     break;
-
                 case 9:
+                    System.out.println("Staff -> Performance reports");
+                    PerformanceReport.generateList(campCommitteeList, campList);
+                    break;
+
+                case 10:
                     System.out.println("------------------");
                     System.out.println("Leaving staff menu");
                     System.out.println("------------------\n");
@@ -157,6 +161,6 @@ public class StaffCampMenu {
 
             }
         }
-        while (choice1 != 9);
+        while (choice1 != 10);
     }
 }

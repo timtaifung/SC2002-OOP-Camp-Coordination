@@ -316,7 +316,8 @@ public class CampManager {
         }
         CampCommittee campCommittee = new CampCommittee(currentStudent, currentCamp);
         campCommitteeList.add(campCommittee);
-        currentCamp.getCommiteeList().add(currentStudent);
+        CampCommittee campcommitee = new CampCommittee(currentStudent, currentCamp);
+        currentCamp.getCommiteeList().add(campcommitee);
         currentCamp.setCommiteeSlots(currentCamp.getCommiteeSlots() - 1);
         System.out.println("---------------------");
         System.out.println("Applied successfully!");

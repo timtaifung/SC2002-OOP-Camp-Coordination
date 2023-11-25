@@ -1,5 +1,6 @@
 package Assets.Camp;
 
+import Assets.Roles.CampCommittee;
 import Assets.Roles.User;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ public class Camp {
     private Boolean visiblity;
     private String name;
     private ArrayList<User> attendanceList;
-    private ArrayList<User> commiteeList;
+    private ArrayList<CampCommittee> commiteeList;
     private String dateOfCamp;
     private String registrationClosing;
     private String grouping;
@@ -25,7 +26,7 @@ public class Camp {
 
     public Camp(User createdBy) {
         this.attendanceList = new ArrayList<User>();
-        this.commiteeList = new ArrayList<User>();
+        this.commiteeList = new ArrayList<CampCommittee>();
         this.blackList = new ArrayList<User>();
         this.createdBy = createdBy;
         this.visiblity = true;
@@ -135,7 +136,7 @@ public class Camp {
         return this.availableSlots;
     }
 
-    public ArrayList<User> getCommiteeList() {
+    public ArrayList<CampCommittee> getCommiteeList() {
         return this.commiteeList;
     }
 
