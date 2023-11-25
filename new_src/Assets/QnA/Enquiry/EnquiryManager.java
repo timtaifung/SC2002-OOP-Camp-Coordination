@@ -15,14 +15,18 @@ public class EnquiryManager extends Enquiry {
         Scanner sc = new Scanner(System.in);
         System.out.println("----------------");
         System.out.println("Enquiry content:");
-        System.out.println(currentEnquiry.getContent());
         System.out.println("----------------\n");
+        System.out.println(currentEnquiry.getContent());
 
+        System.out.println("-----------------");
         System.out.println("Enter your reply:");
+        System.out.println("-----------------\n");
         String y = sc.nextLine();
         currentEnquiry.setreply(y);
         currentEnquiry.setProcessedStatus(true);
+        System.out.println("----------------");
         System.out.println("Reply submitted!");
+        System.out.println("----------------\n");
     }
 
     public static void newEnquiry(ArrayList<Enquiry> enquiryList, User currentUser, Camp currentCamp) {
