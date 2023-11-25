@@ -33,17 +33,20 @@ public class MainMenu {
             System.out.println("Please enter your choice: ");
             x = sc.nextInt();
 
-            if (x == 7) {
+            if (x == 7) 
+            {
+                System.out.println("------------------------");
                 System.out.println("Successfully logged out!");
+                System.out.println("------------------------\n");
                 break;
             }
 
             switch (x) {
                 case 1:
-                    System.out.println("\n-----------------------------");
+                    System.out.println("--------------------------");
                     System.out.println("Student -> Change Password");
                     System.out.println("Input new Password: ");
-                    System.out.println("-----------------------------");
+                    System.out.println("--------------------------\n");
                     ChangePassword.changePassword(currentUser);
                     break;
                 case 2:
@@ -64,15 +67,23 @@ public class MainMenu {
 
                 case 6: {
                     boolean isCampCommittee = false;
-                    if (currentUser.getStudentCampList().isEmpty()) {
-                        System.out.println("You have not registered for any camps!\n");
+                    if (currentUser.getStudentCampList().isEmpty()) 
+                    {
+                        System.out.println("--------------------------------------");
+                        System.out.println("You have not registered for any camps!");
+                        System.out.println("--------------------------------------\n");
                         break;
                     }
+
+                    System.out.println("-----------------------");
                     System.out.println("Inspect Individual Camp");
+                    System.out.println("-----------------------\n");
+
                     if (!CampViewer.showMyRegisteredCamp(currentUser)) {
                         break;
                     }
-                    System.out.println("Please enter your choice: ");
+
+                    System.out.println("Please enter your choice:\n");
                     Integer campIndex = sc.nextInt();
                     Camp campChoice = currentUser.getStudentCampList().get(campIndex - 1);
                     for (CampCommittee currentCampCommittee : campCommitteeList) {
@@ -88,7 +99,9 @@ public class MainMenu {
                 }
 
                 default:
+                    System.out.println("--------------");
                     System.out.println("Invalid input!");
+                    System.out.println("--------------\n");
             }
         }
         while (x != 7);
