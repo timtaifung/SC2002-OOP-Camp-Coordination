@@ -1,7 +1,7 @@
 package Menu.StudentCamps;
 
-import Assets.Camp.CampManager;
 import Assets.Camp.Camp;
+import Assets.Camp.Tools.LeaveCamp;
 import Assets.QnA.Enquiry.Enquiry;
 import Assets.Roles.CampCommittee;
 import Assets.Roles.Student;
@@ -22,7 +22,7 @@ public class LeaveCampOption implements StudentMenuOption {
         sc.nextLine();
         String choice = sc.nextLine();
         if (choice.equals("Y"))
-            CampManager.leaveCamp(currentStudent, currentCamp, campCommitteesList);
+            LeaveCamp.leaveCamp(currentStudent, currentCamp, campCommitteesList);
         else if (choice.equals("N"))
             return;
         else

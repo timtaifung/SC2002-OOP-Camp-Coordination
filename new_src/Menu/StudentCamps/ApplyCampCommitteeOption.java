@@ -1,7 +1,7 @@
 package Menu.StudentCamps;
 
-import Assets.Camp.CampManager;
 import Assets.Camp.Camp;
+import Assets.Camp.Tools.ApplyCampCommittee;
 import Assets.QnA.Enquiry.Enquiry;
 import Assets.Roles.CampCommittee;
 import Assets.Roles.Student;
@@ -14,7 +14,7 @@ public class ApplyCampCommitteeOption implements StudentMenuOption {
         System.out.println("-------------------");
         System.out.println("Apply Camp Committee");
         System.out.println("-------------------\n");
-        if (CampManager.applyCampCommitee(currentStudent, currentCamp, campCommitteesList)) {
+        if (ApplyCampCommittee.applyCampCommitee(currentStudent, currentCamp, campCommitteesList)) {
             currentStudent.setRole("CampCommittee");
         }
     }

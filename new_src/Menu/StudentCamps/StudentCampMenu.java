@@ -1,7 +1,6 @@
 package Menu.StudentCamps;
 
 import Assets.Camp.Camp;
-import Assets.Camp.CampManager;
 import Assets.QnA.Enquiry.Enquiry;
 import Assets.Roles.CampCommittee;
 import Assets.Roles.Student;
