@@ -18,7 +18,7 @@ public class EnquiryViewer extends Enquiry {
         Integer i = 1;
         for (Enquiry currentEnquiry : enquiryList) {
             System.out.println(i + ". " + currentEnquiry.getTitle());
-            i += 1;
+            i++;
         }
         return true;
     }
@@ -34,6 +34,7 @@ public class EnquiryViewer extends Enquiry {
                 } else {
                     System.out.println("Not Processed");
                 }
+                i++;
             }
         }
     }
