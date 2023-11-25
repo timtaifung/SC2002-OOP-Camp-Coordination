@@ -2,8 +2,10 @@ package Menu.StudentCamps;
 
 import Assets.Camp.Camp;
 import Assets.QnA.Enquiry.Enquiry;
-import Assets.QnA.Enquiry.EnquiryManager;
-import Assets.QnA.Enquiry.EnquiryViewer;
+import Assets.QnA.Enquiry.Tools.EnquiryViewer;
+import Assets.QnA.Enquiry.Tools.EnquiryCreator;
+import Assets.QnA.Enquiry.Tools.EnquiryDeletor;
+import Assets.QnA.Enquiry.Tools.EnquiryEditor;
 import Assets.Roles.CampCommittee;
 import Assets.Roles.Student;
 
@@ -38,7 +40,7 @@ public class CampEnquiryOption implements StudentMenuOption {
                     System.out.println("-------------------");
                     System.out.println("Create Camp Enquiry");
                     System.out.println("-------------------\n");
-                    EnquiryManager.newEnquiry(enquiryList, currentStudent, currentCamp);
+                    EnquiryCreator.newEnquiry(enquiryList, currentStudent, currentCamp);
                     System.out.println("---------------------");
                     System.out.println("Camp Enquiry created!");
                     System.out.println("---------------------\n");
@@ -54,7 +56,7 @@ public class CampEnquiryOption implements StudentMenuOption {
                         System.out.println("Please enter your choice: ");
                         Integer enquiryIndex = sc.nextInt();
                         Enquiry currentEnquiry = enquiryList.get(enquiryIndex - 1);
-                        EnquiryManager.editEnquiry(currentEnquiry, currentStudent);
+                        EnquiryEditor.editEnquiry(currentEnquiry, currentStudent);
                         break;
                     }
 
@@ -68,7 +70,7 @@ public class CampEnquiryOption implements StudentMenuOption {
                     System.out.println("Please enter your choice: ");
                     Integer enquiryIndex = sc.nextInt();
                     Enquiry currentEnquiry = enquiryList.get(enquiryIndex - 1);
-                    EnquiryManager.deleteEnquiry(currentEnquiry, enquiryList);
+                    EnquiryDeletor.deleteEnquiry(currentEnquiry, enquiryList);
                     break;
 
                 case 5:

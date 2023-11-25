@@ -2,11 +2,12 @@ package Menu.CampCommiteeCampMenus;
 
 import Assets.Camp.Camp;
 import Assets.QnA.Enquiry.Enquiry;
-import Assets.QnA.Suggestion.SuggestionManager;
-import Assets.QnA.Suggestion.SuggestionViewer;
+import Assets.QnA.Suggestion.Tools.SuggestionViewer;
 import Assets.QnA.Suggestion.Suggestion;
+import Assets.QnA.Suggestion.Tools.SuggestionCreator;
+import Assets.QnA.Suggestion.Tools.SuggestionDeletor;
+import Assets.QnA.Suggestion.Tools.SuggestionEditor;
 import Assets.Roles.CampCommittee;
-import Menu.CampCommiteeCampMenus.CampMenuOption;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -43,7 +44,7 @@ public class CampSuggestionsOption implements CampMenuOption {
                     System.out.println("-----------------------");
                     System.out.println("Create Camp Suggestions");
                     System.out.println("-----------------------\n");
-                    SuggestionManager.newSuggestion(suggestionList, currentCampCommittee, currentCampCommittee);
+                    SuggestionCreator.newSuggestion(suggestionList, currentCampCommittee, currentCampCommittee);
                     System.out.println("-------------------------");
                     System.out.println("Camp Suggestions created!");
                     System.out.println("-------------------------\n");
@@ -60,7 +61,7 @@ public class CampSuggestionsOption implements CampMenuOption {
                     System.out.println("Please enter your choice: ");
                     Integer suggestionIndex = sc.nextInt();
                     Suggestion currentSuggestion = suggestionList.get(suggestionIndex - 1);
-                    SuggestionManager.editSuggestion(currentSuggestion, currentCampCommittee);
+                    SuggestionEditor.editSuggestion(currentSuggestion, currentCampCommittee);
                     break;
                 }
 
@@ -73,7 +74,7 @@ public class CampSuggestionsOption implements CampMenuOption {
                     System.out.println("Please enter your choice: ");
                     Integer suggestionIndex = sc.nextInt();
                     Suggestion currentSuggestion = suggestionList.get(suggestionIndex - 1);
-                    SuggestionManager.deleteSuggestion(currentSuggestion, suggestionList);
+                    SuggestionDeletor.deleteSuggestion(currentSuggestion, suggestionList);
                     break;
                 }
 

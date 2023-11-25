@@ -1,10 +1,11 @@
-package Assets.QnA.Suggestion;
+package Assets.QnA.Suggestion.Tools;
 
+import Assets.QnA.Suggestion.Suggestion;
 import Assets.Roles.User;
 
 import java.util.ArrayList;
 
-public class SuggestionViewer extends Suggestion 
+public class SuggestionViewer extends Suggestion
 {
     public SuggestionViewer(User currentUser) 
     {
