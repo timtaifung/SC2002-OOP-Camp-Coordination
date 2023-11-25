@@ -1,40 +1,32 @@
 package Assets.Login;
+
 import Assets.Roles.User;
 
 import java.util.Scanner;
 
-public class ChangePassword 
-{
-    private static boolean containsSpecialCharacter(String password) 
-    {
-        for (char c : password.toCharArray()) 
-        {
-            if (!Character.isLetterOrDigit(c)) 
-            {
+public class ChangePassword {
+    private static boolean containsSpecialCharacter(String password) {
+        for (char c : password.toCharArray()) {
+            if (!Character.isLetterOrDigit(c)) {
                 return true;
             }
         }
         return false;
     }
 
-    private static boolean containsNumericCharacter(String password) 
-    {
-        for (char c : password.toCharArray()) 
-        {
-            if (Character.isDigit(c)) 
-            {
+    private static boolean containsNumericCharacter(String password) {
+        for (char c : password.toCharArray()) {
+            if (Character.isDigit(c)) {
                 return true;
             }
         }
         return false;
     }
 
-    public static void changePassword(User user) 
-    {
+    public static void changePassword(User user) {
         boolean invalidPassword = true;
 
-        while (invalidPassword) 
-        {
+        while (invalidPassword) {
             System.out.println("---------------------------------------------------------------------------------");
             System.out.println("Please follow the password requirements:");
             System.out.println("1. Do not reuse the old password");
@@ -48,33 +40,17 @@ public class ChangePassword
             Scanner sc = new Scanner(System.in);
             String newPasswordInput = sc.nextLine();
 
-            if (newPasswordInput.equals(user.getPassword())) 
-            {
+            if (newPasswordInput.equals(user.getPassword())) {
                 System.out.println("\nNew password cannot be the same as old password!\n");
-            } 
-
-            else if (newPasswordInput.contains(" ")) 
-            {
+            } else if (newPasswordInput.contains(" ")) {
                 System.out.println("\nPassword cannot contain spaces!\n");
-            } 
-
-            else if (!containsSpecialCharacter(newPasswordInput)) 
-            {
+            } else if (!containsSpecialCharacter(newPasswordInput)) {
                 System.out.println("\nPassword must include at least one special character!\n");
-            } 
-
-            else if (!containsNumericCharacter(newPasswordInput)) 
-            {
+            } else if (!containsNumericCharacter(newPasswordInput)) {
                 System.out.println("\nPassword must include at least one numerical character!\n");
-            } 
-
-            else if (newPasswordInput.length() < 6) 
-            {
+            } else if (newPasswordInput.length() < 6) {
                 System.out.println("\nPassword must be at least 6 characters long!\n");
-            } 
-
-            else 
-            {
+            } else {
                 user.setPassword(newPasswordInput);
                 System.out.println("\nPassword changed!\n");
                 invalidPassword = false;

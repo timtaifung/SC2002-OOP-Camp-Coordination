@@ -1,4 +1,5 @@
 package Assets.Camp;
+
 import Assets.Roles.CampCommittee;
 import Assets.Roles.Student;
 import Assets.Roles.User;
@@ -6,10 +7,8 @@ import Assets.Roles.User;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CampManager 
-{
-    public static Camp createCamp(User currentUser)
-    {
+public class CampManager {
+    public static Camp createCamp(User currentUser) {
         Camp camp = new Camp(currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.println("------Create Camp------");
@@ -29,7 +28,7 @@ public class CampManager
         Integer commiteeSlots = sc.nextInt();
         sc.nextLine();
         System.out.print("Short Description: ");
-        String result=sc.nextLine();
+        String result = sc.nextLine();
         System.out.println("Camp created successfully!\n");
 
         camp.setName(campName);
@@ -46,15 +45,14 @@ public class CampManager
         return camp;
     }
 
-    public static void editCamp(ArrayList<Camp> campList, User currentUser)
-    {
-        if(!CampViewer.viewMyCreatedCamps(campList, currentUser)){
+    public static void editCamp(ArrayList<Camp> campList, User currentUser) {
+        if (!CampViewer.viewMyCreatedCamps(campList, currentUser)) {
             return;
         }
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Edit: ");
         Integer campIndex = sc.nextInt();
-        Camp camp = campList.get(campIndex-1);
+        Camp camp = campList.get(campIndex - 1);
         System.out.println("------Edit Camp------");
         System.out.println("1. Camp Name");
         System.out.println("2. Date of Camp");
@@ -68,8 +66,7 @@ public class CampManager
         System.out.println("10. Back to homepage");
 
         Integer choice = sc.nextInt();
-        switch(choice)
-        {
+        switch (choice) {
             case 1:
                 System.out.print("Camp Name: ");
                 sc.nextLine();
@@ -135,41 +132,38 @@ public class CampManager
                 break;
 
             case 9:
-                if(camp.getVisiblity())
-                {
+                if (camp.getVisiblity()) {
                     camp.setVisiblity(false);
-                }
-
-                else
-                {
+                } else {
                     camp.setVisiblity(true);
                 }
                 System.out.println("Visiblity changed successfully!\n");
                 break;
-                
+
             case 10:
                 break;
         }
     }
 
-    public static void delCamp(ArrayList<Camp> campList, User currentUser)
-    {
-        if(!CampViewer.viewMyCreatedCamps(campList, currentUser)){
+    public static void delCamp(ArrayList<Camp> campList, User currentUser) {
+        if (!CampViewer.viewMyCreatedCamps(campList, currentUser)) {
             return;
         }
         Scanner sc = new Scanner(System.in);
         System.out.print("Select Camp to Delete: ");
         Integer campIndex = sc.nextInt();
-        campList.remove(campIndex.intValue()-1);
+        campList.remove(campIndex.intValue() - 1);
         System.out.println("Camp deleted successfully!\n");
     }
 
-    public static void registerCamp(ArrayList<Camp> campList, Student currentUser)
-    {
-        if(!CampViewer.showAvailableCamp(campList, currentUser)){return;}
+    public static void registerCamp(ArrayList<Camp> campList, Student currentUser) {
+        if (!CampViewer.showAvailableCamp(campList, currentUser)) {
+            return;
+        }
         Scanner sc = new Scanner(System.in);
-        if(campList.size()==0){
-            return;}
+        if (campList.size() == 0) {
+            return;
+        }
 
         System.out.print("Select Camp to Register: ");
         if (!sc.hasNextInt())           //WHAT IF INPUT OUR OF RANGE
@@ -180,26 +174,21 @@ public class CampManager
 
         int campIndex = sc.nextInt();
         sc.nextLine();
-        Camp camp = campList.get(campIndex-1);
+        Camp camp = campList.get(campIndex - 1);
 
         //check if current user is blacklisted
-        for(User blackListedUser: camp.getBlackList())
-        {
-            if(blackListedUser.equals(currentUser))
-            {
+        for (User blackListedUser : camp.getBlackList()) {
+            if (blackListedUser.equals(currentUser)) {
                 System.out.println("You previously left this camp! Unable to join back!\n");
                 return;
             }
         }
 
 
-        if(camp.getAvailableSlots()>0)
-        {
+        if (camp.getAvailableSlots() > 0) {
             //check if student registered camp clash with other camp date
-            for(Camp studentCamp: currentUser.getStudentCampList())
-            {
-                if(studentCamp.getDateofCamp().toString().equals(camp.getDateofCamp().toString()))
-                {
+            for (Camp studentCamp : currentUser.getStudentCampList()) {
+                if (studentCamp.getDateofCamp().toString().equals(camp.getDateofCamp().toString())) {
                     System.out.println("You have registered another camp on the same date!\n");
                     return;
                 }
@@ -207,44 +196,36 @@ public class CampManager
             camp.getAttendanceList().add(currentUser);
             currentUser.getStudentCampList().add(camp);
             System.out.println("Registered successfully!\n");
-        }
-
-        else
-        {
+        } else {
             System.out.println("Camp is full!");
         }
 
     }
 
-    public static void campDetail(Camp currentCamp)
-    {
-        System.out.println("Camp Name: "+currentCamp.getName());
-        System.out.println("Date of Camp: "+currentCamp.getDateofCamp());
-        System.out.println("Registeration Closing Date: "+currentCamp.getRegisteraionClosing());
-        System.out.println("Faculty/School: "+currentCamp.getGrouping());
-        System.out.println("Location: "+currentCamp.getLocation());
-        System.out.println("Total Slots: "+currentCamp.getTotalSlots());
-        System.out.println("Short Description: "+currentCamp.getShortDescription());
-        System.out.println("Available Slots: "+currentCamp.getAvailableSlots());
+    public static void campDetail(Camp currentCamp) {
+        System.out.println("Camp Name: " + currentCamp.getName());
+        System.out.println("Date of Camp: " + currentCamp.getDateofCamp());
+        System.out.println("Registeration Closing Date: " + currentCamp.getRegisteraionClosing());
+        System.out.println("Faculty/School: " + currentCamp.getGrouping());
+        System.out.println("Location: " + currentCamp.getLocation());
+        System.out.println("Total Slots: " + currentCamp.getTotalSlots());
+        System.out.println("Short Description: " + currentCamp.getShortDescription());
+        System.out.println("Available Slots: " + currentCamp.getAvailableSlots());
     }
 
-    public static void applyCampCommitee(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList)
-    {
-        if(currentCamp.getCommiteeSlots()==0)
-        {
+    public static void applyCampCommitee(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList) {
+        if (currentCamp.getCommiteeSlots() == 0) {
             System.out.println("There are no more camp commitee slots available!\n");
             return;
         }
         //Checking if student is already a camp commitee for this camp
-        if(currentCamp.getCommiteeList().contains(currentStudent))
-        {
+        if (currentCamp.getCommiteeList().contains(currentStudent)) {
             System.out.println("You are already a camp commitee!\n");
             return;
         }
         //Checking if student is already a camp commitee for another camp
-        for(CampCommittee currentCampCommittee: campCommitteeList)
-        {
-            if(currentCampCommittee.getName().equals(currentStudent.getName())){
+        for (CampCommittee currentCampCommittee : campCommitteeList) {
+            if (currentCampCommittee.getName().equals(currentStudent.getName())) {
                 System.out.println("You are already a camp Commitee for another Camp!\n");
                 return;
             }
@@ -252,19 +233,17 @@ public class CampManager
         CampCommittee campCommittee = new CampCommittee(currentStudent, currentCamp);
         campCommitteeList.add(campCommittee);
         currentCamp.getCommiteeList().add(currentStudent);
-        currentCamp.setCommiteeSlots(currentCamp.getCommiteeSlots()-1);
+        currentCamp.setCommiteeSlots(currentCamp.getCommiteeSlots() - 1);
         System.out.println("Applied successfully!\n");
     }
 
-    public static void leaveCamp(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList)
-    {
+    public static void leaveCamp(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList) {
         currentCamp.getAttendanceList().remove(currentStudent);
         currentStudent.getStudentCampList().remove(currentCamp);
-        if (currentCamp.getCommiteeList().contains(currentStudent))
-        {
+        if (currentCamp.getCommiteeList().contains(currentStudent)) {
             campCommitteeList.remove(currentStudent);
             currentCamp.getCommiteeList().remove(currentStudent);
-            currentCamp.setCommiteeSlots(currentCamp.getCommiteeSlots()+1);
+            currentCamp.setCommiteeSlots(currentCamp.getCommiteeSlots() + 1);
         }
         currentCamp.getBlackList().add(currentStudent);
         System.out.println("Left camp successfully!\n");

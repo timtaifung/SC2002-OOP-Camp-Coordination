@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentCampMenu {
-    public static void menu(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteesList, ArrayList<Enquiry> enquiryList){
-        int x=0;
+    public static void menu(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteesList, ArrayList<Enquiry> enquiryList) {
+        int x = 0;
         do {
             System.out.println("Main Menu -> Student" + currentCamp.getName() + " Camp Menu");
             System.out.println("1. View Camp Details");
@@ -52,8 +52,8 @@ public class StudentCampMenu {
                 }
 
                 case 4: {
-                    int y=0;
-                    do{
+                    int y = 0;
+                    do {
                         System.out.println("Camp Enquiry");
                         System.out.println("-------------------Camp Enquiry-------------------");
                         System.out.println("1. View My Camp Enquiry");
@@ -101,12 +101,12 @@ public class StudentCampMenu {
                                 break;
                             }
                         }
-                    }while(y != 5) ;
+                    } while (y != 5);
                 }
                 case 5:
                     System.out.println("Exit");
 
             }
-        }while (x != 5) ;
+        } while (x != 5);
     }
 }

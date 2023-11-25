@@ -1,19 +1,23 @@
 package Menu;
+
 import Assets.Camp.Camp;
+import Assets.Camp.CampManager;
+import Assets.QnA.Enquiry.Enquiry;
+import Assets.QnA.Enquiry.EnquiryManager;
+import Assets.QnA.Enquiry.EnquiryViewer;
+import Assets.QnA.Suggestion.Suggestion;
+import Assets.QnA.Suggestion.SuggestionManager;
+import Assets.QnA.Suggestion.SuggestionViewer;
 import Assets.Roles.CampCommittee;
-import Assets.Roles.Student;
-import Assets.Camp.*;
-import Assets.QnA.Enquiry.*;
-import Assets.QnA.Suggestion.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CampCommiteeCampMenu{
+public class CampCommiteeCampMenu {
     //similar to camp menu but with additional features for camp commitee like suggestion reply
-    public static void menu(Camp currentCamp, CampCommittee currentCampCommittee, ArrayList<CampCommittee> campCommitteesList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList){
-        int x=0;
-        do{
+    public static void menu(Camp currentCamp, CampCommittee currentCampCommittee, ArrayList<CampCommittee> campCommitteesList, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList) {
+        int x = 0;
+        do {
             System.out.println("Main Menu -> Camp Committee" + currentCamp.getName() + " Camp Menu");
             System.out.println("1. View Camp Details");
             System.out.println("2. Leave Camp");
@@ -36,7 +40,7 @@ public class CampCommiteeCampMenu{
                     sc.nextLine();
                     String choice = sc.nextLine();
                     if (choice.equals("Y"))
-                        CampManager.leaveCamp(currentCampCommittee,currentCamp, campCommitteesList);
+                        CampManager.leaveCamp(currentCampCommittee, currentCamp, campCommitteesList);
                     else if (choice.equals("N"))
                         break;
                     else
@@ -45,8 +49,8 @@ public class CampCommiteeCampMenu{
                 }
 
                 case 3: {
-                    int y=0;
-                    do{
+                    int y = 0;
+                    do {
                         System.out.println("Camp Enquiry");
                         System.out.println("-------------------Camp Enquiry-------------------");
                         System.out.println("1. View All Camp Enquiry");
@@ -59,7 +63,7 @@ public class CampCommiteeCampMenu{
                                 EnquiryManager.viewAllEnquiry(enquiryList);
                                 break;
                             }
-                            case 2:{
+                            case 2: {
                                 System.out.println("Answer Camp Enquiry");
                                 EnquiryViewer.viewMyEnquiry(enquiryList, currentCampCommittee);
                                 System.out.println("Please enter your choice: ");
@@ -75,13 +79,13 @@ public class CampCommiteeCampMenu{
                                 break;
                             }
                         }
-                    }while(y != 3) ;
+                    } while (y != 3);
                     break;
                 }
-                case 4:{
+                case 4: {
 
-                    int t=0;
-                    do{
+                    int t = 0;
+                    do {
                         System.out.println("Camp Suggestions");
                         System.out.println("-------------------Camp Suggestions-------------------");
                         System.out.println("1. View My Camp Suggestions");
@@ -99,7 +103,7 @@ public class CampCommiteeCampMenu{
 
                             case 2: {
                                 System.out.println("Create Camp Suggestions");
-                                SuggestionManager.newSuggestion(suggestionList, currentCampCommittee,currentCampCommittee);
+                                SuggestionManager.newSuggestion(suggestionList, currentCampCommittee, currentCampCommittee);
                                 System.out.println("Camp Suggestions created!");
                                 break;
                             }
@@ -129,12 +133,12 @@ public class CampCommiteeCampMenu{
                                 break;
                             }
                         }
-                    }while (t != 5) ;
+                    } while (t != 5);
                 }
                 case 5:
                     System.out.println("Exit");
 
             }
-        }while(x!=5);
+        } while (x != 5);
     }
 }
