@@ -182,6 +182,7 @@ public class CampCommiteeCampMenu {
                         }
                     } 
                     while (t != 5);
+                    break;
                 }
                 case 4:
                 {

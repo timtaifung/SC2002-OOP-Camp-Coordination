@@ -1,9 +1,10 @@
 ------------------------------------ Camp Report ------------------------------------
-Camp Name: FOp 2023
-Camp Date: 9
-Camp Location: fsas 
-Camp Description: ffsdfsd fsdfsafs
-Camp Slots: 120 / 119
+Camp Name: FOP 2023
+Camp Date: 19.10.2023
+Camp Location: Hall 9 gdfdsfdsgsfd
+Camp Description: fsdfas fdsf sdfds fdsf dsafsf sfsd fsafs
+Camp Slots: 120 / 118
 ------------------------------------ Attendance List ------------------------------------
 Name, Role, 
+RAWAL, Student, 
 LIU , Student, 
