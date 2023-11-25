@@ -1,0 +1,8 @@
+------------------------------------ Camp Report ------------------------------------
+Camp Name: test
+Camp Date: 12-12
+Camp Location: school
+Camp Description: fop
+Camp Slots: 100 / 100
+------------------------------------ Attendance List ------------------------------------
+Name, Role, 

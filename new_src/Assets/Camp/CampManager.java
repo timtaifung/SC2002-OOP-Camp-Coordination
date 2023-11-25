@@ -242,6 +242,14 @@ public class CampManager {
                 return;
             }
         }
+        for(int i=0;i<camp.getAttendanceList().size();i++){
+            if(camp.getAttendanceList().get(i) == currentUser){
+                System.out.println("------------------------------------------");
+                System.out.println("You have already registered for this camp!");
+                System.out.println("------------------------------------------");
+                return;
+            }
+        }
 
 
         if (camp.getAvailableSlots() > 0) {

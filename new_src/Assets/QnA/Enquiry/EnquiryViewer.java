@@ -29,7 +29,7 @@ public class EnquiryViewer extends Enquiry {
         return true;
     }
 
-    public static void viewMyEnquiry(ArrayList<Enquiry> enquiryList, User currentUser) {
+    public static Boolean viewMyEnquiry(ArrayList<Enquiry> enquiryList, User currentUser) {
         Integer i = 1;
         for (Enquiry currentEnquiry : enquiryList) 
         {
@@ -51,5 +51,12 @@ public class EnquiryViewer extends Enquiry {
                 i++;
             }
         }
+        if(i==1){
+            System.out.println("------------------------------------");
+            System.out.println("You have not made any enquiries yet!");
+            System.out.println("------------------------------------");
+            return false;
+        }
+        return true;
     }
 }

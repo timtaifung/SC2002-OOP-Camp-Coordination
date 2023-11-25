@@ -16,7 +16,7 @@ public class StudentCampMenu {
         int x = 0;
         do {
             System.out.println("------------------------------------------------------");
-            System.out.println("Main Menu -> Student" + currentCamp.getName() + " Camp Menu");
+            System.out.println("Main Menu -> Student " + currentCamp.getName() + " Camp Menu");
             System.out.println("------------------------------------------------------");
             System.out.println("----------------------");
             System.out.println("1. View Camp Details");
@@ -109,12 +109,15 @@ public class StudentCampMenu {
                                 System.out.println("-----------------");
                                 System.out.println("Edit Camp Enquiry");
                                 System.out.println("-----------------\n");
-                                EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
-                                System.out.println("Please enter your choice: ");
-                                Integer enquiryIndex = sc.nextInt();
-                                Enquiry currentEnquiry = enquiryList.get(enquiryIndex - 1);
-                                EnquiryManager.editEnquiry(currentEnquiry, currentStudent);
+                                if(!EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent)){break;}
+                                else{
+                                    System.out.println("Please enter your choice: ");
+                                    Integer enquiryIndex = sc.nextInt();
+                                    Enquiry currentEnquiry = enquiryList.get(enquiryIndex - 1);
+                                    EnquiryManager.editEnquiry(currentEnquiry, currentStudent);
                                 break;
+                                }
+                                
                             }
 
                             case 4: 
@@ -122,7 +125,7 @@ public class StudentCampMenu {
                                 System.out.println("-------------------");
                                 System.out.println("Delete Camp Enquiry");
                                 System.out.println("-------------------\n");
-                                EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent);
+                                if(!EnquiryViewer.viewMyEnquiry(enquiryList, currentStudent)){break;}
                                 System.out.println("Please enter your choice: ");
                                 Integer enquiryIndex = sc.nextInt();
                                 Enquiry currentEnquiry = enquiryList.get(enquiryIndex - 1);
@@ -152,6 +155,7 @@ public class StudentCampMenu {
                     System.out.println("----");
                     System.out.println("Exit");
                     System.out.println("----\n");
+                    break;
             }
         } while (x != 5);
     }

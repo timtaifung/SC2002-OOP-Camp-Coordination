@@ -29,56 +29,57 @@ public class CampViewer {
                 System.out.println(i + 1 + ". " + campList.get(i).getName());
                 System.out.println("-----------------------------\n");
             }
-        }
-        System.out.println("Do want to filter the camps? (1. Yes / 2. No)");
-        choice = sc.nextInt();
-        if (choice == 1)
-        {
-            System.out.println("1. Filter by Date");
-            System.out.println("2. Filter by Location");
-            System.out.println("3. Filter by Grouping");
+        
+            System.out.println("Do want to filter the camps? (1. Yes / 2. No)");
             choice = sc.nextInt();
-            switch (choice)
+            if (choice == 1)
             {
-                case 1:
-                    System.out.println("Enter Date: ");
-                    String date = sc.next();
-                    for(Camp camp: campList)
-                    {
-                        if(Objects.equals(camp.getDateofCamp(), date))
+                System.out.println("1. Filter by Date");
+                System.out.println("2. Filter by Location");
+                System.out.println("3. Filter by Grouping");
+                choice = sc.nextInt();
+                switch (choice)
+                {
+                    case 1:
+                        System.out.println("Enter Date: ");
+                        String date = sc.next();
+                        for(Camp camp: campList)
                         {
-                            System.out.println("-----------------------------");
-                            System.out.println(camp.getName());
-                            System.out.println("-----------------------------\n");
+                            if(Objects.equals(camp.getDateofCamp(), date))
+                            {
+                                System.out.println("-----------------------------");
+                                System.out.println(camp.getName());
+                                System.out.println("-----------------------------\n");
+                            }
                         }
-                    }
-                    break;
-                case 2:
-                    System.out.println("Enter Location: ");
-                    String location = sc.next();
-                    for(Camp camp: campList)
-                    {
-                        if(Objects.equals(camp.getLocation(), location))
+                        break;
+                    case 2:
+                        System.out.println("Enter Location: ");
+                        String location = sc.next();
+                        for(Camp camp: campList)
                         {
-                            System.out.println("-----------------------------");
-                            System.out.println(camp.getName());
-                            System.out.println("-----------------------------\n");
+                            if(Objects.equals(camp.getLocation(), location))
+                            {
+                                System.out.println("-----------------------------");
+                                System.out.println(camp.getName());
+                                System.out.println("-----------------------------\n");
+                            }
                         }
-                    }
-                    break;
-                case 3:
-                    System.out.println("Enter Grouping: ");
-                    String grouping = sc.next();
-                    for(Camp camp: campList)
-                    {
-                        if(Objects.equals(camp.getGrouping(), grouping))
+                        break;
+                    case 3:
+                        System.out.println("Enter Grouping: ");
+                        String grouping = sc.next();
+                        for(Camp camp: campList)
                         {
-                            System.out.println("-----------------------------");
-                            System.out.println(camp.getName());
-                            System.out.println("-----------------------------\n");
+                            if(Objects.equals(camp.getGrouping(), grouping))
+                            {
+                                System.out.println("-----------------------------");
+                                System.out.println(camp.getName());
+                                System.out.println("-----------------------------\n");
+                            }
                         }
-                    }
-                    break;
+                        break;
+                }
             }
         }
     }

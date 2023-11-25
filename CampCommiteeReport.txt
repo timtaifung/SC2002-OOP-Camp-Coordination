@@ -1,14 +1,3 @@
 ------------------------------------ Camp Report ------------------------------------
 
------------------------------------- FOP 2023 ------------------------------------
-Camp Commitee Name: LIU 
-Points: 3
-Enquiries Answered: 
-fsfasfs fsafsfsfsfs
-fsafsfs fdsf sfsfsdfsf dsf safsdfs
-
-Suggestions: 
-1
-fdsfadsfsdf sdfadsfsfs fsfasdfsfsa
-2
-fsadfsfs fdsfdsafsadfsadff ssdfsaf
+------------------------------------ test ------------------------------------
