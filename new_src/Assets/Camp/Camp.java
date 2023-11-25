@@ -57,7 +57,7 @@ public class Camp {
         this.dateOfCamp = dateOfCamp;
     }
 
-    public String getRegisteraionClosing() {
+    public String getRegistrationClosing() {
         return this.registrationClosing;
     }
 
