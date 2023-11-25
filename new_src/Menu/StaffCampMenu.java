@@ -46,14 +46,16 @@ public class StaffCampMenu {
             System.out.println("1. Change password");
             System.out.println("-----------------------------\n");
 
-
             displayStaffCampMenu();
 
             choice1 = sc.nextInt();
-            if (choice1 == 9) {
+            if (choice1 == 9) 
+            {
                 return;
             }
-            switch (choice1) {
+
+            switch (choice1) 
+            {
                 case 1:
                     System.out.println("-----------------------------");
                     System.out.println("Staff -> Change Password");
@@ -62,6 +64,7 @@ public class StaffCampMenu {
                     sc.nextLine();
                     ChangePassword.changePassword(currentUser);
                     break;
+
                 case 2:
                     System.out.println("Staff -> View All Camps");
                     CampViewer.viewAllCamps(campList);
