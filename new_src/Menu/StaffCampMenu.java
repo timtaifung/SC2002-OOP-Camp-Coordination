@@ -11,6 +11,7 @@ import Assets.QnA.Suggestion.Suggestion;
 import Assets.QnA.Suggestion.SuggestionManager;
 import Assets.QnA.Suggestion.SuggestionViewer;
 import Assets.Roles.User;
+import Assets.Login.ChangePassword;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -54,12 +55,12 @@ public class StaffCampMenu {
             }
             switch (choice1) {
                 case 1:
+                    System.out.println("-----------------------------");
                     System.out.println("Staff -> Change Password");
-                    System.out.print("Input new Password: ");
+                    System.out.println("Input new Password: ");
+                    System.out.println("-----------------------------\n");
                     sc.nextLine();
-                    String passwordInput = sc.nextLine();
-                    currentUser.setPassword(passwordInput);
-                    System.out.println("Password reset successfully!");
+                    ChangePassword.changePassword(currentUser);
                     break;
                 case 2:
                     System.out.println("Staff -> View All Camps");

@@ -7,6 +7,7 @@ import Assets.QnA.Enquiry.Enquiry;
 import Assets.QnA.Suggestion.Suggestion;
 import Assets.Roles.CampCommittee;
 import Assets.Roles.Student;
+import Assets.Login.ChangePassword;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -39,12 +40,11 @@ public class MainMenu {
 
             switch (x) {
                 case 1:
+                    System.out.println("\n-----------------------------");
                     System.out.println("Student -> Change Password");
-                    System.out.print("Input new Password: ");
-                    sc.nextLine();
-                    String passwordInput = sc.nextLine();
-                    currentUser.setPassword(passwordInput);
-                    System.out.println("Password reset successfully!");
+                    System.out.println("Input new Password: ");
+                    System.out.println("-----------------------------");
+                    ChangePassword.changePassword(currentUser);
                     break;
                 case 2:
                     CampViewer.viewAllCamps(campList);
