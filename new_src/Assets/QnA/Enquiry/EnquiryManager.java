@@ -50,6 +50,7 @@ public class EnquiryManager extends Enquiry {
                 String title = sc.nextLine();
                 currentEnquiry.setTitle(title);
                 System.out.println("Enquiry title updated!");
+                break;
             }
 
             case 2: {
@@ -57,13 +58,16 @@ public class EnquiryManager extends Enquiry {
                 String content = sc.nextLine();
                 currentEnquiry.setContent(content);
                 System.out.println("Enquiry content updated!");
+                break;
             }
 
             case 3:
                 System.out.println("Exit");
+                break;
 
             default:
                 System.out.println("Invalid input!");
+                break;
         }
     }
 

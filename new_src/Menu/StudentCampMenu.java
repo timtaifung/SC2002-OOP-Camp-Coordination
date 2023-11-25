@@ -58,7 +58,7 @@ public class StudentCampMenu {
                         System.out.println("-------------------Camp Enquiry-------------------");
                         System.out.println("1. View My Camp Enquiry");
                         System.out.println("2. Create Camp Enquiry");
-                        System.out.println("3 Edit Camp Enquiry");
+                        System.out.println("3  Edit Camp Enquiry");
                         System.out.println("4. Delete Camp Enquiry");
                         System.out.println("5. Back to Camp Menu");
                         y = sc.nextInt();
