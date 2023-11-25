@@ -1,4 +1,4 @@
-package Menu;
+package Menu.CampCommiteeCampMenus;
 
 import Assets.Camp.Camp;
 import Assets.QnA.Enquiry.Enquiry;
@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class CampSuggestionsOption implements CampMenuOption {
     @Override
     public void execute(Camp currentCamp, CampCommittee currentCampCommittee, ArrayList<Enquiry> enquiryList, ArrayList<Suggestion> suggestionList, ArrayList<Camp> campList) {
+        Scanner sc = new Scanner(System.in);
         int t = 0;
         do
         {
