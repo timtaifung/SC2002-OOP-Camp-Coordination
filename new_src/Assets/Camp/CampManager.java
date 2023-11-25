@@ -286,20 +286,31 @@ public class CampManager {
         System.out.println("--------------------------------------------");
     }
 
-    public static void applyCampCommitee(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList) {
-        if (currentCamp.getCommiteeSlots() == 0) {
-            System.out.println("There are no more camp commitee slots available!\n");
+    public static void applyCampCommitee(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList) 
+    {
+        if (currentCamp.getCommiteeSlots() == 0) 
+        {
+            System.out.println("------------------------------------------------");
+            System.out.println("There are no more camp commitee slots available!");
+            System.out.println("------------------------------------------------\n");
             return;
         }
         //Checking if student is already a camp commitee for this camp
-        if (currentCamp.getCommiteeList().contains(currentStudent)) {
-            System.out.println("You are already a camp commitee!\n");
+        if (currentCamp.getCommiteeList().contains(currentStudent)) 
+        {
+            System.out.println("--------------------------------");
+            System.out.println("You are already a camp commitee!");
+            System.out.println("--------------------------------\n");
             return;
         }
         //Checking if student is already a camp commitee for another camp
-        for (CampCommittee currentCampCommittee : campCommitteeList) {
-            if (currentCampCommittee.getName().equals(currentStudent.getName())) {
-                System.out.println("You are already a camp Commitee for another Camp!\n");
+        for (CampCommittee currentCampCommittee : campCommitteeList) 
+        {
+            if (currentCampCommittee.getName().equals(currentStudent.getName())) 
+            {
+                System.out.println("-------------------------------------------------");
+                System.out.println("You are already a camp Commitee for another Camp!");
+                System.out.println("-------------------------------------------------\n");
                 return;
             }
         }
@@ -307,7 +318,9 @@ public class CampManager {
         campCommitteeList.add(campCommittee);
         currentCamp.getCommiteeList().add(currentStudent);
         currentCamp.setCommiteeSlots(currentCamp.getCommiteeSlots() - 1);
-        System.out.println("Applied successfully!\n");
+        System.out.println("---------------------");
+        System.out.println("Applied successfully!");
+        System.out.println("---------------------\n");
     }
 
     public static void leaveCamp(Student currentStudent, Camp currentCamp, ArrayList<CampCommittee> campCommitteeList) {
@@ -319,6 +332,8 @@ public class CampManager {
             currentCamp.setCommiteeSlots(currentCamp.getCommiteeSlots() + 1);
         }
         currentCamp.getBlackList().add(currentStudent);
-        System.out.println("Left camp successfully!\n");
+        System.out.println("-----------------------");
+        System.out.println("Left camp successfully!");
+        System.out.println("-----------------------\n");
     }
 }

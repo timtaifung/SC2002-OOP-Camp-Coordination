@@ -32,7 +32,9 @@ public class CampCommiteeCampMenu {
             {
                 case 1: 
                 {
+                    System.out.println("-----------------");
                     System.out.println("View Camp Details");
+                    System.out.println("-----------------\n");
                     CampManager.campDetail(currentCamp);
                     break;
                 }
@@ -42,19 +44,28 @@ public class CampCommiteeCampMenu {
                     int y = 0;
                     do {
                         System.out.println("Camp Enquiry");
-                        System.out.println("-------------------Camp Enquiry-------------------");
+                        System.out.println("----- Camp Enquiry -----");
                         System.out.println("1. View All Camp Enquiry");
                         System.out.println("2. Answer Camp Enquiry");
                         System.out.println("3. Back to Camp Menu");
+                        System.out.println("------------------------\n");
                         y = sc.nextInt();
-                        switch (y) {
-                            case 1: {
+                        switch (y)
+                        {
+                            case 1: 
+                            {
+                                System.out.println("---------------------");
                                 System.out.println("View All Camp Enquiry");
+                                System.out.println("---------------------\n");
                                 EnquiryViewer.getAllEnquiry(enquiryList);
                                 break;
                             }
-                            case 2: {
+
+                            case 2: 
+                            {
+                                System.out.println("-------------------");
                                 System.out.println("Answer Camp Enquiry");
+                                System.out.println("-------------------\n");
                                 EnquiryViewer.viewMyEnquiry(enquiryList, currentCampCommittee);
                                 System.out.println("Please enter your choice: ");
                                 Integer enquiryIndex = sc.nextInt();
@@ -62,10 +73,20 @@ public class CampCommiteeCampMenu {
                                 EnquiryManager.replyEnquiry(currentEnquiry);
                                 break;
                             }
+
                             case 3:
+                            {
+                                System.out.println("----");
                                 System.out.println("Exit");
-                            default: {
+                                System.out.println("----\n");
+                                break;
+                            }
+
+                            default: 
+                            {
+                                System.out.println("--------------");
                                 System.out.println("Invalid input!");
+                                System.out.println("--------------\n");
                                 break;
                             }
                         }
@@ -77,35 +98,45 @@ public class CampCommiteeCampMenu {
                 case 3: 
                 {
                     int t = 0;
-                    do {
+                    do 
+                    {
                         System.out.println("Camp Suggestions");
-                        System.out.println("-------------------Camp Suggestions-------------------");
+                        System.out.println("----- Camp Suggestions -----");
                         System.out.println("1. View My Camp Suggestions");
                         System.out.println("2. Create Camp Suggestions");
                         System.out.println("3. Edit Camp Suggestions");
                         System.out.println("4. Delete Camp Suggestions");
                         System.out.println("5. Back to Camp Menu");
+                        System.out.println("----------------------------\n");
                         t = sc.nextInt();
                         switch (t) 
                         {
                             case 1: 
                             {
+                                System.out.println("------------------------");
                                 System.out.println("View My Camp Suggestions");
+                                System.out.println("------------------------\n");
                                 SuggestionViewer.viewMySuggestion(suggestionList, currentCampCommittee);
                                 break;
                             }
 
                             case 2: 
                             {
+                                System.out.println("-----------------------");
                                 System.out.println("Create Camp Suggestions");
+                                System.out.println("-----------------------\n");
                                 SuggestionManager.newSuggestion(suggestionList, currentCampCommittee, currentCampCommittee);
+                                System.out.println("-------------------------");
                                 System.out.println("Camp Suggestions created!");
+                                System.out.println("-------------------------\n");
                                 break;
                             }
 
                             case 3: 
                             {
+                                System.out.println("---------------------");
                                 System.out.println("Edit Camp Suggestions");
+                                System.out.println("---------------------/n");
                                 SuggestionViewer.viewMySuggestion(suggestionList, currentCampCommittee);
                                 System.out.println("Please enter your choice: ");
                                 Integer suggestionIndex = sc.nextInt();
@@ -116,7 +147,9 @@ public class CampCommiteeCampMenu {
 
                             case 4: 
                             {
+                                System.out.println("-----------------------");
                                 System.out.println("Delete Camp Suggestions");
+                                System.out.println("-----------------------/n");
                                 SuggestionViewer.viewMySuggestion(suggestionList, currentCampCommittee);
                                 System.out.println("Please enter your choice: ");
                                 Integer suggestionIndex = sc.nextInt();
@@ -127,13 +160,17 @@ public class CampCommiteeCampMenu {
 
                             case 5:
                             {
+                                System.out.println("----");
                                 System.out.println("Exit");
+                                System.out.println("----\n");
                                 break;
                             }
 
                             default: 
                             {
+                                System.out.println("--------------");
                                 System.out.println("Invalid input!");
+                                System.out.println("--------------\n");
                                 break;
                             }
                         }
@@ -143,7 +180,9 @@ public class CampCommiteeCampMenu {
 
                 case 4:
                 {
+                    System.out.println("----");
                     System.out.println("Exit");
+                    System.out.println("----\n");
                     break;
                 }
             }
