@@ -13,6 +13,11 @@ public class EnquiryManager extends Enquiry {
 
     public static void replyEnquiry(Enquiry currentEnquiry) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("----------------");
+        System.out.println("Enquiry content:");
+        System.out.println(currentEnquiry.getContent());
+        System.out.println("----------------\n");
+
         System.out.println("Enter your reply:");
         String y = sc.nextLine();
         currentEnquiry.setreply(y);
