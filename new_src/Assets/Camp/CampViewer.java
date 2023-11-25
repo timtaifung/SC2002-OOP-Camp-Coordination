@@ -134,7 +134,7 @@ public class CampViewer {
             if (camp.getAvailableSlots() > 0 && camp.getVisiblity() && camp.getNTU() || camp.getAvailableSlots() > 0 && camp.getVisiblity() && Objects.equals(camp.getGrouping(), currentStudent.getFaculty())) 
             {
                 System.out.println("-----------------------------");
-                System.out.println((i) + ". " + camp.getName());
+                System.out.println((i) + ". " + camp.getName() + " " + camp.getAvailableSlots() + "/" + camp.getTotalSlots());
                 System.out.println("-----------------------------\n");
 
                 i++;
