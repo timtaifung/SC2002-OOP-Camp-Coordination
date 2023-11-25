@@ -11,9 +11,15 @@ public class SuggestionManager extends Suggestion {
         super(currentUser);
     }
 
-    public static void approveSuggestion(Suggestion currentSuggestion) {
+    public static void approveSuggestion(Suggestion currentSuggestion) 
+    {
+        System.out.println("-------------------");
+        System.out.println("Suggestion content:");
+        System.out.println(currentSuggestion.getContent());
+        System.out.println("-------------------");
         Scanner sc = new Scanner(System.in);
         System.out.println("1. Accept 2.Reject");
+        System.out.println("-------------------");
         Integer y = sc.nextInt();
         if (y == 1) {
             currentSuggestion.setApprovedStatus(true);
@@ -53,13 +59,15 @@ public class SuggestionManager extends Suggestion {
 
         Integer x = sc.nextInt();
         switch (x) {
-            case 1: {
+            case 1: 
+            {
                 System.out.println("Enter your suggestion title:");
                 String title = sc.nextLine();
                 currentSuggestion.setTitle(title);
             }
 
-            case 2: {
+            case 2: 
+            {
                 System.out.println("Enter your suggestion content:");
                 String content = sc.nextLine();
                 currentSuggestion.setContent(content);
@@ -73,7 +81,8 @@ public class SuggestionManager extends Suggestion {
         }
     }
 
-    public static void deleteSuggestion(Suggestion currentSuggestion, ArrayList<Suggestion> suggestionList) {
+    public static void deleteSuggestion(Suggestion currentSuggestion, ArrayList<Suggestion> suggestionList) 
+    {
         suggestionList.remove(currentSuggestion);
         System.out.println("Suggestion deleted!");
     }
