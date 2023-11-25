@@ -48,6 +48,7 @@ public class EnquiryManager extends Enquiry {
             case 1: {
                 System.out.println("Enter your enquiry title:");
                 String title = sc.nextLine();
+                sc.nextLine();
                 currentEnquiry.setTitle(title);
                 System.out.println("Enquiry title updated!");
                 break;
@@ -56,6 +57,7 @@ public class EnquiryManager extends Enquiry {
             case 2: {
                 System.out.println("Enter your enquiry content:");
                 String content = sc.nextLine();
+                sc.nextLine();
                 currentEnquiry.setContent(content);
                 System.out.println("Enquiry content updated!");
                 break;
