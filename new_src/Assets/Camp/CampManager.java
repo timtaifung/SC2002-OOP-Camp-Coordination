@@ -12,29 +12,29 @@ public class CampManager {
         Camp camp = new Camp(currentUser);
         Scanner sc = new Scanner(System.in);
         System.out.println("------ Create Camp -------");
-        System.out.print("Camp Name: ");
+        System.out.println("Camp Name: ");
         String campName = sc.nextLine();
-        System.out.print("Date of Camp: ");
+        System.out.println("Date of Camp: ");
         String dateOfCamp = sc.nextLine();
-        System.out.print("Registeration Closing Date: ");
+        System.out.println("Registeration Closing Date: ");
         String registeraionClosing = sc.nextLine();
-        System.out.print("Faculty/School: ");
+        System.out.println("Faculty/School: ");
         String grouping = sc.nextLine();
-        System.out.print("Location: ");
+        System.out.println("Location: ");
         String location = sc.nextLine();
-        System.out.print("Total Slots: ");
+        System.out.println("Total Slots: ");
         Integer totalSlots = sc.nextInt();      //try throw exception when input is !integer
-        System.out.print("Camp Commitee Slots: ");
+        System.out.println("Camp Commitee Slots: ");
         Integer commiteeSlots = sc.nextInt();
         sc.nextLine();
-        System.out.print("Short Description: ");
+        System.out.println("Short Description: ");
         String result = sc.nextLine();
-        System.out.println("Camp created successfully!\n");
-        System.out.println("--------------------------");
+        System.out.println("Camp created successfully!");
+        System.out.println("--------------------------\n");
 
         camp.setName(campName);
         camp.setDateofCamp(dateOfCamp);
-        camp.setRegisteraionClosing(registeraionClosing);
+        camp.setRegistrationClosing(registeraionClosing);
         camp.setGrouping(grouping);
         camp.setLocation(location);
         camp.setTotalSlots(totalSlots);
@@ -51,10 +51,13 @@ public class CampManager {
             return;
         }
         Scanner sc = new Scanner(System.in);
-        System.out.print("Select Camp to Edit: ");
+        System.out.println("--------------------");
+        System.out.println("Select Camp to Edit:");
+        System.out.println("--------------------\n");
         Integer campIndex = sc.nextInt();
         Camp camp = campList.get(campIndex - 1);
-        System.out.println("------Edit Camp------");
+
+        System.out.println("--------- Edit Camp ---------");
         System.out.println("1. Camp Name");
         System.out.println("2. Date of Camp");
         System.out.println("3. Registeration Closing Date");
@@ -65,80 +68,119 @@ public class CampManager {
         System.out.println("8. Short Description");
         System.out.println("9. Visiblity Toggle");
         System.out.println("10. Back to homepage");
+        System.out.println("-----------------------------\n");
 
         Integer choice = sc.nextInt();
-        switch (choice) {
+        switch (choice) 
+        {
             case 1:
-                System.out.print("Camp Name: ");
+                System.out.println("----------");
+                System.out.println("Camp Name:");
+                System.out.println("----------\n");
                 sc.nextLine();
                 String campName = sc.nextLine();
                 camp.setName(campName);
-                System.out.println("Camp name changed successfully!\n");
+                System.out.println("-------------------------------");
+                System.out.println("Camp name changed successfully!");
+                System.out.println("-------------------------------\n");
                 break;
 
             case 2:
-                System.out.print("Date of Camp: ");
+                System.out.println("--------------");
+                System.out.println("Date of Camp: ");
+                System.out.println("--------------\n");
                 sc.nextLine();
                 String dateOfCamp = sc.nextLine();
                 camp.setDateofCamp(dateOfCamp);
-                System.out.println("Date of camp changed successfully!\n");
+                System.out.println("----------------------------------");
+                System.out.println("Date of camp changed successfully!");
+                System.out.println("----------------------------------\n");
                 break;
 
             case 3:
-                System.out.print("Registeration Closing Date: ");
+                System.out.println("---------------------------");
+                System.out.println("Registeration Closing Date:");
+                System.out.println("---------------------------\n");
                 sc.nextLine();
                 String registeraionClosing = sc.nextLine();
-                camp.setRegisteraionClosing(registeraionClosing);
-                System.out.println("Registeration closing date changed successfully!\n");
+                camp.setRegistrationClosing(registeraionClosing);
+                System.out.println("------------------------------------------------");
+                System.out.println("Registration closing date changed successfully!");
+                System.out.println("------------------------------------------------\n");
                 break;
 
             case 4:
-                System.out.print("Faculty/School: ");
+                System.out.println("---------------"); 
+                System.out.println("Faculty/School:");
+                System.out.println("---------------\n"); 
                 sc.nextLine();
                 String grouping = sc.nextLine();
                 camp.setGrouping(grouping);
-                System.out.println("Faculty/School changed successfully!\n");
+                System.out.println("------------------------------------"); 
+                System.out.println("Faculty/School changed successfully!");
+                System.out.println("------------------------------------\n"); 
                 break;
 
             case 5:
-                System.out.print("Location: ");
+                System.out.println("---------"); 
+                System.out.println("Location:");
+                System.out.println("---------\n"); 
                 sc.nextLine();
                 String location = sc.nextLine();
                 camp.setLocation(location);
-                System.out.println("Location changed successfully!\n");
+                System.out.println("------------------------------"); 
+                System.out.println("Location changed successfully!");
+                System.out.println("------------------------------\n"); 
                 break;
 
             case 6:
-                System.out.print("Total Slots: ");
+                System.out.println("------------"); 
+                System.out.println("Total Slots:");
+                System.out.println("------------/n"); 
                 sc.nextLine();
                 Integer totalSlots = sc.nextInt();
                 camp.setTotalSlots(totalSlots);
-                System.out.println("Total slots changed successfully!\n");
+                System.out.println("---------------------------------"); 
+                System.out.println("Total slots changed successfully!");
+                System.out.println("---------------------------------\n"); 
                 break;
 
             case 7:
-                System.out.print("Camp Commitee Slots: ");
+                System.out.println("--------------------"); 
+                System.out.println("Camp Commitee Slots:");
+                System.out.println("--------------------\n"); 
                 sc.nextLine();
                 Integer commiteeSlots = sc.nextInt();
                 camp.setCommiteeSlots(commiteeSlots);
-                System.out.println("Camp commitee slots changed successfully!\n");
+                System.out.println("-----------------------------------------"); 
+                System.out.println("Camp commitee slots changed successfully!");
+                System.out.println("-----------------------------------------\n"); 
                 break;
 
             case 8:
-                System.out.print("Short Description: ");
+                System.out.println("------------------"); 
+                System.out.println("Short Description:");
+                System.out.println("------------------\n"); 
                 sc.nextLine();
                 String shortDescription = sc.nextLine();
                 camp.setShortDescription(shortDescription);
-                System.out.println("Short description changed successfully!\n");
+                System.out.println("---------------------------------------"); 
+                System.out.println("Short description changed successfully!");
+                System.out.println("---------------------------------------\n"); 
                 break;
 
             case 9:
-                if (camp.getVisiblity()) {
+                if (camp.getVisiblity()) 
+                {
                     camp.setVisiblity(false);
-                } else {
+                } 
+                else
+                {
                     camp.setVisiblity(true);
                 }
-                System.out.println("Visiblity changed successfully!\n");
+                System.out.println("-------------------------------"); 
+                System.out.println("Visiblity changed successfully!");
+                System.out.println("-------------------------------\n"); 
                 break;
 
             case 10:
@@ -146,30 +188,42 @@ public class CampManager {
         }
     }
 
-    public static void delCamp(ArrayList<Camp> campList, User currentUser) {
-        if (!CampViewer.viewMyCreatedCamps(campList, currentUser)) {
+    public static void delCamp(ArrayList<Camp> campList, User currentUser) 
+    {
+        if (!CampViewer.viewMyCreatedCamps(campList, currentUser)) 
+        {
             return;
         }
         Scanner sc = new Scanner(System.in);
-        System.out.print("Select Camp to Delete: ");
+        System.out.println("----------------------"); 
+        System.out.println("Select Camp to Delete:");
+        System.out.println("----------------------\n"); 
         Integer campIndex = sc.nextInt();
         campList.remove(campIndex.intValue() - 1);
-        System.out.println("Camp deleted successfully!\n");
+        System.out.println("--------------------------"); 
+        System.out.println("Camp deleted successfully!");
+        System.out.println("--------------------------\n"); 
     }
 
-    public static void registerCamp(ArrayList<Camp> campList, Student currentUser) {
-        if (!CampViewer.showAvailableCamp(campList, currentUser)) {
+    public static void registerCamp(ArrayList<Camp> campList, Student currentUser) 
+    {
+        if (!CampViewer.showAvailableCamp(campList, currentUser)) 
+        {
             return;
         }
+
         Scanner sc = new Scanner(System.in);
-        if (campList.size() == 0) {
+        if (campList.size() == 0) 
+        {
             return;
         }
 
         System.out.print("Select Camp to Register: ");
         if (!sc.hasNextInt())           //WHAT IF INPUT OUR OF RANGE
         {
-            System.out.println("Invalid input. Please enter a valid integer.\n");
+            System.out.println("--------------------------------------------");
+            System.out.println("Invalid input. Please enter a valid integer.");
+            System.out.println("--------------------------------------------\n");
             return;
         }
 
@@ -178,9 +232,13 @@ public class CampManager {
         Camp camp = campList.get(campIndex - 1);
 
         //check if current user is blacklisted
-        for (User blackListedUser : camp.getBlackList()) {
-            if (blackListedUser.equals(currentUser)) {
-                System.out.println("You previously left this camp! Unable to join back!\n");
+        for (User blackListedUser : camp.getBlackList()) 
+        {
+            if (blackListedUser.equals(currentUser)) 
+            {
+                System.out.println("---------------------------------------------------");
+                System.out.println("You previously left this camp! Unable to join back!");
+                System.out.println("---------------------------------------------------\n");
                 return;
             }
         }
@@ -188,22 +246,34 @@ public class CampManager {
 
         if (camp.getAvailableSlots() > 0) {
             //check if student registered camp clash with other camp date
-            for (Camp studentCamp : currentUser.getStudentCampList()) {
-                if (studentCamp.getDateofCamp().toString().equals(camp.getDateofCamp().toString())) {
-                    System.out.println("You have registered another camp on the same date!\n");
+            for (Camp studentCamp : currentUser.getStudentCampList()) 
+            {
+                if (studentCamp.getDateofCamp().toString().equals(camp.getDateofCamp().toString())) 
+                {
+                    System.out.println("--------------------------------------------------");
+                    System.out.println("You have registered another camp on the same date!");
+                    System.out.println("--------------------------------------------------\n");
                     return;
                 }
             }
             camp.getAttendanceList().add(currentUser);
             currentUser.getStudentCampList().add(camp);
-            System.out.println("Registered successfully!\n");
-        } else {
+            System.out.println("------------------------");
+            System.out.println("Registered successfully!");
+            System.out.println("------------------------");
+        } 
+
+        else 
+        {
+            System.out.println("-------------");
             System.out.println("Camp is full!");
+            System.out.println("-------------\n");
         }
 
     }
 
-    public static void campDetail(Camp currentCamp) {
+    public static void campDetail(Camp currentCamp) 
+    {
         System.out.println("Camp Name: " + currentCamp.getName());
         System.out.println("Date of Camp: " + currentCamp.getDateofCamp());
         System.out.println("Registeration Closing Date: " + currentCamp.getRegisteraionClosing());
