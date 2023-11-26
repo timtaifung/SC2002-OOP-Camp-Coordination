@@ -35,14 +35,12 @@ public class Main {
                     Student currentUserStudent = (Student) currentUser;
                     MainMenu.menu(currentUserStudent, campList, enquiryList, suggestionList, campCommitteeList);
                     break;
-
+                case "CampCommittee":
+                    currentUserStudent = (Student) currentUser;
+                    MainMenu.menu(currentUserStudent, campList, enquiryList, suggestionList, campCommitteeList);
+                    break;
                 case "Staff":
                     StaffCampMenu.menu(currentUser, campList, enquiryList, suggestionList, campCommitteeList);
-                    break;
-
-                case "CampCommittee":
-                    Student currentCampCommitteeStudent = (Student) currentUser;
-                    MainMenu.menu(currentCampCommitteeStudent, campList, enquiryList, suggestionList, campCommitteeList);
                     break;
             }
         }
