@@ -19,10 +19,12 @@ public class LeaveCampOption implements StudentMenuOption {
         System.out.println("Are you sure you want to leave this camp? (Y/N)");
         System.out.println("Once you leave, you will not be able to rejoin the camp.");
         System.out.println("--------------------------------------------------------\n");
-        sc.nextLine();
         String choice = sc.nextLine();
-        if (choice.equals("Y"))
+        if (choice.equals("Y")){
             LeaveCamp.leaveCamp(currentStudent, currentCamp, campCommitteesList);
+            System.out.println("You have left the camp!");
+            return;
+        }
         else if (choice.equals("N"))
             return;
         else
