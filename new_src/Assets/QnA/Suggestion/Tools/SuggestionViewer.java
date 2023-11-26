@@ -26,6 +26,7 @@ public class SuggestionViewer extends Suggestion
             System.out.println("-----------------------------------");
             System.out.println(i + ". " + currentSuggestion.getTitle());
             System.out.println("-----------------------------------\n");
+            i++;
         }
         return true;
     }
