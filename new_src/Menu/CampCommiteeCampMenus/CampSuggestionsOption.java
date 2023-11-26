@@ -55,7 +55,7 @@ public class CampSuggestionsOption implements CampMenuOption {
                 {
                     System.out.println("---------------------");
                     System.out.println("Edit Camp Suggestions");
-                    System.out.println("---------------------/n");
+                    System.out.println("---------------------\n");
                     SuggestionViewer.viewMySuggestion(suggestionList, currentCampCommittee);
                     System.out.println("Please enter your choice: ");
                     Integer suggestionIndex = sc.nextInt();
@@ -68,7 +68,7 @@ public class CampSuggestionsOption implements CampMenuOption {
                 {
                     System.out.println("-----------------------");
                     System.out.println("Delete Camp Suggestions");
-                    System.out.println("-----------------------/n");
+                    System.out.println("-----------------------\n");
                     SuggestionViewer.viewMySuggestion(suggestionList, currentCampCommittee);
                     System.out.println("Please enter your choice: ");
                     Integer suggestionIndex = sc.nextInt();

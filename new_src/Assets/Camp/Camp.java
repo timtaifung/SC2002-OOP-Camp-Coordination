@@ -79,7 +79,7 @@ public class Camp {
     }
 
     public void setNTU(String grouping) {
-        this.NTU = Objects.equals(grouping, "NTU");
+        this.NTU = Objects.equals(grouping, "NTU") || Objects.equals(grouping,"ntu");
 
     }
 

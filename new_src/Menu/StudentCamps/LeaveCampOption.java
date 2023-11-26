@@ -21,9 +21,9 @@ public class LeaveCampOption implements StudentMenuOption {
         System.out.println("--------------------------------------------------------\n");
         sc.nextLine();
         String choice = sc.nextLine();
-        if (choice.equals("Y"))
+        if (choice.equals("Y") || choice.equals("y"))
             LeaveCamp.leaveCamp(currentStudent, currentCamp, campCommitteesList);
-        else if (choice.equals("N"))
+        else if (choice.equals("N") || choice.equals("n"))
             return;
         else
             System.out.println("--------------");
