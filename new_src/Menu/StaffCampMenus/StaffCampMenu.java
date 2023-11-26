@@ -23,6 +23,13 @@ public class StaffCampMenu {
         options.add(new ViewAllCampsOption());
         options.add(new ViewMyCreatedCampsOption());
         options.add(new CreateCampOption());
+        options.add(new EditDeleteCampOption());
+        options.add(new ViewReplyEnquiriesOption());
+        options.add(new ViewReplySuggestionsOption());
+        options.add(new GenerateReportsOption());
+        options.add(new PerformanceReportsOption());
+
+
 
 
         do {
