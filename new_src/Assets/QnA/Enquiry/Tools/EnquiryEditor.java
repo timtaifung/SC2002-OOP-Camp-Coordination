@@ -20,8 +20,8 @@ public class EnquiryEditor {
                 System.out.println("-------------------------");
                 System.out.println("Enter your enquiry title:");
                 System.out.println("-------------------------\n");
-                String title = sc.nextLine();
                 sc.nextLine();
+                String title = sc.nextLine();
                 currentEnquiry.setTitle(title);
                 System.out.println("----------------------");
                 System.out.println("Enquiry title updated!");
@@ -33,8 +33,8 @@ public class EnquiryEditor {
                 System.out.println("---------------------------");
                 System.out.println("Enter your enquiry content:");
                 System.out.println("---------------------------\n");
-                String content = sc.nextLine();
                 sc.nextLine();
+                String content = sc.nextLine();
                 currentEnquiry.setContent(content);
                 System.out.println("------------------------");
                 System.out.println("Enquiry content updated!");
