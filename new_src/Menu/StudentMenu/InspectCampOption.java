@@ -40,9 +40,12 @@ public class InspectCampOption implements StudentMenuOption {
         for (CampCommittee currentCampCommittee : campCommitteeList) {
             //Student is a camp committee
             if (currentCampCommittee.getName() == currentUser.getName()) {
-                isCampCommittee = true;
-                CampCommiteeCampMenu.menu(campChoice, currentCampCommittee, campCommitteeList, enquiryList, suggestionList, campList);
-                break;
+                if(campChoice.getCommiteeList().contains(currentCampCommittee))
+                {
+                    isCampCommittee = true;
+                    CampCommiteeCampMenu.menu(campChoice, currentCampCommittee, campCommitteeList, enquiryList, suggestionList, campList);
+                    return;
+                }
             }
         }
 //        StudentCampMenu.menu(currentUser, campChoice, campCommitteeList, enquiryList);
