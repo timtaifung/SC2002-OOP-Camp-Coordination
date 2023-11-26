@@ -39,6 +39,11 @@ public class Main {
                 case "Staff":
                     StaffCampMenu.menu(currentUser, campList, enquiryList, suggestionList, campCommitteeList);
                     break;
+
+                case "CampCommittee":
+                    Student currentCampCommitteeStudent = (Student) currentUser;
+                    MainMenu.menu(currentCampCommitteeStudent, campList, enquiryList, suggestionList, campCommitteeList);
+                    break;
             }
         }
     }
