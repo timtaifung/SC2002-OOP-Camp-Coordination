@@ -1,12 +1,11 @@
 package Menu.CampCommiteeCampMenus;
 
 import Assets.Camp.Camp;
-import Assets.QnA.Enquiry.EnquiryManager;
-import Assets.QnA.Enquiry.EnquiryViewer;
+import Assets.QnA.Enquiry.Tools.EnquiryViewer;
 import Assets.QnA.Enquiry.Enquiry;
+import Assets.QnA.Enquiry.Tools.EnquiryReplier;
 import Assets.QnA.Suggestion.Suggestion;
 import Assets.Roles.CampCommittee;
-import Menu.CampCommiteeCampMenus.CampMenuOption;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -44,7 +43,7 @@ public class CampEnquiryOption implements CampMenuOption {
                     System.out.println("Please enter your choice: ");
                     Integer enquiryIndex = sc.nextInt();
                     Enquiry currentEnquiry = enquiryList.get(enquiryIndex - 1);
-                    EnquiryManager.replyEnquiry(currentEnquiry);
+                    EnquiryReplier.replyEnquiry(currentEnquiry);
                     currentCampCommittee.addToEnquiryAnswered(currentEnquiry);
                     currentCampCommittee.setpoint();
                     break;

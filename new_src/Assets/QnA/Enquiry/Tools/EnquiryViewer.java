@@ -1,5 +1,6 @@
-package Assets.QnA.Enquiry;
+package Assets.QnA.Enquiry.Tools;
 
+import Assets.QnA.Enquiry.Enquiry;
 import Assets.Roles.User;
 
 import java.util.ArrayList;
